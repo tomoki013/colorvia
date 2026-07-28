@@ -1,0 +1,284 @@
+[
+  {
+    "id": "JP-01",
+    "englishName": "Hokkaido",
+    "japaneseName": "北海道",
+    "region": "hokkaido"
+  },
+  {
+    "id": "JP-02",
+    "englishName": "Aomori",
+    "japaneseName": "青森県",
+    "region": "tohoku"
+  },
+  {
+    "id": "JP-03",
+    "englishName": "Iwate",
+    "japaneseName": "岩手県",
+    "region": "tohoku"
+  },
+  {
+    "id": "JP-04",
+    "englishName": "Miyagi",
+    "japaneseName": "宮城県",
+    "region": "tohoku"
+  },
+  {
+    "id": "JP-05",
+    "englishName": "Akita",
+    "japaneseName": "秋田県",
+    "region": "tohoku"
+  },
+  {
+    "id": "JP-06",
+    "englishName": "Yamagata",
+    "japaneseName": "山形県",
+    "region": "tohoku"
+  },
+  {
+    "id": "JP-07",
+    "englishName": "Fukushima",
+    "japaneseName": "福島県",
+    "region": "tohoku"
+  },
+  {
+    "id": "JP-08",
+    "englishName": "Ibaraki",
+    "japaneseName": "茨城県",
+    "region": "kanto"
+  },
+  {
+    "id": "JP-09",
+    "englishName": "Tochigi",
+    "japaneseName": "栃木県",
+    "region": "kanto"
+  },
+  {
+    "id": "JP-10",
+    "englishName": "Gunma",
+    "japaneseName": "群馬県",
+    "region": "kanto"
+  },
+  {
+    "id": "JP-11",
+    "englishName": "Saitama",
+    "japaneseName": "埼玉県",
+    "region": "kanto"
+  },
+  {
+    "id": "JP-12",
+    "englishName": "Chiba",
+    "japaneseName": "千葉県",
+    "region": "kanto"
+  },
+  {
+    "id": "JP-13",
+    "englishName": "Tokyo",
+    "japaneseName": "東京都",
+    "region": "kanto"
+  },
+  {
+    "id": "JP-14",
+    "englishName": "Kanagawa",
+    "japaneseName": "神奈川県",
+    "region": "kanto"
+  },
+  {
+    "id": "JP-15",
+    "englishName": "Niigata",
+    "japaneseName": "新潟県",
+    "region": "chubu"
+  },
+  {
+    "id": "JP-16",
+    "englishName": "Toyama",
+    "japaneseName": "富山県",
+    "region": "chubu"
+  },
+  {
+    "id": "JP-17",
+    "englishName": "Ishikawa",
+    "japaneseName": "石川県",
+    "region": "chubu"
+  },
+  {
+    "id": "JP-18",
+    "englishName": "Fukui",
+    "japaneseName": "福井県",
+    "region": "chubu"
+  },
+  {
+    "id": "JP-19",
+    "englishName": "Yamanashi",
+    "japaneseName": "山梨県",
+    "region": "chubu"
+  },
+  {
+    "id": "JP-20",
+    "englishName": "Nagano",
+    "japaneseName": "長野県",
+    "region": "chubu"
+  },
+  {
+    "id": "JP-21",
+    "englishName": "Gifu",
+    "japaneseName": "岐阜県",
+    "region": "chubu"
+  },
+  {
+    "id": "JP-22",
+    "englishName": "Shizuoka",
+    "japaneseName": "静岡県",
+    "region": "chubu"
+  },
+  {
+    "id": "JP-23",
+    "englishName": "Aichi",
+    "japaneseName": "愛知県",
+    "region": "chubu"
+  },
+  {
+    "id": "JP-24",
+    "englishName": "Mie",
+    "japaneseName": "三重県",
+    "region": "kinki"
+  },
+  {
+    "id": "JP-25",
+    "englishName": "Shiga",
+    "japaneseName": "滋賀県",
+    "region": "kinki"
+  },
+  {
+    "id": "JP-26",
+    "englishName": "Kyoto",
+    "japaneseName": "京都府",
+    "region": "kinki"
+  },
+  {
+    "id": "JP-27",
+    "englishName": "Osaka",
+    "japaneseName": "大阪府",
+    "region": "kinki"
+  },
+  {
+    "id": "JP-28",
+    "englishName": "Hyogo",
+    "japaneseName": "兵庫県",
+    "region": "kinki"
+  },
+  {
+    "id": "JP-29",
+    "englishName": "Nara",
+    "japaneseName": "奈良県",
+    "region": "kinki"
+  },
+  {
+    "id": "JP-30",
+    "englishName": "Wakayama",
+    "japaneseName": "和歌山県",
+    "region": "kinki"
+  },
+  {
+    "id": "JP-31",
+    "englishName": "Tottori",
+    "japaneseName": "鳥取県",
+    "region": "chugoku"
+  },
+  {
+    "id": "JP-32",
+    "englishName": "Shimane",
+    "japaneseName": "島根県",
+    "region": "chugoku"
+  },
+  {
+    "id": "JP-33",
+    "englishName": "Okayama",
+    "japaneseName": "岡山県",
+    "region": "chugoku"
+  },
+  {
+    "id": "JP-34",
+    "englishName": "Hiroshima",
+    "japaneseName": "広島県",
+    "region": "chugoku"
+  },
+  {
+    "id": "JP-35",
+    "englishName": "Yamaguchi",
+    "japaneseName": "山口県",
+    "region": "chugoku"
+  },
+  {
+    "id": "JP-36",
+    "englishName": "Tokushima",
+    "japaneseName": "徳島県",
+    "region": "shikoku"
+  },
+  {
+    "id": "JP-37",
+    "englishName": "Kagawa",
+    "japaneseName": "香川県",
+    "region": "shikoku"
+  },
+  {
+    "id": "JP-38",
+    "englishName": "Ehime",
+    "japaneseName": "愛媛県",
+    "region": "shikoku"
+  },
+  {
+    "id": "JP-39",
+    "englishName": "Kochi",
+    "japaneseName": "高知県",
+    "region": "shikoku"
+  },
+  {
+    "id": "JP-40",
+    "englishName": "Fukuoka",
+    "japaneseName": "福岡県",
+    "region": "kyushuOkinawa"
+  },
+  {
+    "id": "JP-41",
+    "englishName": "Saga",
+    "japaneseName": "佐賀県",
+    "region": "kyushuOkinawa"
+  },
+  {
+    "id": "JP-42",
+    "englishName": "Nagasaki",
+    "japaneseName": "長崎県",
+    "region": "kyushuOkinawa"
+  },
+  {
+    "id": "JP-43",
+    "englishName": "Kumamoto",
+    "japaneseName": "熊本県",
+    "region": "kyushuOkinawa"
+  },
+  {
+    "id": "JP-44",
+    "englishName": "Oita",
+    "japaneseName": "大分県",
+    "region": "kyushuOkinawa"
+  },
+  {
+    "id": "JP-45",
+    "englishName": "Miyazaki",
+    "japaneseName": "宮崎県",
+    "region": "kyushuOkinawa"
+  },
+  {
+    "id": "JP-46",
+    "englishName": "Kagoshima",
+    "japaneseName": "鹿児島県",
+    "region": "kyushuOkinawa"
+  },
+  {
+    "id": "JP-47",
+    "englishName": "Okinawa",
+    "japaneseName": "沖縄県",
+    "region": "kyushuOkinawa"
+  }
+]

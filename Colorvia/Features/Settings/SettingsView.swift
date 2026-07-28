@@ -19,7 +19,16 @@ struct SettingsView: View {
       .background(ColorviaTheme.background)
       .navigationTitle(L10n.text("settings.title"))
       .navigationBarTitleDisplayMode(.inline)
-      .toolbar { Button(L10n.text("common.close")) { dismiss() } }
+      .toolbar {
+        ToolbarItem(placement: .cancellationAction) {
+          Button {
+            dismiss()
+          } label: {
+            Image(systemName: "xmark")
+          }
+          .accessibilityLabel(L10n.text("common.close"))
+        }
+      }
       .confirmationDialog(L10n.text("settings.reset_confirm"), isPresented: $confirmingReset) {
         Button(L10n.text("common.delete"), role: .destructive) {
           Task {
@@ -29,6 +38,9 @@ struct SettingsView: View {
         }
       }
     }
+    .presentationDetents([.medium, .large])
+    .presentationDragIndicator(.visible)
+    .presentationContentInteraction(.scrolls)
     .tint(ColorviaTheme.accentDeep)
     .preferredColorScheme(appState.appearance.colorScheme)
   }
@@ -279,10 +291,38 @@ private struct AppDetailsView: View {
 }
 
 private struct DataManagementView: View {
+  @Environment(AppState.self) private var appState
+  @State private var exportDocument = VisitDataDocument()
+  @State private var showingExporter = false
+  @State private var showingImporter = false
+  @State private var resultMessage: String?
+  @State private var pendingImportData: Data?
+  @State private var orphanedParentCodes: [String] = []
   let onRequestReset: () -> Void
 
   var body: some View {
     List {
+      Section {
+        Button {
+          do {
+            exportDocument = VisitDataDocument(data: try appState.exportedVisitData())
+            showingExporter = true
+          } catch {
+            resultMessage = error.localizedDescription
+          }
+        } label: {
+          Label(L10n.text("settings.export_json"), systemImage: "square.and.arrow.up")
+        }
+
+        Button {
+          showingImporter = true
+        } label: {
+          Label(L10n.text("settings.import_json"), systemImage: "square.and.arrow.down")
+        }
+      } footer: {
+        Text(L10n.text("settings.json_footer"))
+      }
+
       Section {
         Button(L10n.text("settings.reset_all"), role: .destructive) {
           onRequestReset()
@@ -295,6 +335,90 @@ private struct DataManagementView: View {
     .background(ColorviaTheme.background)
     .navigationTitle(L10n.text("settings.data_management"))
     .navigationBarTitleDisplayMode(.inline)
+    .fileExporter(
+      isPresented: $showingExporter,
+      document: exportDocument,
+      contentType: .json,
+      defaultFilename: "colorvia-visits"
+    ) { result in
+      if case .failure(let error) = result {
+        resultMessage = error.localizedDescription
+      }
+    }
+    .fileImporter(isPresented: $showingImporter, allowedContentTypes: [.json]) { result in
+      switch result {
+      case .success(let url):
+        Task {
+          let accessed = url.startAccessingSecurityScopedResource()
+          defer {
+            if accessed { url.stopAccessingSecurityScopedResource() }
+          }
+          do {
+            let data = try Data(contentsOf: url)
+            do {
+              try await appState.importVisitData(data)
+            } catch VisitDataImportError.unvisitedParentCountries(let codes) {
+              pendingImportData = data
+              orphanedParentCodes = codes
+              return
+            }
+            resultMessage = L10n.text("settings.import_complete")
+          } catch {
+            resultMessage = error.localizedDescription
+          }
+        }
+      case .failure(let error):
+        resultMessage = error.localizedDescription
+      }
+    }
+    .alert(
+      L10n.text("settings.data_management"),
+      isPresented: Binding(
+        get: { resultMessage != nil },
+        set: { if !$0 { resultMessage = nil } }
+      )
+    ) {
+      Button("OK", role: .cancel) {}
+    } message: {
+      Text(resultMessage ?? "")
+    }
+    .confirmationDialog(
+      L10n.text("settings.import_parent_title"),
+      isPresented: Binding(
+        get: { pendingImportData != nil },
+        set: {
+          if !$0 {
+            pendingImportData = nil
+            orphanedParentCodes = []
+          }
+        }
+      ),
+      titleVisibility: .visible
+    ) {
+      Button(L10n.text("settings.import_repair_parents")) {
+        completePendingImport(repairParents: true)
+      }
+      Button(L10n.text("settings.import_skip_regions")) {
+        completePendingImport(repairParents: false)
+      }
+      Button(L10n.text("common.cancel"), role: .cancel) {}
+    } message: {
+      Text(orphanedParentCodes.joined(separator: ", "))
+    }
+  }
+
+  private func completePendingImport(repairParents: Bool) {
+    guard let data = pendingImportData else { return }
+    pendingImportData = nil
+    Task {
+      do {
+        try await appState.importVisitData(data, repairUnvisitedParents: repairParents)
+        resultMessage = L10n.text("settings.import_complete")
+      } catch {
+        resultMessage = error.localizedDescription
+      }
+      orphanedParentCodes = []
+    }
   }
 }
 
@@ -308,6 +432,58 @@ private struct OpenSourceLicensesView: View {
         Link(
           L10n.text("settings.view_source"),
           destination: URL(string: "https://www.naturalearthdata.com/")!
+        )
+      }
+      Section("Insee COG 2026") {
+        Text(L10n.text("settings.insee_description"))
+          .font(.subheadline)
+          .foregroundStyle(ColorviaTheme.secondaryInk)
+        Link(
+          L10n.text("settings.view_source"),
+          destination: URL(string: "https://www.insee.fr/fr/information/8740222")!
+        )
+      }
+      Section("Geolonia Japanese Addresses") {
+        Text(L10n.text("settings.japan_address_description"))
+          .font(.subheadline)
+          .foregroundStyle(ColorviaTheme.secondaryInk)
+        Link(
+          L10n.text("settings.view_source"),
+          destination: URL(string: "https://github.com/geolonia/japanese-addresses")!
+        )
+      }
+      Section("GeoNames") {
+        Text(L10n.text("settings.geonames_description"))
+          .font(.subheadline)
+          .foregroundStyle(ColorviaTheme.secondaryInk)
+        Link(
+          L10n.text("settings.view_source"),
+          destination: URL(string: "https://www.geonames.org/")!
+        )
+      }
+      Section("U.S. Census Bureau") {
+        Text("2024 state-equivalent cartographic boundary data for the United States map.")
+          .font(.subheadline)
+          .foregroundStyle(ColorviaTheme.secondaryInk)
+        Link(
+          L10n.text("settings.view_source"),
+          destination: URL(
+            string:
+              "https://www.census.gov/geographies/mapping-files/time-series/geo/cartographic-boundary.html"
+          )!
+        )
+      }
+      Section("Singapore URA") {
+        Text(
+          "Master Plan 2019 Planning Area Boundary data, provided under the Singapore Open Data Licence."
+        )
+        .font(.subheadline)
+        .foregroundStyle(ColorviaTheme.secondaryInk)
+        Link(
+          L10n.text("settings.view_source"),
+          destination: URL(
+            string: "https://data.gov.sg/datasets/d_4765db0e87b9c86336792efe8a1f7a66/view"
+          )!
         )
       }
     }

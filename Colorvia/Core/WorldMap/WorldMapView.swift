@@ -5,6 +5,7 @@ struct WorldMapView: View {
   let visitedCodes: Set<String>
   var compact = false
   var visitedColor = ColorviaTheme.accent
+  var highlightedCode: String?
 
   @State private var scale: CGFloat = 1
   @State private var lastScale: CGFloat = 1
@@ -25,8 +26,11 @@ struct WorldMapView: View {
             context.fill(path, with: .color(fill))
             context.stroke(
               path,
-              with: .color(ColorviaTheme.border.opacity(0.72)),
-              lineWidth: compact ? 0.25 : 0.45
+              with: .color(
+                country.code == highlightedCode
+                  ? ColorviaTheme.ink : ColorviaTheme.border.opacity(0.72)
+              ),
+              lineWidth: country.code == highlightedCode ? 1.8 : (compact ? 0.25 : 0.45)
             )
           }
         }

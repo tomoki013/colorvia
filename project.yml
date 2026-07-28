@@ -26,6 +26,7 @@ targets:
       - path: Colorvia
     settings:
       base:
+        CODE_SIGN_ENTITLEMENTS: Colorvia/Colorvia.entitlements
         PRODUCT_BUNDLE_IDENTIFIER: io.tmkch.colorvia
         TARGETED_DEVICE_FAMILY: "1,2"
     scheme:

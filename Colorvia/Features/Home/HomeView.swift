@@ -2,46 +2,79 @@ import SwiftUI
 
 struct HomeView: View {
   @Environment(AppState.self) private var appState
+  @State private var path: [AppRoute] = []
   @State private var showingPicker = false
   @State private var showingSettings = false
   @State private var isStatisticsExpanded = false
 
   var body: some View {
-    GeometryReader { proxy in
-      let collapsedHeight: CGFloat = 168
-      let expandedHeight = min(proxy.size.height * 0.78, 660)
+    NavigationStack(path: $path) {
+      GeometryReader { proxy in
+        let collapsedHeight: CGFloat = 168
+        let expandedHeight = min(proxy.size.height * 0.78, 660)
 
-      ZStack(alignment: .bottomTrailing) {
-        VStack(spacing: 0) {
-          header
+        ZStack(alignment: .bottomTrailing) {
+          VStack(spacing: 0) {
+            header
 
-          WorldMapView(
-            countries: appState.mapCountries,
-            visitedCodes: appState.visitedCodes,
-            visitedColor: appState.mapColor.color
+            WorldMapView(
+              countries: appState.mapCountries,
+              visitedCodes: appState.visitedCodes,
+              visitedColor: appState.mapColor.color
+            )
+            .padding(.horizontal, 14)
+            .padding(.top, 6)
+            .padding(.bottom, collapsedHeight - 22)
+          }
+
+          if !isStatisticsExpanded {
+            addButton
+              .padding(.trailing, 25)
+              .padding(.bottom, collapsedHeight + 16)
+              .transition(.scale(scale: 0.8).combined(with: .opacity))
+          }
+
+          StatisticsBottomSheet(
+            isExpanded: $isStatisticsExpanded,
+            collapsedHeight: collapsedHeight,
+            expandedHeight: expandedHeight
           )
-          .padding(.horizontal, 14)
-          .padding(.top, 6)
-          .padding(.bottom, collapsedHeight - 22)
+          .environment(appState)
+          .animation(.snappy(duration: 0.26), value: isStatisticsExpanded)
         }
-
-        if !isStatisticsExpanded {
-          addButton
-            .padding(.trailing, 25)
-            .padding(.bottom, collapsedHeight + 16)
-            .transition(.scale(scale: 0.8).combined(with: .opacity))
-        }
-
-        StatisticsBottomSheet(
-          isExpanded: $isStatisticsExpanded,
-          collapsedHeight: collapsedHeight,
-          expandedHeight: expandedHeight
-        )
-        .environment(appState)
       }
-      .animation(.snappy(duration: 0.34), value: isStatisticsExpanded)
+      .background(ColorviaTheme.background.ignoresSafeArea())
+      .navigationDestination(for: AppRoute.self) { route in
+        switch route {
+        case .countryDetail(let countryCode):
+          if let definition = CountrySubdivisionRegistry.definition(for: countryCode) {
+            SubdivisionCountryDetailView(definition: definition)
+          } else {
+            CountryDetailView(countryCode: countryCode)
+          }
+        case .japanMap:
+          if appState.visitedCodes.contains("JP") {
+            JapanMapScreen()
+          } else if let definition = CountrySubdivisionRegistry.definition(for: "JP") {
+            SubdivisionCountryDetailView(definition: definition)
+          }
+        case .franceMap:
+          if appState.visitedCodes.contains("FR") {
+            FranceMapScreen()
+          } else if let definition = CountrySubdivisionRegistry.definition(for: "FR") {
+            SubdivisionCountryDetailView(definition: definition)
+          }
+        case .subdivisionMap(let countryCode):
+          if appState.visitedCodes.contains(countryCode),
+            let definition = CountrySubdivisionRegistry.definition(for: countryCode)
+          {
+            SubdivisionMapScreen(definition: definition)
+          } else if let definition = CountrySubdivisionRegistry.definition(for: countryCode) {
+            SubdivisionCountryDetailView(definition: definition)
+          }
+        }
+      }
     }
-    .background(ColorviaTheme.background.ignoresSafeArea())
     .sheet(isPresented: $showingPicker) {
       CountryPickerView(initialSelection: appState.visitedCodes) { selection in
         Task {
@@ -106,7 +139,6 @@ private struct StatisticsBottomSheet: View {
   @Binding var isExpanded: Bool
   let collapsedHeight: CGFloat
   let expandedHeight: CGFloat
-  @GestureState private var dragTranslation: CGFloat = 0
 
   var body: some View {
     VStack(spacing: 0) {
@@ -142,7 +174,9 @@ private struct StatisticsBottomSheet: View {
     .accessibilityAction(
       named: isExpanded ? L10n.text("stats.close") : L10n.text("stats.open")
     ) {
-      isExpanded.toggle()
+      withAnimation(.snappy(duration: 0.26)) {
+        isExpanded.toggle()
+      }
     }
   }
 
@@ -241,14 +275,54 @@ private struct StatisticsBottomSheet: View {
             .padding(.vertical, 30)
           } else {
             ForEach(visitedCountries) { country in
-              HStack(spacing: 13) {
-                Text(country.flag)
-                  .font(.title2)
-                  .frame(width: 34)
-                Text(country.localizedName)
-                  .foregroundStyle(ColorviaTheme.ink)
-                Spacer()
+              NavigationLink(value: AppRoute.countryDetail(countryCode: country.id)) {
+                HStack(spacing: 13) {
+                  Text(country.flag)
+                    .font(.title2)
+                    .frame(width: 34)
+                  VStack(alignment: .leading, spacing: 2) {
+                    Text(country.localizedName)
+                      .foregroundStyle(ColorviaTheme.ink)
+                    if country.id == "JP" {
+                      Text(
+                        L10n.japanRowStatus(
+                          isVisited: true,
+                          prefectureCount: appState.visitedPrefectureCount
+                        )
+                      )
+                      .font(.caption)
+                      .foregroundStyle(ColorviaTheme.secondaryInk)
+                    } else if country.id == "FR" {
+                      Text(
+                        L10n.franceRowStatus(
+                          isVisited: true,
+                          departmentCount: appState.visitedFranceDepartmentCount
+                        )
+                      )
+                      .font(.caption)
+                      .foregroundStyle(ColorviaTheme.secondaryInk)
+                    } else if let definition = CountrySubdivisionRegistry.definition(
+                      for: country.id
+                    ) {
+                      Text(
+                        L10n.subdivisionRowStatus(
+                          isVisited: true,
+                          count: appState.visitedSubdivisionCount(countryCode: country.id),
+                          total: definition.totalCount
+                        )
+                      )
+                      .font(.caption)
+                      .foregroundStyle(ColorviaTheme.secondaryInk)
+                    }
+                  }
+                  Spacer()
+                  Image(systemName: "chevron.right")
+                    .font(.caption.weight(.semibold))
+                    .foregroundStyle(ColorviaTheme.secondaryInk)
+                }
+                .contentShape(Rectangle())
               }
+              .buttonStyle(.plain)
               .padding(.horizontal, 24)
               .padding(.vertical, 11)
 
@@ -295,21 +369,19 @@ private struct StatisticsBottomSheet: View {
   }
 
   private var sheetOffset: CGFloat {
-    let restingOffset = isExpanded ? 0 : expandedHeight - collapsedHeight
-    return min(max(restingOffset + dragTranslation, 0), expandedHeight - collapsedHeight)
+    isExpanded ? 0 : expandedHeight - collapsedHeight
   }
 
   private var dragGesture: some Gesture {
     DragGesture(minimumDistance: 4)
-      .updating($dragTranslation) { value, state, _ in
-        state = value.translation.height
-      }
       .onEnded { value in
         let projected = value.predictedEndTranslation.height
-        if isExpanded {
-          isExpanded = projected < 90
-        } else {
-          isExpanded = projected < -70
+        withAnimation(.snappy(duration: 0.26)) {
+          if isExpanded {
+            isExpanded = projected < 90
+          } else {
+            isExpanded = projected < -70
+          }
         }
       }
   }

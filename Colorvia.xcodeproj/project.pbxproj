@@ -7,25 +7,83 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		00E0C09A9EC5BB90CFC3D190 /* us-place-search-index.json in Resources */ = {isa = PBXBuildFile; fileRef = CCBDDC80937AD8B575CF7310 /* us-place-search-index.json */; };
+		065436C2D4CF3E5FB0187603 /* VisitDataDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7432E1D1B0C7F76039CE60 /* VisitDataDocument.swift */; };
+		0B5C55E83D270EA4FC83CFD2 /* us-map.json in Resources */ = {isa = PBXBuildFile; fileRef = 741D5F29B425AF05B12FA5B9 /* us-map.json */; };
+		0F6CC944D18A7B76FC6BB958 /* kr-subdivisions.json in Resources */ = {isa = PBXBuildFile; fileRef = 17564F03267C2614F0BCA353 /* kr-subdivisions.json */; };
+		12BF4945C7F025D171E8D1DC /* JapanDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8311FC617211F299BD9822 /* JapanDetailView.swift */; };
+		1998A33F643F146FEE9A2622 /* sg-planning-areas.json in Resources */ = {isa = PBXBuildFile; fileRef = 0BCB5961E7719E0F058EA73F /* sg-planning-areas.json */; };
+		1B2E67C9419E65EEE31BD62B /* tr-subdivisions.json in Resources */ = {isa = PBXBuildFile; fileRef = 279620BDCC1CCE269F8B97EF /* tr-subdivisions.json */; };
 		1F686C743A52C07FF4B493F6 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B62B4DA711226F149795E36 /* HomeView.swift */; };
+		2253DA1851D8E8DC34B4B505 /* sg-place-search-index.json in Resources */ = {isa = PBXBuildFile; fileRef = 8FD7F40B367A088C111AA3E3 /* sg-place-search-index.json */; };
+		2B6A5C524AC60A4927543B66 /* es-subdivisions.json in Resources */ = {isa = PBXBuildFile; fileRef = CC2DB817C950F061BAE7A3D1 /* es-subdivisions.json */; };
+		2BBA5A9BA0446A86A6AC765E /* be-subdivisions.json in Resources */ = {isa = PBXBuildFile; fileRef = D6CAC62C03A972AB99E59240 /* be-subdivisions.json */; };
 		2C44FF20E6D4ED021C557D8C /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FAE63DD192DB49310C45B5E /* RootView.swift */; };
+		2DBB3C7D89D861228E16A65C /* FranceMapScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF05AA7C7839AE5D18E6F34 /* FranceMapScreen.swift */; };
+		2F0DFDE058D58746AA2312C8 /* Prefecture.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53B993D75FE982A8E737A9D /* Prefecture.swift */; };
 		3B1063F5AB294789B9A3437B /* world-map.json in Resources */ = {isa = PBXBuildFile; fileRef = 520C0FB967AE13AAAE8DFBC5 /* world-map.json */; };
+		3C1B050D42480CA831161B68 /* us-source-regions.json in Resources */ = {isa = PBXBuildFile; fileRef = 500413565FA4B9B4892BEB39 /* us-source-regions.json */; };
+		3C33FDB4B479C3F6965227FE /* FranceDepartment.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1CCBC618EFFB8D24258971 /* FranceDepartment.swift */; };
+		3DB51DB99523E8B014C14FC3 /* my-subdivisions.json in Resources */ = {isa = PBXBuildFile; fileRef = DB0B37140D85DCD2FC6DC090 /* my-subdivisions.json */; };
+		4005AF0C0EE72F1D50B2D868 /* kr-map.json in Resources */ = {isa = PBXBuildFile; fileRef = 0365D5D25DF7BD96E8FC313B /* kr-map.json */; };
 		439670840BEA5963AB804117 /* ColorviaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEEE051D57ED64054C2E3FD /* ColorviaApp.swift */; };
 		44D90F32D84B9104EB974EC7 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439D34D0EA0B7D278BFA0073 /* OnboardingView.swift */; };
 		47CB5430C115CC15A647DC3C /* WorldMapStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA63DB3C3DBCE86665B054CD /* WorldMapStore.swift */; };
 		47DF61942BF18441C3FBEEE5 /* FileVisitStateRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73CFE93E0B2158A4FF2BD1E /* FileVisitStateRepository.swift */; };
 		5903E5F8BC59AF93449426C5 /* L10n.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F07E87D5E4AB5178114D283 /* L10n.swift */; };
 		5A08402A5DF3E925628C0019 /* CountryPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860D0D68DBF538BC1C34B550 /* CountryPickerView.swift */; };
+		5AE911E2D9607239FE8C8739 /* france-map.json in Resources */ = {isa = PBXBuildFile; fileRef = E5C3A8AE91C7619DF148C066 /* france-map.json */; };
+		608D0BC7BE3BECA5124DDC81 /* FranceShareSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C477227371CFC5DEDC45E8 /* FranceShareSheet.swift */; };
+		62D276D830C799D14351FA3F /* JapanMapStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5454AD3F0F5E8CB7D9B9EE22 /* JapanMapStore.swift */; };
+		63B104417F2484D708AF3F1F /* eg-subdivisions.json in Resources */ = {isa = PBXBuildFile; fileRef = B2567681BD8FCA5493972105 /* eg-subdivisions.json */; };
+		65F92FB9CA5946EADE21A0F5 /* FranceDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E7E4F02CE07B45EE2CC339B /* FranceDetailView.swift */; };
+		6A5B4D7B9985FB605F2A7A20 /* my-map.json in Resources */ = {isa = PBXBuildFile; fileRef = 60B184E9D06FEA19CED0FE57 /* my-map.json */; };
+		6AA1E4D692A3FAA30A9D24C9 /* SubdivisionCountryDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B052C3928ACEFF96EA85D0B0 /* SubdivisionCountryDetailView.swift */; };
+		6C29DED453844ED577804EA6 /* tr-map.json in Resources */ = {isa = PBXBuildFile; fileRef = 4081222B198E30AB7ED3244A /* tr-map.json */; };
+		6C824B80871F3258D7F872DA /* france-place-search-index.json in Resources */ = {isa = PBXBuildFile; fileRef = 132A0FCA55489532D9E621EE /* france-place-search-index.json */; };
+		72796FBB384215C46A9D2274 /* CountryDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E49DA7D76F9323C3660D1F /* CountryDetailView.swift */; };
+		785D6D7FFECE44A08234AA66 /* kr-place-search-index.json in Resources */ = {isa = PBXBuildFile; fileRef = 7E5CB462AC0E7937E73A4087 /* kr-place-search-index.json */; };
+		78D9706EE3882E6D3BE83AB1 /* es-map.json in Resources */ = {isa = PBXBuildFile; fileRef = 957D45F9AF37DDF78AA0E620 /* es-map.json */; };
+		79FB99856254C94F3C9B7185 /* my-place-search-index.json in Resources */ = {isa = PBXBuildFile; fileRef = D177DCBED58403440FED28FE /* my-place-search-index.json */; };
+		82967AD29DC9D63D9E1AD7E7 /* japan-map.json in Resources */ = {isa = PBXBuildFile; fileRef = 994046E137431869FA45F1BB /* japan-map.json */; };
+		868FC94D7119122C64B18890 /* eg-place-search-index.json in Resources */ = {isa = PBXBuildFile; fileRef = 0B9D34C5AAE06EB903847DCE /* eg-place-search-index.json */; };
+		889ED512F161ABFEE8429007 /* AppRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4BE1AA59C3E2E148B13FC6C /* AppRoute.swift */; };
+		8C1BCF8EA43B393972FF1427 /* us-subdivisions.json in Resources */ = {isa = PBXBuildFile; fileRef = 6FB90EC83715387311C03A54 /* us-subdivisions.json */; };
+		944F69693C6E135D4205B1B9 /* PlaceSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A117E1C8E09450D9A13433 /* PlaceSearch.swift */; };
+		9B327DF229BC538035AA79CE /* eg-map.json in Resources */ = {isa = PBXBuildFile; fileRef = F54C021D2B00D6C5A1144E22 /* eg-map.json */; };
 		A20716DCCEABC4F9C02980C1 /* StatisticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088F978FCCC3EF778E0248E1 /* StatisticsView.swift */; };
+		A4E4B39A5E61ABE526DCEE1A /* th-place-search-index.json in Resources */ = {isa = PBXBuildFile; fileRef = F85DE257DCAF3989820B19A4 /* th-place-search-index.json */; };
 		A5ADC63ADDE72D2C13CEF1DA /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF150C708A695D206CD1AB9 /* SettingsView.swift */; };
+		A702E1D865B0AA1730D683A5 /* japan-place-search-index.json in Resources */ = {isa = PBXBuildFile; fileRef = 3A41FFF4CDE5D569C838292C /* japan-place-search-index.json */; };
+		ABA6531F58064270E4257E6F /* france-departments.json in Resources */ = {isa = PBXBuildFile; fileRef = 3CFCDACF240E1F4A1FF5B43E /* france-departments.json */; };
+		ABDBD70EFC964EA0D71FAE9C /* be-place-search-index.json in Resources */ = {isa = PBXBuildFile; fileRef = 31C27495BF28523539D33FEA /* be-place-search-index.json */; };
+		AE1AFF988FAA2477F5B91203 /* SubdivisionMapScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BDBFCFC63E053860D1472A /* SubdivisionMapScreen.swift */; };
+		B00B77DCE07C715B8AA88A28 /* CountrySubdivision.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97569D652F710198CBB7047 /* CountrySubdivision.swift */; };
 		B4D96BAD6715EFD4292A770C /* AppStateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C521C79E2753A0A22EC61A /* AppStateTests.swift */; };
 		B8CABB666298D49AC52FBCAF /* WorldMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51547EE1483B3222565E21C9 /* WorldMapView.swift */; };
 		B915BBCACDDE7B2D2A4C4AF6 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 8285A0001343A486C18A5684 /* Localizable.xcstrings */; };
+		BC3CD912B025983AF9C21A8C /* th-map.json in Resources */ = {isa = PBXBuildFile; fileRef = DF641294B6B841D569BC7C8C /* th-map.json */; };
+		BCA1BB955671E535993C7501 /* th-subdivisions.json in Resources */ = {isa = PBXBuildFile; fileRef = F0E0F586F476D73800097440 /* th-subdivisions.json */; };
 		C23C6550AFF97FF5BC3A5443 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25B0A607ED04D3FED250D616 /* AppState.swift */; };
+		C350A745A140F98A6C496E96 /* sg-map.json in Resources */ = {isa = PBXBuildFile; fileRef = 3875E4FAE474E54CD330151C /* sg-map.json */; };
+		C47E5C58AAB415459B07284B /* SubdivisionShareSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7197F600ED1B069ADCC17D8 /* SubdivisionShareSheet.swift */; };
+		C9B8772C926FAC3985ED0710 /* SubdivisionListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B09303E4CFE941F03903F84D /* SubdivisionListView.swift */; };
+		CEDD8179EEF2CD96199C0A8E /* JapanMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0657E346137DAB2461126A /* JapanMapView.swift */; };
+		D24326D76E24A2683A1B005B /* sg-subdivisions.json in Resources */ = {isa = PBXBuildFile; fileRef = D630418794DFB4EB9FD2FDB2 /* sg-subdivisions.json */; };
+		D3A1B9ADC5BDB33393543E93 /* es-place-search-index.json in Resources */ = {isa = PBXBuildFile; fileRef = D3704B8FF1F5A494D674E7D8 /* es-place-search-index.json */; };
+		D3E49ACB5F075EE01B1A4981 /* sg-source-regions.json in Resources */ = {isa = PBXBuildFile; fileRef = 8B134B695689E7944C718856 /* sg-source-regions.json */; };
+		D7380314D326A515C568C551 /* be-source-regions.json in Resources */ = {isa = PBXBuildFile; fileRef = B384CB2A4F45954D6B8BD850 /* be-source-regions.json */; };
 		D8D14FF3F660F698C5DA97CA /* ColorviaTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EDFC8A379A0752FBA434E7 /* ColorviaTheme.swift */; };
+		E02005221174C16D30924532 /* my-source-regions.json in Resources */ = {isa = PBXBuildFile; fileRef = 0C9FB37CFB9A0B22A8B8DE18 /* my-source-regions.json */; };
 		E0C9E98C963930FAA408A5E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 861527F7663B05711A617077 /* Assets.xcassets */; };
+		E1A16FF6CEFF6950717CA547 /* PrefectureListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0567673CE31008D3B179D8 /* PrefectureListView.swift */; };
+		EC420C5F26223C342B332BDB /* prefectures.json in Resources */ = {isa = PBXBuildFile; fileRef = 7409206E2ED969BC382279D2 /* prefectures.json */; };
 		F026C5E0EA0E394C5F4F7D82 /* countries.json in Resources */ = {isa = PBXBuildFile; fileRef = 0BC09B273BF476F90E5E7241 /* countries.json */; };
+		F34D1DFF27AE6FA0B0BB1663 /* FranceDepartmentListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7814D2D45592ABCAA4A8E21B /* FranceDepartmentListView.swift */; };
 		F469535ABD213BA8DFD40884 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A0FA03D4355BD1F490FE3B4 /* Country.swift */; };
+		F7A2AFDA6E7D7F838AFD31F0 /* tr-place-search-index.json in Resources */ = {isa = PBXBuildFile; fileRef = 685509F4D226B24460F481BF /* tr-place-search-index.json */; };
+		FB1F0825501BE7980F4DA6AC /* be-map.json in Resources */ = {isa = PBXBuildFile; fileRef = C7ACA4BBE7C7C19A6903B4DB /* be-map.json */; };
+		FF35AFC3E2E225E336580624 /* JapanMapScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69970AEDFD350CCBC2F95CC5 /* JapanMapScreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,27 +97,86 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0365D5D25DF7BD96E8FC313B /* kr-map.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "kr-map.json"; sourceTree = "<group>"; };
 		063DCF90BE28079DC8068201 /* Colorvia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Colorvia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		088F978FCCC3EF778E0248E1 /* StatisticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsView.swift; sourceTree = "<group>"; };
+		0B9D34C5AAE06EB903847DCE /* eg-place-search-index.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "eg-place-search-index.json"; sourceTree = "<group>"; };
 		0BC09B273BF476F90E5E7241 /* countries.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = countries.json; sourceTree = "<group>"; };
+		0BCB5961E7719E0F058EA73F /* sg-planning-areas.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "sg-planning-areas.json"; sourceTree = "<group>"; };
+		0C9FB37CFB9A0B22A8B8DE18 /* my-source-regions.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "my-source-regions.json"; sourceTree = "<group>"; };
+		132A0FCA55489532D9E621EE /* france-place-search-index.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "france-place-search-index.json"; sourceTree = "<group>"; };
 		16EDFC8A379A0752FBA434E7 /* ColorviaTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorviaTheme.swift; sourceTree = "<group>"; };
+		17564F03267C2614F0BCA353 /* kr-subdivisions.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "kr-subdivisions.json"; sourceTree = "<group>"; };
 		1F07E87D5E4AB5178114D283 /* L10n.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = L10n.swift; sourceTree = "<group>"; };
 		1FAE63DD192DB49310C45B5E /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		25B0A607ED04D3FED250D616 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		279620BDCC1CCE269F8B97EF /* tr-subdivisions.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "tr-subdivisions.json"; sourceTree = "<group>"; };
+		2E8311FC617211F299BD9822 /* JapanDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JapanDetailView.swift; sourceTree = "<group>"; };
+		31C27495BF28523539D33FEA /* be-place-search-index.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "be-place-search-index.json"; sourceTree = "<group>"; };
+		3875E4FAE474E54CD330151C /* sg-map.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "sg-map.json"; sourceTree = "<group>"; };
+		38BDBFCFC63E053860D1472A /* SubdivisionMapScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubdivisionMapScreen.swift; sourceTree = "<group>"; };
+		3A41FFF4CDE5D569C838292C /* japan-place-search-index.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "japan-place-search-index.json"; sourceTree = "<group>"; };
 		3CF150C708A695D206CD1AB9 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		3CFCDACF240E1F4A1FF5B43E /* france-departments.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "france-departments.json"; sourceTree = "<group>"; };
+		4081222B198E30AB7ED3244A /* tr-map.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "tr-map.json"; sourceTree = "<group>"; };
 		439D34D0EA0B7D278BFA0073 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		4B62B4DA711226F149795E36 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		500413565FA4B9B4892BEB39 /* us-source-regions.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "us-source-regions.json"; sourceTree = "<group>"; };
 		51547EE1483B3222565E21C9 /* WorldMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldMapView.swift; sourceTree = "<group>"; };
 		520C0FB967AE13AAAE8DFBC5 /* world-map.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "world-map.json"; sourceTree = "<group>"; };
+		5454AD3F0F5E8CB7D9B9EE22 /* JapanMapStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JapanMapStore.swift; sourceTree = "<group>"; };
+		59E49DA7D76F9323C3660D1F /* CountryDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryDetailView.swift; sourceTree = "<group>"; };
+		5E7E4F02CE07B45EE2CC339B /* FranceDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FranceDetailView.swift; sourceTree = "<group>"; };
+		60B184E9D06FEA19CED0FE57 /* my-map.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "my-map.json"; sourceTree = "<group>"; };
+		685509F4D226B24460F481BF /* tr-place-search-index.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "tr-place-search-index.json"; sourceTree = "<group>"; };
+		69970AEDFD350CCBC2F95CC5 /* JapanMapScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JapanMapScreen.swift; sourceTree = "<group>"; };
+		6FB90EC83715387311C03A54 /* us-subdivisions.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "us-subdivisions.json"; sourceTree = "<group>"; };
+		7409206E2ED969BC382279D2 /* prefectures.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = prefectures.json; sourceTree = "<group>"; };
+		741D5F29B425AF05B12FA5B9 /* us-map.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "us-map.json"; sourceTree = "<group>"; };
+		7814D2D45592ABCAA4A8E21B /* FranceDepartmentListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FranceDepartmentListView.swift; sourceTree = "<group>"; };
+		7C0657E346137DAB2461126A /* JapanMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JapanMapView.swift; sourceTree = "<group>"; };
+		7E5CB462AC0E7937E73A4087 /* kr-place-search-index.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "kr-place-search-index.json"; sourceTree = "<group>"; };
 		8285A0001343A486C18A5684 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		860D0D68DBF538BC1C34B550 /* CountryPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryPickerView.swift; sourceTree = "<group>"; };
 		861527F7663B05711A617077 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8A0567673CE31008D3B179D8 /* PrefectureListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrefectureListView.swift; sourceTree = "<group>"; };
+		8B134B695689E7944C718856 /* sg-source-regions.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "sg-source-regions.json"; sourceTree = "<group>"; };
+		8FD7F40B367A088C111AA3E3 /* sg-place-search-index.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "sg-place-search-index.json"; sourceTree = "<group>"; };
 		92C521C79E2753A0A22EC61A /* AppStateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStateTests.swift; sourceTree = "<group>"; };
+		957D45F9AF37DDF78AA0E620 /* es-map.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "es-map.json"; sourceTree = "<group>"; };
+		994046E137431869FA45F1BB /* japan-map.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "japan-map.json"; sourceTree = "<group>"; };
 		9A0FA03D4355BD1F490FE3B4 /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
 		9CEEE051D57ED64054C2E3FD /* ColorviaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorviaApp.swift; sourceTree = "<group>"; };
+		9F7432E1D1B0C7F76039CE60 /* VisitDataDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitDataDocument.swift; sourceTree = "<group>"; };
 		A73CFE93E0B2158A4FF2BD1E /* FileVisitStateRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileVisitStateRepository.swift; sourceTree = "<group>"; };
+		A9A117E1C8E09450D9A13433 /* PlaceSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceSearch.swift; sourceTree = "<group>"; };
+		AD1CCBC618EFFB8D24258971 /* FranceDepartment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FranceDepartment.swift; sourceTree = "<group>"; };
+		B052C3928ACEFF96EA85D0B0 /* SubdivisionCountryDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubdivisionCountryDetailView.swift; sourceTree = "<group>"; };
+		B09303E4CFE941F03903F84D /* SubdivisionListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubdivisionListView.swift; sourceTree = "<group>"; };
+		B2567681BD8FCA5493972105 /* eg-subdivisions.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "eg-subdivisions.json"; sourceTree = "<group>"; };
+		B384CB2A4F45954D6B8BD850 /* be-source-regions.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "be-source-regions.json"; sourceTree = "<group>"; };
+		B7197F600ED1B069ADCC17D8 /* SubdivisionShareSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubdivisionShareSheet.swift; sourceTree = "<group>"; };
+		C4C477227371CFC5DEDC45E8 /* FranceShareSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FranceShareSheet.swift; sourceTree = "<group>"; };
 		C5E451573C611F504FD2ACBD /* ColorviaTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = ColorviaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C7ACA4BBE7C7C19A6903B4DB /* be-map.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "be-map.json"; sourceTree = "<group>"; };
+		CC2DB817C950F061BAE7A3D1 /* es-subdivisions.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "es-subdivisions.json"; sourceTree = "<group>"; };
+		CCBDDC80937AD8B575CF7310 /* us-place-search-index.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "us-place-search-index.json"; sourceTree = "<group>"; };
+		D177DCBED58403440FED28FE /* my-place-search-index.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "my-place-search-index.json"; sourceTree = "<group>"; };
+		D3704B8FF1F5A494D674E7D8 /* es-place-search-index.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "es-place-search-index.json"; sourceTree = "<group>"; };
+		D53B993D75FE982A8E737A9D /* Prefecture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prefecture.swift; sourceTree = "<group>"; };
+		D630418794DFB4EB9FD2FDB2 /* sg-subdivisions.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "sg-subdivisions.json"; sourceTree = "<group>"; };
+		D6CAC62C03A972AB99E59240 /* be-subdivisions.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "be-subdivisions.json"; sourceTree = "<group>"; };
+		D97569D652F710198CBB7047 /* CountrySubdivision.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountrySubdivision.swift; sourceTree = "<group>"; };
 		DA63DB3C3DBCE86665B054CD /* WorldMapStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldMapStore.swift; sourceTree = "<group>"; };
+		DB0B37140D85DCD2FC6DC090 /* my-subdivisions.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "my-subdivisions.json"; sourceTree = "<group>"; };
+		DF641294B6B841D569BC7C8C /* th-map.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "th-map.json"; sourceTree = "<group>"; };
+		E4BE1AA59C3E2E148B13FC6C /* AppRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRoute.swift; sourceTree = "<group>"; };
+		E5C3A8AE91C7619DF148C066 /* france-map.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "france-map.json"; sourceTree = "<group>"; };
+		EE1BD3F91D2987B8D1824934 /* Colorvia.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Colorvia.entitlements; sourceTree = "<group>"; };
+		EEF05AA7C7839AE5D18E6F34 /* FranceMapScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FranceMapScreen.swift; sourceTree = "<group>"; };
+		F0E0F586F476D73800097440 /* th-subdivisions.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "th-subdivisions.json"; sourceTree = "<group>"; };
+		F54C021D2B00D6C5A1144E22 /* eg-map.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "eg-map.json"; sourceTree = "<group>"; };
+		F85DE257DCAF3989820B19A4 /* th-place-search-index.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "th-place-search-index.json"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -88,6 +205,46 @@
 			path = Home;
 			sourceTree = "<group>";
 		};
+		274D31078EF3C4A9D4CE47F3 /* Japan */ = {
+			isa = PBXGroup;
+			children = (
+				2E8311FC617211F299BD9822 /* JapanDetailView.swift */,
+				69970AEDFD350CCBC2F95CC5 /* JapanMapScreen.swift */,
+				8A0567673CE31008D3B179D8 /* PrefectureListView.swift */,
+			);
+			path = Japan;
+			sourceTree = "<group>";
+		};
+		32168532DECB783AEC8E0E9A /* CountrySubdivision */ = {
+			isa = PBXGroup;
+			children = (
+				B052C3928ACEFF96EA85D0B0 /* SubdivisionCountryDetailView.swift */,
+				B09303E4CFE941F03903F84D /* SubdivisionListView.swift */,
+				38BDBFCFC63E053860D1472A /* SubdivisionMapScreen.swift */,
+				B7197F600ED1B069ADCC17D8 /* SubdivisionShareSheet.swift */,
+			);
+			path = CountrySubdivision;
+			sourceTree = "<group>";
+		};
+		37B0FE511F52C5514D8E39BA /* PlaceSearch */ = {
+			isa = PBXGroup;
+			children = (
+				A9A117E1C8E09450D9A13433 /* PlaceSearch.swift */,
+			);
+			path = PlaceSearch;
+			sourceTree = "<group>";
+		};
+		3801DF9614610893A1EF7D3E /* France */ = {
+			isa = PBXGroup;
+			children = (
+				7814D2D45592ABCAA4A8E21B /* FranceDepartmentListView.swift */,
+				5E7E4F02CE07B45EE2CC339B /* FranceDetailView.swift */,
+				EEF05AA7C7839AE5D18E6F34 /* FranceMapScreen.swift */,
+				C4C477227371CFC5DEDC45E8 /* FranceShareSheet.swift */,
+			);
+			path = France;
+			sourceTree = "<group>";
+		};
 		3FA6EBB303469A184302F931 /* Country */ = {
 			isa = PBXGroup;
 			children = (
@@ -107,8 +264,12 @@
 		4819F9B78CA8B4F7A34680BA /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				9CBF9532A1651BEE0D2AAA60 /* CountryDetail */,
 				873882CFC36156F0FCFF78A7 /* CountryPicker */,
+				32168532DECB783AEC8E0E9A /* CountrySubdivision */,
+				3801DF9614610893A1EF7D3E /* France */,
 				222C836D709DC7637A12EEAE /* Home */,
+				274D31078EF3C4A9D4CE47F3 /* Japan */,
 				8D3753D798FC25CF3AA18519 /* Onboarding */,
 				603AC18218DEA8FEF3983A5B /* Settings */,
 				532DF4C7DF3946918F01CE6F /* Statistics */,
@@ -120,6 +281,7 @@
 			isa = PBXGroup;
 			children = (
 				A73CFE93E0B2158A4FF2BD1E /* FileVisitStateRepository.swift */,
+				9F7432E1D1B0C7F76039CE60 /* VisitDataDocument.swift */,
 			);
 			path = Persistence;
 			sourceTree = "<group>";
@@ -135,6 +297,7 @@
 		5CBE842AFF7B05A7928EE5A1 /* Colorvia */ = {
 			isa = PBXGroup;
 			children = (
+				EE1BD3F91D2987B8D1824934 /* Colorvia.entitlements */,
 				CE9B00487E0DE45122BA482A /* App */,
 				9ED41B007C35A51CBC7C5ED0 /* Core */,
 				E9FFDB353FE4ED2545766C3D /* DesignSystem */,
@@ -186,12 +349,24 @@
 			path = Onboarding;
 			sourceTree = "<group>";
 		};
+		9CBF9532A1651BEE0D2AAA60 /* CountryDetail */ = {
+			isa = PBXGroup;
+			children = (
+				59E49DA7D76F9323C3660D1F /* CountryDetailView.swift */,
+			);
+			path = CountryDetail;
+			sourceTree = "<group>";
+		};
 		9ED41B007C35A51CBC7C5ED0 /* Core */ = {
 			isa = PBXGroup;
 			children = (
 				3FA6EBB303469A184302F931 /* Country */,
+				E85F0EB8920B8D4EE9E637FC /* France */,
+				E7B0EF86C959C017259C4686 /* Japan */,
 				45B00E2A1F68B215F6DCCFA6 /* Localization */,
 				50AF828156362C9AB127DC38 /* Persistence */,
+				37B0FE511F52C5514D8E39BA /* PlaceSearch */,
+				C86D83EB173A2F445140ED81 /* Subdivision */,
 				6C86EDB695F0F79B8AF626AD /* WorldMap */,
 			);
 			path = Core;
@@ -201,21 +376,86 @@
 			isa = PBXGroup;
 			children = (
 				861527F7663B05711A617077 /* Assets.xcassets */,
+				C7ACA4BBE7C7C19A6903B4DB /* be-map.json */,
+				31C27495BF28523539D33FEA /* be-place-search-index.json */,
+				B384CB2A4F45954D6B8BD850 /* be-source-regions.json */,
+				D6CAC62C03A972AB99E59240 /* be-subdivisions.json */,
 				0BC09B273BF476F90E5E7241 /* countries.json */,
+				F54C021D2B00D6C5A1144E22 /* eg-map.json */,
+				0B9D34C5AAE06EB903847DCE /* eg-place-search-index.json */,
+				B2567681BD8FCA5493972105 /* eg-subdivisions.json */,
+				957D45F9AF37DDF78AA0E620 /* es-map.json */,
+				D3704B8FF1F5A494D674E7D8 /* es-place-search-index.json */,
+				CC2DB817C950F061BAE7A3D1 /* es-subdivisions.json */,
+				3CFCDACF240E1F4A1FF5B43E /* france-departments.json */,
+				E5C3A8AE91C7619DF148C066 /* france-map.json */,
+				132A0FCA55489532D9E621EE /* france-place-search-index.json */,
+				994046E137431869FA45F1BB /* japan-map.json */,
+				3A41FFF4CDE5D569C838292C /* japan-place-search-index.json */,
+				0365D5D25DF7BD96E8FC313B /* kr-map.json */,
+				7E5CB462AC0E7937E73A4087 /* kr-place-search-index.json */,
+				17564F03267C2614F0BCA353 /* kr-subdivisions.json */,
 				8285A0001343A486C18A5684 /* Localizable.xcstrings */,
+				60B184E9D06FEA19CED0FE57 /* my-map.json */,
+				D177DCBED58403440FED28FE /* my-place-search-index.json */,
+				0C9FB37CFB9A0B22A8B8DE18 /* my-source-regions.json */,
+				DB0B37140D85DCD2FC6DC090 /* my-subdivisions.json */,
+				7409206E2ED969BC382279D2 /* prefectures.json */,
+				3875E4FAE474E54CD330151C /* sg-map.json */,
+				8FD7F40B367A088C111AA3E3 /* sg-place-search-index.json */,
+				0BCB5961E7719E0F058EA73F /* sg-planning-areas.json */,
+				8B134B695689E7944C718856 /* sg-source-regions.json */,
+				D630418794DFB4EB9FD2FDB2 /* sg-subdivisions.json */,
+				DF641294B6B841D569BC7C8C /* th-map.json */,
+				F85DE257DCAF3989820B19A4 /* th-place-search-index.json */,
+				F0E0F586F476D73800097440 /* th-subdivisions.json */,
+				4081222B198E30AB7ED3244A /* tr-map.json */,
+				685509F4D226B24460F481BF /* tr-place-search-index.json */,
+				279620BDCC1CCE269F8B97EF /* tr-subdivisions.json */,
+				741D5F29B425AF05B12FA5B9 /* us-map.json */,
+				CCBDDC80937AD8B575CF7310 /* us-place-search-index.json */,
+				500413565FA4B9B4892BEB39 /* us-source-regions.json */,
+				6FB90EC83715387311C03A54 /* us-subdivisions.json */,
 				520C0FB967AE13AAAE8DFBC5 /* world-map.json */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		C86D83EB173A2F445140ED81 /* Subdivision */ = {
+			isa = PBXGroup;
+			children = (
+				D97569D652F710198CBB7047 /* CountrySubdivision.swift */,
+			);
+			path = Subdivision;
+			sourceTree = "<group>";
+		};
 		CE9B00487E0DE45122BA482A /* App */ = {
 			isa = PBXGroup;
 			children = (
+				E4BE1AA59C3E2E148B13FC6C /* AppRoute.swift */,
 				25B0A607ED04D3FED250D616 /* AppState.swift */,
 				9CEEE051D57ED64054C2E3FD /* ColorviaApp.swift */,
 				1FAE63DD192DB49310C45B5E /* RootView.swift */,
 			);
 			path = App;
+			sourceTree = "<group>";
+		};
+		E7B0EF86C959C017259C4686 /* Japan */ = {
+			isa = PBXGroup;
+			children = (
+				5454AD3F0F5E8CB7D9B9EE22 /* JapanMapStore.swift */,
+				7C0657E346137DAB2461126A /* JapanMapView.swift */,
+				D53B993D75FE982A8E737A9D /* Prefecture.swift */,
+			);
+			path = Japan;
+			sourceTree = "<group>";
+		};
+		E85F0EB8920B8D4EE9E637FC /* France */ = {
+			isa = PBXGroup;
+			children = (
+				AD1CCBC618EFFB8D24258971 /* FranceDepartment.swift */,
+			);
+			path = France;
 			sourceTree = "<group>";
 		};
 		E9FFDB353FE4ED2545766C3D /* DesignSystem */ = {
@@ -320,7 +560,45 @@
 			files = (
 				E0C9E98C963930FAA408A5E4 /* Assets.xcassets in Resources */,
 				B915BBCACDDE7B2D2A4C4AF6 /* Localizable.xcstrings in Resources */,
+				FB1F0825501BE7980F4DA6AC /* be-map.json in Resources */,
+				ABDBD70EFC964EA0D71FAE9C /* be-place-search-index.json in Resources */,
+				D7380314D326A515C568C551 /* be-source-regions.json in Resources */,
+				2BBA5A9BA0446A86A6AC765E /* be-subdivisions.json in Resources */,
 				F026C5E0EA0E394C5F4F7D82 /* countries.json in Resources */,
+				9B327DF229BC538035AA79CE /* eg-map.json in Resources */,
+				868FC94D7119122C64B18890 /* eg-place-search-index.json in Resources */,
+				63B104417F2484D708AF3F1F /* eg-subdivisions.json in Resources */,
+				78D9706EE3882E6D3BE83AB1 /* es-map.json in Resources */,
+				D3A1B9ADC5BDB33393543E93 /* es-place-search-index.json in Resources */,
+				2B6A5C524AC60A4927543B66 /* es-subdivisions.json in Resources */,
+				ABA6531F58064270E4257E6F /* france-departments.json in Resources */,
+				5AE911E2D9607239FE8C8739 /* france-map.json in Resources */,
+				6C824B80871F3258D7F872DA /* france-place-search-index.json in Resources */,
+				82967AD29DC9D63D9E1AD7E7 /* japan-map.json in Resources */,
+				A702E1D865B0AA1730D683A5 /* japan-place-search-index.json in Resources */,
+				4005AF0C0EE72F1D50B2D868 /* kr-map.json in Resources */,
+				785D6D7FFECE44A08234AA66 /* kr-place-search-index.json in Resources */,
+				0F6CC944D18A7B76FC6BB958 /* kr-subdivisions.json in Resources */,
+				6A5B4D7B9985FB605F2A7A20 /* my-map.json in Resources */,
+				79FB99856254C94F3C9B7185 /* my-place-search-index.json in Resources */,
+				E02005221174C16D30924532 /* my-source-regions.json in Resources */,
+				3DB51DB99523E8B014C14FC3 /* my-subdivisions.json in Resources */,
+				EC420C5F26223C342B332BDB /* prefectures.json in Resources */,
+				C350A745A140F98A6C496E96 /* sg-map.json in Resources */,
+				2253DA1851D8E8DC34B4B505 /* sg-place-search-index.json in Resources */,
+				1998A33F643F146FEE9A2622 /* sg-planning-areas.json in Resources */,
+				D3E49ACB5F075EE01B1A4981 /* sg-source-regions.json in Resources */,
+				D24326D76E24A2683A1B005B /* sg-subdivisions.json in Resources */,
+				BC3CD912B025983AF9C21A8C /* th-map.json in Resources */,
+				A4E4B39A5E61ABE526DCEE1A /* th-place-search-index.json in Resources */,
+				BCA1BB955671E535993C7501 /* th-subdivisions.json in Resources */,
+				6C29DED453844ED577804EA6 /* tr-map.json in Resources */,
+				F7A2AFDA6E7D7F838AFD31F0 /* tr-place-search-index.json in Resources */,
+				1B2E67C9419E65EEE31BD62B /* tr-subdivisions.json in Resources */,
+				0B5C55E83D270EA4FC83CFD2 /* us-map.json in Resources */,
+				00E0C09A9EC5BB90CFC3D190 /* us-place-search-index.json in Resources */,
+				3C1B050D42480CA831161B68 /* us-source-regions.json in Resources */,
+				8C1BCF8EA43B393972FF1427 /* us-subdivisions.json in Resources */,
 				3B1063F5AB294789B9A3437B /* world-map.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -332,18 +610,38 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				889ED512F161ABFEE8429007 /* AppRoute.swift in Sources */,
 				C23C6550AFF97FF5BC3A5443 /* AppState.swift in Sources */,
 				439670840BEA5963AB804117 /* ColorviaApp.swift in Sources */,
 				D8D14FF3F660F698C5DA97CA /* ColorviaTheme.swift in Sources */,
 				F469535ABD213BA8DFD40884 /* Country.swift in Sources */,
+				72796FBB384215C46A9D2274 /* CountryDetailView.swift in Sources */,
 				5A08402A5DF3E925628C0019 /* CountryPickerView.swift in Sources */,
+				B00B77DCE07C715B8AA88A28 /* CountrySubdivision.swift in Sources */,
 				47DF61942BF18441C3FBEEE5 /* FileVisitStateRepository.swift in Sources */,
+				3C33FDB4B479C3F6965227FE /* FranceDepartment.swift in Sources */,
+				F34D1DFF27AE6FA0B0BB1663 /* FranceDepartmentListView.swift in Sources */,
+				65F92FB9CA5946EADE21A0F5 /* FranceDetailView.swift in Sources */,
+				2DBB3C7D89D861228E16A65C /* FranceMapScreen.swift in Sources */,
+				608D0BC7BE3BECA5124DDC81 /* FranceShareSheet.swift in Sources */,
 				1F686C743A52C07FF4B493F6 /* HomeView.swift in Sources */,
+				12BF4945C7F025D171E8D1DC /* JapanDetailView.swift in Sources */,
+				FF35AFC3E2E225E336580624 /* JapanMapScreen.swift in Sources */,
+				62D276D830C799D14351FA3F /* JapanMapStore.swift in Sources */,
+				CEDD8179EEF2CD96199C0A8E /* JapanMapView.swift in Sources */,
 				5903E5F8BC59AF93449426C5 /* L10n.swift in Sources */,
 				44D90F32D84B9104EB974EC7 /* OnboardingView.swift in Sources */,
+				944F69693C6E135D4205B1B9 /* PlaceSearch.swift in Sources */,
+				2F0DFDE058D58746AA2312C8 /* Prefecture.swift in Sources */,
+				E1A16FF6CEFF6950717CA547 /* PrefectureListView.swift in Sources */,
 				2C44FF20E6D4ED021C557D8C /* RootView.swift in Sources */,
 				A5ADC63ADDE72D2C13CEF1DA /* SettingsView.swift in Sources */,
 				A20716DCCEABC4F9C02980C1 /* StatisticsView.swift in Sources */,
+				6AA1E4D692A3FAA30A9D24C9 /* SubdivisionCountryDetailView.swift in Sources */,
+				C9B8772C926FAC3985ED0710 /* SubdivisionListView.swift in Sources */,
+				AE1AFF988FAA2477F5B91203 /* SubdivisionMapScreen.swift in Sources */,
+				C47E5C58AAB415459B07284B /* SubdivisionShareSheet.swift in Sources */,
+				065436C2D4CF3E5FB0187603 /* VisitDataDocument.swift in Sources */,
 				47CB5430C115CC15A647DC3C /* WorldMapStore.swift in Sources */,
 				B8CABB666298D49AC52FBCAF /* WorldMapView.swift in Sources */,
 			);
@@ -455,6 +753,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Colorvia/Colorvia.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEVELOPMENT_TEAM = 7GU925RQ99;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -561,6 +860,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Colorvia/Colorvia.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEVELOPMENT_TEAM = 7GU925RQ99;
 				LD_RUNPATH_SEARCH_PATHS = (

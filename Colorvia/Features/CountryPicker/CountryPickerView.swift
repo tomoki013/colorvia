@@ -57,18 +57,27 @@ struct CountryPickerView: View {
       .searchable(text: $searchText, prompt: L10n.text("picker.search"))
       .toolbar {
         ToolbarItem(placement: .cancellationAction) {
-          Button(L10n.text("common.cancel")) { dismiss() }
+          Button {
+            dismiss()
+          } label: {
+            Image(systemName: "xmark")
+          }
+          .accessibilityLabel(L10n.text("common.cancel"))
         }
         ToolbarItem(placement: .confirmationAction) {
-          Button(L10n.selectedCount(selection.count)) {
+          Button {
             onComplete(selection)
             dismiss()
+          } label: {
+            Image(systemName: "checkmark")
           }
-          .fontWeight(.semibold)
+          .accessibilityLabel(L10n.selectedCount(selection.count))
         }
       }
     }
-    .presentationDetents([.large])
+    .presentationDetents([.medium, .large])
+    .presentationDragIndicator(.visible)
+    .presentationContentInteraction(.scrolls)
     .tint(ColorviaTheme.accentDeep)
   }
 
