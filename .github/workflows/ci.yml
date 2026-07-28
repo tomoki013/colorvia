@@ -1,0 +1,66 @@
+name: iOS CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  localization:
+    name: Localization integrity
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate translations
+        run: python3 Scripts/validate_localizations.py
+      - name: Verify generated catalog is current
+        run: |
+          python3 Scripts/generate_localizations.py
+          git diff --exit-code -- Colorvia/Resources/Localizable.xcstrings
+
+  test:
+    name: Build and test
+    runs-on: macos-15
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install XcodeGen
+        run: brew install xcodegen
+      - name: Validate Swift formatting
+        run: xcrun swift-format lint --recursive Colorvia ColorviaTests
+      - name: Generate project
+        run: xcodegen generate
+      - name: Select an iPhone simulator
+        run: |
+          SIMULATOR_ID="$(
+            xcrun simctl list devices available -j | python3 -c '
+          import json, sys
+          data = json.load(sys.stdin)
+          devices = [
+              device
+              for runtime_devices in data["devices"].values()
+              for device in runtime_devices
+              if device.get("isAvailable") and device["name"].startswith("iPhone")
+          ]
+          if not devices:
+              raise SystemExit("No available iPhone simulator")
+          print(devices[0]["udid"])
+          '
+          )"
+          echo "SIMULATOR_ID=$SIMULATOR_ID" >> "$GITHUB_ENV"
+      - name: Build and test
+        run: |
+          xcodebuild \
+            -project Colorvia.xcodeproj \
+            -scheme Colorvia \
+            -destination "platform=iOS Simulator,id=$SIMULATOR_ID" \
+            CODE_SIGNING_ALLOWED=NO \
+            test

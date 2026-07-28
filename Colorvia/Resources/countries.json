@@ -1,0 +1,1811 @@
+[
+  {
+    "id": "AF",
+    "alpha2Code": "AF",
+    "alpha3Code": "AFG",
+    "englishName": "Afghanistan",
+    "continent": "asia",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "AL",
+    "alpha2Code": "AL",
+    "alpha3Code": "ALB",
+    "englishName": "Albania",
+    "continent": "europe",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "DZ",
+    "alpha2Code": "DZ",
+    "alpha3Code": "DZA",
+    "englishName": "Algeria",
+    "continent": "africa",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "AD",
+    "alpha2Code": "AD",
+    "alpha3Code": "AND",
+    "englishName": "Andorra",
+    "continent": "europe",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "AO",
+    "alpha2Code": "AO",
+    "alpha3Code": "AGO",
+    "englishName": "Angola",
+    "continent": "africa",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "AG",
+    "alpha2Code": "AG",
+    "alpha3Code": "ATG",
+    "englishName": "Antigua and Barbuda",
+    "continent": "northAmerica",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "AR",
+    "alpha2Code": "AR",
+    "alpha3Code": "ARG",
+    "englishName": "Argentina",
+    "continent": "southAmerica",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "AM",
+    "alpha2Code": "AM",
+    "alpha3Code": "ARM",
+    "englishName": "Armenia",
+    "continent": "asia",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "AU",
+    "alpha2Code": "AU",
+    "alpha3Code": "AUS",
+    "englishName": "Australia",
+    "continent": "oceania",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "AT",
+    "alpha2Code": "AT",
+    "alpha3Code": "AUT",
+    "englishName": "Austria",
+    "continent": "europe",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "AZ",
+    "alpha2Code": "AZ",
+    "alpha3Code": "AZE",
+    "englishName": "Azerbaijan",
+    "continent": "asia",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "BH",
+    "alpha2Code": "BH",
+    "alpha3Code": "BHR",
+    "englishName": "Bahrain",
+    "continent": "asia",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "BD",
+    "alpha2Code": "BD",
+    "alpha3Code": "BGD",
+    "englishName": "Bangladesh",
+    "continent": "asia",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "BB",
+    "alpha2Code": "BB",
+    "alpha3Code": "BRB",
+    "englishName": "Barbados",
+    "continent": "northAmerica",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "BY",
+    "alpha2Code": "BY",
+    "alpha3Code": "BLR",
+    "englishName": "Belarus",
+    "continent": "europe",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "BE",
+    "alpha2Code": "BE",
+    "alpha3Code": "BEL",
+    "englishName": "Belgium",
+    "continent": "europe",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "BZ",
+    "alpha2Code": "BZ",
+    "alpha3Code": "BLZ",
+    "englishName": "Belize",
+    "continent": "northAmerica",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "BJ",
+    "alpha2Code": "BJ",
+    "alpha3Code": "BEN",
+    "englishName": "Benin",
+    "continent": "africa",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "BT",
+    "alpha2Code": "BT",
+    "alpha3Code": "BTN",
+    "englishName": "Bhutan",
+    "continent": "asia",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "BO",
+    "alpha2Code": "BO",
+    "alpha3Code": "BOL",
+    "englishName": "Bolivia",
+    "continent": "southAmerica",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "BA",
+    "alpha2Code": "BA",
+    "alpha3Code": "BIH",
+    "englishName": "Bosnia and Herzegovina",
+    "continent": "europe",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "BW",
+    "alpha2Code": "BW",
+    "alpha3Code": "BWA",
+    "englishName": "Botswana",
+    "continent": "africa",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "BR",
+    "alpha2Code": "BR",
+    "alpha3Code": "BRA",
+    "englishName": "Brazil",
+    "continent": "southAmerica",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "BN",
+    "alpha2Code": "BN",
+    "alpha3Code": "BRN",
+    "englishName": "Brunei",
+    "continent": "asia",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "BG",
+    "alpha2Code": "BG",
+    "alpha3Code": "BGR",
+    "englishName": "Bulgaria",
+    "continent": "europe",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "BF",
+    "alpha2Code": "BF",
+    "alpha3Code": "BFA",
+    "englishName": "Burkina Faso",
+    "continent": "africa",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "BI",
+    "alpha2Code": "BI",
+    "alpha3Code": "BDI",
+    "englishName": "Burundi",
+    "continent": "africa",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "CV",
+    "alpha2Code": "CV",
+    "alpha3Code": "CPV",
+    "englishName": "Cabo Verde",
+    "continent": "africa",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "KH",
+    "alpha2Code": "KH",
+    "alpha3Code": "KHM",
+    "englishName": "Cambodia",
+    "continent": "asia",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "CM",
+    "alpha2Code": "CM",
+    "alpha3Code": "CMR",
+    "englishName": "Cameroon",
+    "continent": "africa",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "CA",
+    "alpha2Code": "CA",
+    "alpha3Code": "CAN",
+    "englishName": "Canada",
+    "continent": "northAmerica",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "CF",
+    "alpha2Code": "CF",
+    "alpha3Code": "CAF",
+    "englishName": "Central African Republic",
+    "continent": "africa",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "TD",
+    "alpha2Code": "TD",
+    "alpha3Code": "TCD",
+    "englishName": "Chad",
+    "continent": "africa",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "CL",
+    "alpha2Code": "CL",
+    "alpha3Code": "CHL",
+    "englishName": "Chile",
+    "continent": "southAmerica",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "CO",
+    "alpha2Code": "CO",
+    "alpha3Code": "COL",
+    "englishName": "Colombia",
+    "continent": "southAmerica",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "KM",
+    "alpha2Code": "KM",
+    "alpha3Code": "COM",
+    "englishName": "Comoros",
+    "continent": "africa",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "CR",
+    "alpha2Code": "CR",
+    "alpha3Code": "CRI",
+    "englishName": "Costa Rica",
+    "continent": "northAmerica",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "HR",
+    "alpha2Code": "HR",
+    "alpha3Code": "HRV",
+    "englishName": "Croatia",
+    "continent": "europe",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "CU",
+    "alpha2Code": "CU",
+    "alpha3Code": "CUB",
+    "englishName": "Cuba",
+    "continent": "northAmerica",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "CY",
+    "alpha2Code": "CY",
+    "alpha3Code": "CYP",
+    "englishName": "Cyprus",
+    "continent": "asia",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "CZ",
+    "alpha2Code": "CZ",
+    "alpha3Code": "CZE",
+    "englishName": "Czech Republic",
+    "continent": "europe",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "CD",
+    "alpha2Code": "CD",
+    "alpha3Code": "COD",
+    "englishName": "Democratic Republic of the Congo",
+    "continent": "africa",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "DK",
+    "alpha2Code": "DK",
+    "alpha3Code": "DNK",
+    "englishName": "Denmark",
+    "continent": "europe",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "DJ",
+    "alpha2Code": "DJ",
+    "alpha3Code": "DJI",
+    "englishName": "Djibouti",
+    "continent": "africa",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "DM",
+    "alpha2Code": "DM",
+    "alpha3Code": "DMA",
+    "englishName": "Dominica",
+    "continent": "northAmerica",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "DO",
+    "alpha2Code": "DO",
+    "alpha3Code": "DOM",
+    "englishName": "Dominican Republic",
+    "continent": "northAmerica",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "TL",
+    "alpha2Code": "TL",
+    "alpha3Code": "TLS",
+    "englishName": "East Timor",
+    "continent": "asia",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "EC",
+    "alpha2Code": "EC",
+    "alpha3Code": "ECU",
+    "englishName": "Ecuador",
+    "continent": "southAmerica",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "EG",
+    "alpha2Code": "EG",
+    "alpha3Code": "EGY",
+    "englishName": "Egypt",
+    "continent": "africa",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "SV",
+    "alpha2Code": "SV",
+    "alpha3Code": "SLV",
+    "englishName": "El Salvador",
+    "continent": "northAmerica",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "GQ",
+    "alpha2Code": "GQ",
+    "alpha3Code": "GNQ",
+    "englishName": "Equatorial Guinea",
+    "continent": "africa",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "ER",
+    "alpha2Code": "ER",
+    "alpha3Code": "ERI",
+    "englishName": "Eritrea",
+    "continent": "africa",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "EE",
+    "alpha2Code": "EE",
+    "alpha3Code": "EST",
+    "englishName": "Estonia",
+    "continent": "europe",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "SZ",
+    "alpha2Code": "SZ",
+    "alpha3Code": "SWZ",
+    "englishName": "Eswatini",
+    "continent": "africa",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "ET",
+    "alpha2Code": "ET",
+    "alpha3Code": "ETH",
+    "englishName": "Ethiopia",
+    "continent": "africa",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "FK",
+    "alpha2Code": "FK",
+    "alpha3Code": "FLK",
+    "englishName": "Falkland Islands",
+    "continent": "southAmerica",
+    "isProgressEligible": false,
+    "isTerritory": true
+  },
+  {
+    "id": "FJ",
+    "alpha2Code": "FJ",
+    "alpha3Code": "FJI",
+    "englishName": "Fiji",
+    "continent": "oceania",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "FI",
+    "alpha2Code": "FI",
+    "alpha3Code": "FIN",
+    "englishName": "Finland",
+    "continent": "europe",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "FR",
+    "alpha2Code": "FR",
+    "alpha3Code": "-99",
+    "englishName": "France",
+    "continent": "europe",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "GA",
+    "alpha2Code": "GA",
+    "alpha3Code": "GAB",
+    "englishName": "Gabon",
+    "continent": "africa",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "GE",
+    "alpha2Code": "GE",
+    "alpha3Code": "GEO",
+    "englishName": "Georgia",
+    "continent": "asia",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "DE",
+    "alpha2Code": "DE",
+    "alpha3Code": "DEU",
+    "englishName": "Germany",
+    "continent": "europe",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "GH",
+    "alpha2Code": "GH",
+    "alpha3Code": "GHA",
+    "englishName": "Ghana",
+    "continent": "africa",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "GR",
+    "alpha2Code": "GR",
+    "alpha3Code": "GRC",
+    "englishName": "Greece",
+    "continent": "europe",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "GL",
+    "alpha2Code": "GL",
+    "alpha3Code": "GRL",
+    "englishName": "Greenland",
+    "continent": "northAmerica",
+    "isProgressEligible": false,
+    "isTerritory": true
+  },
+  {
+    "id": "GD",
+    "alpha2Code": "GD",
+    "alpha3Code": "GRD",
+    "englishName": "Grenada",
+    "continent": "northAmerica",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "GT",
+    "alpha2Code": "GT",
+    "alpha3Code": "GTM",
+    "englishName": "Guatemala",
+    "continent": "northAmerica",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "GN",
+    "alpha2Code": "GN",
+    "alpha3Code": "GIN",
+    "englishName": "Guinea",
+    "continent": "africa",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "GW",
+    "alpha2Code": "GW",
+    "alpha3Code": "GNB",
+    "englishName": "Guinea-Bissau",
+    "continent": "africa",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "GY",
+    "alpha2Code": "GY",
+    "alpha3Code": "GUY",
+    "englishName": "Guyana",
+    "continent": "southAmerica",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "HT",
+    "alpha2Code": "HT",
+    "alpha3Code": "HTI",
+    "englishName": "Haiti",
+    "continent": "northAmerica",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "HN",
+    "alpha2Code": "HN",
+    "alpha3Code": "HND",
+    "englishName": "Honduras",
+    "continent": "northAmerica",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "HU",
+    "alpha2Code": "HU",
+    "alpha3Code": "HUN",
+    "englishName": "Hungary",
+    "continent": "europe",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "IS",
+    "alpha2Code": "IS",
+    "alpha3Code": "ISL",
+    "englishName": "Iceland",
+    "continent": "europe",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "IN",
+    "alpha2Code": "IN",
+    "alpha3Code": "IND",
+    "englishName": "India",
+    "continent": "asia",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "ID",
+    "alpha2Code": "ID",
+    "alpha3Code": "IDN",
+    "englishName": "Indonesia",
+    "continent": "asia",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "IR",
+    "alpha2Code": "IR",
+    "alpha3Code": "IRN",
+    "englishName": "Iran",
+    "continent": "asia",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "IQ",
+    "alpha2Code": "IQ",
+    "alpha3Code": "IRQ",
+    "englishName": "Iraq",
+    "continent": "asia",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "IE",
+    "alpha2Code": "IE",
+    "alpha3Code": "IRL",
+    "englishName": "Ireland",
+    "continent": "europe",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "IL",
+    "alpha2Code": "IL",
+    "alpha3Code": "ISR",
+    "englishName": "Israel",
+    "continent": "asia",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "IT",
+    "alpha2Code": "IT",
+    "alpha3Code": "ITA",
+    "englishName": "Italy",
+    "continent": "europe",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "CI",
+    "alpha2Code": "CI",
+    "alpha3Code": "CIV",
+    "englishName": "Ivory Coast",
+    "continent": "africa",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "JM",
+    "alpha2Code": "JM",
+    "alpha3Code": "JAM",
+    "englishName": "Jamaica",
+    "continent": "northAmerica",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "JP",
+    "alpha2Code": "JP",
+    "alpha3Code": "JPN",
+    "englishName": "Japan",
+    "continent": "asia",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "JO",
+    "alpha2Code": "JO",
+    "alpha3Code": "JOR",
+    "englishName": "Jordan",
+    "continent": "asia",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "KZ",
+    "alpha2Code": "KZ",
+    "alpha3Code": "KAZ",
+    "englishName": "Kazakhstan",
+    "continent": "asia",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "KE",
+    "alpha2Code": "KE",
+    "alpha3Code": "KEN",
+    "englishName": "Kenya",
+    "continent": "africa",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "KI",
+    "alpha2Code": "KI",
+    "alpha3Code": "KIR",
+    "englishName": "Kiribati",
+    "continent": "oceania",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "KW",
+    "alpha2Code": "KW",
+    "alpha3Code": "KWT",
+    "englishName": "Kuwait",
+    "continent": "asia",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "KG",
+    "alpha2Code": "KG",
+    "alpha3Code": "KGZ",
+    "englishName": "Kyrgyzstan",
+    "continent": "asia",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "LA",
+    "alpha2Code": "LA",
+    "alpha3Code": "LAO",
+    "englishName": "Laos",
+    "continent": "asia",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "LV",
+    "alpha2Code": "LV",
+    "alpha3Code": "LVA",
+    "englishName": "Latvia",
+    "continent": "europe",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "LB",
+    "alpha2Code": "LB",
+    "alpha3Code": "LBN",
+    "englishName": "Lebanon",
+    "continent": "asia",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "LS",
+    "alpha2Code": "LS",
+    "alpha3Code": "LSO",
+    "englishName": "Lesotho",
+    "continent": "africa",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "LR",
+    "alpha2Code": "LR",
+    "alpha3Code": "LBR",
+    "englishName": "Liberia",
+    "continent": "africa",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "LY",
+    "alpha2Code": "LY",
+    "alpha3Code": "LBY",
+    "englishName": "Libya",
+    "continent": "africa",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "LI",
+    "alpha2Code": "LI",
+    "alpha3Code": "LIE",
+    "englishName": "Liechtenstein",
+    "continent": "europe",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "LT",
+    "alpha2Code": "LT",
+    "alpha3Code": "LTU",
+    "englishName": "Lithuania",
+    "continent": "europe",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "LU",
+    "alpha2Code": "LU",
+    "alpha3Code": "LUX",
+    "englishName": "Luxembourg",
+    "continent": "europe",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "MG",
+    "alpha2Code": "MG",
+    "alpha3Code": "MDG",
+    "englishName": "Madagascar",
+    "continent": "africa",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "MW",
+    "alpha2Code": "MW",
+    "alpha3Code": "MWI",
+    "englishName": "Malawi",
+    "continent": "africa",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "MY",
+    "alpha2Code": "MY",
+    "alpha3Code": "MYS",
+    "englishName": "Malaysia",
+    "continent": "asia",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "MV",
+    "alpha2Code": "MV",
+    "alpha3Code": "MDV",
+    "englishName": "Maldives",
+    "continent": "asia",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "ML",
+    "alpha2Code": "ML",
+    "alpha3Code": "MLI",
+    "englishName": "Mali",
+    "continent": "africa",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "MT",
+    "alpha2Code": "MT",
+    "alpha3Code": "MLT",
+    "englishName": "Malta",
+    "continent": "europe",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "MH",
+    "alpha2Code": "MH",
+    "alpha3Code": "MHL",
+    "englishName": "Marshall Islands",
+    "continent": "oceania",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "MR",
+    "alpha2Code": "MR",
+    "alpha3Code": "MRT",
+    "englishName": "Mauritania",
+    "continent": "africa",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "MU",
+    "alpha2Code": "MU",
+    "alpha3Code": "MUS",
+    "englishName": "Mauritius",
+    "continent": "africa",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "MX",
+    "alpha2Code": "MX",
+    "alpha3Code": "MEX",
+    "englishName": "Mexico",
+    "continent": "northAmerica",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "FM",
+    "alpha2Code": "FM",
+    "alpha3Code": "FSM",
+    "englishName": "Micronesia",
+    "continent": "oceania",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "MD",
+    "alpha2Code": "MD",
+    "alpha3Code": "MDA",
+    "englishName": "Moldova",
+    "continent": "europe",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "MC",
+    "alpha2Code": "MC",
+    "alpha3Code": "MCO",
+    "englishName": "Monaco",
+    "continent": "europe",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "MN",
+    "alpha2Code": "MN",
+    "alpha3Code": "MNG",
+    "englishName": "Mongolia",
+    "continent": "asia",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "ME",
+    "alpha2Code": "ME",
+    "alpha3Code": "MNE",
+    "englishName": "Montenegro",
+    "continent": "europe",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "MA",
+    "alpha2Code": "MA",
+    "alpha3Code": "MAR",
+    "englishName": "Morocco",
+    "continent": "africa",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "MZ",
+    "alpha2Code": "MZ",
+    "alpha3Code": "MOZ",
+    "englishName": "Mozambique",
+    "continent": "africa",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "MM",
+    "alpha2Code": "MM",
+    "alpha3Code": "MMR",
+    "englishName": "Myanmar",
+    "continent": "asia",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "NA",
+    "alpha2Code": "NA",
+    "alpha3Code": "NAM",
+    "englishName": "Namibia",
+    "continent": "africa",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "NR",
+    "alpha2Code": "NR",
+    "alpha3Code": "NRU",
+    "englishName": "Nauru",
+    "continent": "oceania",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "NP",
+    "alpha2Code": "NP",
+    "alpha3Code": "NPL",
+    "englishName": "Nepal",
+    "continent": "asia",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "NL",
+    "alpha2Code": "NL",
+    "alpha3Code": "NLD",
+    "englishName": "Netherlands",
+    "continent": "europe",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "NC",
+    "alpha2Code": "NC",
+    "alpha3Code": "NCL",
+    "englishName": "New Caledonia",
+    "continent": "oceania",
+    "isProgressEligible": false,
+    "isTerritory": true
+  },
+  {
+    "id": "NZ",
+    "alpha2Code": "NZ",
+    "alpha3Code": "NZL",
+    "englishName": "New Zealand",
+    "continent": "oceania",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "NI",
+    "alpha2Code": "NI",
+    "alpha3Code": "NIC",
+    "englishName": "Nicaragua",
+    "continent": "northAmerica",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "NE",
+    "alpha2Code": "NE",
+    "alpha3Code": "NER",
+    "englishName": "Niger",
+    "continent": "africa",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "NG",
+    "alpha2Code": "NG",
+    "alpha3Code": "NGA",
+    "englishName": "Nigeria",
+    "continent": "africa",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "KP",
+    "alpha2Code": "KP",
+    "alpha3Code": "PRK",
+    "englishName": "North Korea",
+    "continent": "asia",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "MK",
+    "alpha2Code": "MK",
+    "alpha3Code": "MKD",
+    "englishName": "North Macedonia",
+    "continent": "europe",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "NO",
+    "alpha2Code": "NO",
+    "alpha3Code": "-99",
+    "englishName": "Norway",
+    "continent": "europe",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "OM",
+    "alpha2Code": "OM",
+    "alpha3Code": "OMN",
+    "englishName": "Oman",
+    "continent": "asia",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "PK",
+    "alpha2Code": "PK",
+    "alpha3Code": "PAK",
+    "englishName": "Pakistan",
+    "continent": "asia",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "PW",
+    "alpha2Code": "PW",
+    "alpha3Code": "PLW",
+    "englishName": "Palau",
+    "continent": "oceania",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "PS",
+    "alpha2Code": "PS",
+    "alpha3Code": "PSE",
+    "englishName": "Palestine",
+    "continent": "asia",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "PA",
+    "alpha2Code": "PA",
+    "alpha3Code": "PAN",
+    "englishName": "Panama",
+    "continent": "northAmerica",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "PG",
+    "alpha2Code": "PG",
+    "alpha3Code": "PNG",
+    "englishName": "Papua New Guinea",
+    "continent": "oceania",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "PY",
+    "alpha2Code": "PY",
+    "alpha3Code": "PRY",
+    "englishName": "Paraguay",
+    "continent": "southAmerica",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "CN",
+    "alpha2Code": "CN",
+    "alpha3Code": "CHN",
+    "englishName": "People's Republic of China",
+    "continent": "asia",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "PE",
+    "alpha2Code": "PE",
+    "alpha3Code": "PER",
+    "englishName": "Peru",
+    "continent": "southAmerica",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "PH",
+    "alpha2Code": "PH",
+    "alpha3Code": "PHL",
+    "englishName": "Philippines",
+    "continent": "asia",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "PL",
+    "alpha2Code": "PL",
+    "alpha3Code": "POL",
+    "englishName": "Poland",
+    "continent": "europe",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "PT",
+    "alpha2Code": "PT",
+    "alpha3Code": "PRT",
+    "englishName": "Portugal",
+    "continent": "europe",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "PR",
+    "alpha2Code": "PR",
+    "alpha3Code": "PRI",
+    "englishName": "Puerto Rico",
+    "continent": "northAmerica",
+    "isProgressEligible": false,
+    "isTerritory": true
+  },
+  {
+    "id": "QA",
+    "alpha2Code": "QA",
+    "alpha3Code": "QAT",
+    "englishName": "Qatar",
+    "continent": "asia",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "CG",
+    "alpha2Code": "CG",
+    "alpha3Code": "COG",
+    "englishName": "Republic of the Congo",
+    "continent": "africa",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "RO",
+    "alpha2Code": "RO",
+    "alpha3Code": "ROU",
+    "englishName": "Romania",
+    "continent": "europe",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "RU",
+    "alpha2Code": "RU",
+    "alpha3Code": "RUS",
+    "englishName": "Russia",
+    "continent": "europe",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "RW",
+    "alpha2Code": "RW",
+    "alpha3Code": "RWA",
+    "englishName": "Rwanda",
+    "continent": "africa",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "KN",
+    "alpha2Code": "KN",
+    "alpha3Code": "KNA",
+    "englishName": "Saint Kitts and Nevis",
+    "continent": "northAmerica",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "LC",
+    "alpha2Code": "LC",
+    "alpha3Code": "LCA",
+    "englishName": "Saint Lucia",
+    "continent": "northAmerica",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "VC",
+    "alpha2Code": "VC",
+    "alpha3Code": "VCT",
+    "englishName": "Saint Vincent and the Grenadines",
+    "continent": "northAmerica",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "WS",
+    "alpha2Code": "WS",
+    "alpha3Code": "WSM",
+    "englishName": "Samoa",
+    "continent": "oceania",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "SM",
+    "alpha2Code": "SM",
+    "alpha3Code": "SMR",
+    "englishName": "San Marino",
+    "continent": "europe",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "SA",
+    "alpha2Code": "SA",
+    "alpha3Code": "SAU",
+    "englishName": "Saudi Arabia",
+    "continent": "asia",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "SN",
+    "alpha2Code": "SN",
+    "alpha3Code": "SEN",
+    "englishName": "Senegal",
+    "continent": "africa",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "RS",
+    "alpha2Code": "RS",
+    "alpha3Code": "SRB",
+    "englishName": "Serbia",
+    "continent": "europe",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "SC",
+    "alpha2Code": "SC",
+    "alpha3Code": "SYC",
+    "englishName": "Seychelles",
+    "continent": "africa",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "SL",
+    "alpha2Code": "SL",
+    "alpha3Code": "SLE",
+    "englishName": "Sierra Leone",
+    "continent": "africa",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "SG",
+    "alpha2Code": "SG",
+    "alpha3Code": "SGP",
+    "englishName": "Singapore",
+    "continent": "asia",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "SK",
+    "alpha2Code": "SK",
+    "alpha3Code": "SVK",
+    "englishName": "Slovakia",
+    "continent": "europe",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "SI",
+    "alpha2Code": "SI",
+    "alpha3Code": "SVN",
+    "englishName": "Slovenia",
+    "continent": "europe",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "SB",
+    "alpha2Code": "SB",
+    "alpha3Code": "SLB",
+    "englishName": "Solomon Islands",
+    "continent": "oceania",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "SO",
+    "alpha2Code": "SO",
+    "alpha3Code": "SOM",
+    "englishName": "Somalia",
+    "continent": "africa",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "ZA",
+    "alpha2Code": "ZA",
+    "alpha3Code": "ZAF",
+    "englishName": "South Africa",
+    "continent": "africa",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "KR",
+    "alpha2Code": "KR",
+    "alpha3Code": "KOR",
+    "englishName": "South Korea",
+    "continent": "asia",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "SS",
+    "alpha2Code": "SS",
+    "alpha3Code": "SSD",
+    "englishName": "South Sudan",
+    "continent": "africa",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "ES",
+    "alpha2Code": "ES",
+    "alpha3Code": "ESP",
+    "englishName": "Spain",
+    "continent": "europe",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "LK",
+    "alpha2Code": "LK",
+    "alpha3Code": "LKA",
+    "englishName": "Sri Lanka",
+    "continent": "asia",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "SD",
+    "alpha2Code": "SD",
+    "alpha3Code": "SDN",
+    "englishName": "Sudan",
+    "continent": "africa",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "SR",
+    "alpha2Code": "SR",
+    "alpha3Code": "SUR",
+    "englishName": "Suriname",
+    "continent": "southAmerica",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "SE",
+    "alpha2Code": "SE",
+    "alpha3Code": "SWE",
+    "englishName": "Sweden",
+    "continent": "europe",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "CH",
+    "alpha2Code": "CH",
+    "alpha3Code": "CHE",
+    "englishName": "Switzerland",
+    "continent": "europe",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "SY",
+    "alpha2Code": "SY",
+    "alpha3Code": "SYR",
+    "englishName": "Syria",
+    "continent": "asia",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "ST",
+    "alpha2Code": "ST",
+    "alpha3Code": "STP",
+    "englishName": "São Tomé and Príncipe",
+    "continent": "africa",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "TW",
+    "alpha2Code": "TW",
+    "alpha3Code": "TWN",
+    "englishName": "Taiwan",
+    "continent": "asia",
+    "isProgressEligible": false,
+    "isTerritory": true
+  },
+  {
+    "id": "TJ",
+    "alpha2Code": "TJ",
+    "alpha3Code": "TJK",
+    "englishName": "Tajikistan",
+    "continent": "asia",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "TZ",
+    "alpha2Code": "TZ",
+    "alpha3Code": "TZA",
+    "englishName": "Tanzania",
+    "continent": "africa",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "TH",
+    "alpha2Code": "TH",
+    "alpha3Code": "THA",
+    "englishName": "Thailand",
+    "continent": "asia",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "BS",
+    "alpha2Code": "BS",
+    "alpha3Code": "BHS",
+    "englishName": "The Bahamas",
+    "continent": "northAmerica",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "GM",
+    "alpha2Code": "GM",
+    "alpha3Code": "GMB",
+    "englishName": "The Gambia",
+    "continent": "africa",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "TG",
+    "alpha2Code": "TG",
+    "alpha3Code": "TGO",
+    "englishName": "Togo",
+    "continent": "africa",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "TO",
+    "alpha2Code": "TO",
+    "alpha3Code": "TON",
+    "englishName": "Tonga",
+    "continent": "oceania",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "TT",
+    "alpha2Code": "TT",
+    "alpha3Code": "TTO",
+    "englishName": "Trinidad and Tobago",
+    "continent": "northAmerica",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "TN",
+    "alpha2Code": "TN",
+    "alpha3Code": "TUN",
+    "englishName": "Tunisia",
+    "continent": "africa",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "TR",
+    "alpha2Code": "TR",
+    "alpha3Code": "TUR",
+    "englishName": "Turkey",
+    "continent": "asia",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "TM",
+    "alpha2Code": "TM",
+    "alpha3Code": "TKM",
+    "englishName": "Turkmenistan",
+    "continent": "asia",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "TV",
+    "alpha2Code": "TV",
+    "alpha3Code": "TUV",
+    "englishName": "Tuvalu",
+    "continent": "oceania",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "UG",
+    "alpha2Code": "UG",
+    "alpha3Code": "UGA",
+    "englishName": "Uganda",
+    "continent": "africa",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "UA",
+    "alpha2Code": "UA",
+    "alpha3Code": "UKR",
+    "englishName": "Ukraine",
+    "continent": "europe",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "AE",
+    "alpha2Code": "AE",
+    "alpha3Code": "ARE",
+    "englishName": "United Arab Emirates",
+    "continent": "asia",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "GB",
+    "alpha2Code": "GB",
+    "alpha3Code": "GBR",
+    "englishName": "United Kingdom",
+    "continent": "europe",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "US",
+    "alpha2Code": "US",
+    "alpha3Code": "USA",
+    "englishName": "United States of America",
+    "continent": "northAmerica",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "UY",
+    "alpha2Code": "UY",
+    "alpha3Code": "URY",
+    "englishName": "Uruguay",
+    "continent": "southAmerica",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "UZ",
+    "alpha2Code": "UZ",
+    "alpha3Code": "UZB",
+    "englishName": "Uzbekistan",
+    "continent": "asia",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "VU",
+    "alpha2Code": "VU",
+    "alpha3Code": "VUT",
+    "englishName": "Vanuatu",
+    "continent": "oceania",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "VA",
+    "alpha2Code": "VA",
+    "alpha3Code": "VAT",
+    "englishName": "Vatican City",
+    "continent": "europe",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "VE",
+    "alpha2Code": "VE",
+    "alpha3Code": "VEN",
+    "englishName": "Venezuela",
+    "continent": "southAmerica",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "VN",
+    "alpha2Code": "VN",
+    "alpha3Code": "VNM",
+    "englishName": "Vietnam",
+    "continent": "asia",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "EH",
+    "alpha2Code": "EH",
+    "alpha3Code": "ESH",
+    "englishName": "Western Sahara",
+    "continent": "africa",
+    "isProgressEligible": false,
+    "isTerritory": true
+  },
+  {
+    "id": "YE",
+    "alpha2Code": "YE",
+    "alpha3Code": "YEM",
+    "englishName": "Yemen",
+    "continent": "asia",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "ZM",
+    "alpha2Code": "ZM",
+    "alpha3Code": "ZMB",
+    "englishName": "Zambia",
+    "continent": "africa",
+    "isProgressEligible": true,
+    "isTerritory": false
+  },
+  {
+    "id": "ZW",
+    "alpha2Code": "ZW",
+    "alpha3Code": "ZWE",
+    "englishName": "Zimbabwe",
+    "continent": "africa",
+    "isProgressEligible": true,
+    "isTerritory": false
+  }
+]
