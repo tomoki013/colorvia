@@ -21,6 +21,7 @@
 		2C44FF20E6D4ED021C557D8C /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FAE63DD192DB49310C45B5E /* RootView.swift */; };
 		2DBB3C7D89D861228E16A65C /* FranceMapScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF05AA7C7839AE5D18E6F34 /* FranceMapScreen.swift */; };
 		2F0DFDE058D58746AA2312C8 /* Prefecture.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53B993D75FE982A8E737A9D /* Prefecture.swift */; };
+		33D50579A9AAC1515ADB75A0 /* ContactSupportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D755BC07691D7AB758EECCDE /* ContactSupportView.swift */; };
 		3B1063F5AB294789B9A3437B /* world-map.json in Resources */ = {isa = PBXBuildFile; fileRef = 520C0FB967AE13AAAE8DFBC5 /* world-map.json */; };
 		3C1B050D42480CA831161B68 /* us-source-regions.json in Resources */ = {isa = PBXBuildFile; fileRef = 500413565FA4B9B4892BEB39 /* us-source-regions.json */; };
 		3C33FDB4B479C3F6965227FE /* FranceDepartment.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1CCBC618EFFB8D24258971 /* FranceDepartment.swift */; };
@@ -28,6 +29,7 @@
 		4005AF0C0EE72F1D50B2D868 /* kr-map.json in Resources */ = {isa = PBXBuildFile; fileRef = 0365D5D25DF7BD96E8FC313B /* kr-map.json */; };
 		439670840BEA5963AB804117 /* ColorviaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEEE051D57ED64054C2E3FD /* ColorviaApp.swift */; };
 		44D90F32D84B9104EB974EC7 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439D34D0EA0B7D278BFA0073 /* OnboardingView.swift */; };
+		47285FC06CBDAD3469AC23B9 /* SupportAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B9798EDA56165F498E090F /* SupportAPIClient.swift */; };
 		47CB5430C115CC15A647DC3C /* WorldMapStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA63DB3C3DBCE86665B054CD /* WorldMapStore.swift */; };
 		47DF61942BF18441C3FBEEE5 /* FileVisitStateRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73CFE93E0B2158A4FF2BD1E /* FileVisitStateRepository.swift */; };
 		5903E5F8BC59AF93449426C5 /* L10n.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F07E87D5E4AB5178114D283 /* L10n.swift */; };
@@ -78,6 +80,7 @@
 		E0C9E98C963930FAA408A5E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 861527F7663B05711A617077 /* Assets.xcassets */; };
 		E1A16FF6CEFF6950717CA547 /* PrefectureListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0567673CE31008D3B179D8 /* PrefectureListView.swift */; };
 		EC420C5F26223C342B332BDB /* prefectures.json in Resources */ = {isa = PBXBuildFile; fileRef = 7409206E2ED969BC382279D2 /* prefectures.json */; };
+		EE538A79A0EC88793B5F8397 /* LegalDocumentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CE52F38EFB09EDF7645224 /* LegalDocumentView.swift */; };
 		F026C5E0EA0E394C5F4F7D82 /* countries.json in Resources */ = {isa = PBXBuildFile; fileRef = 0BC09B273BF476F90E5E7241 /* countries.json */; };
 		F34D1DFF27AE6FA0B0BB1663 /* FranceDepartmentListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7814D2D45592ABCAA4A8E21B /* FranceDepartmentListView.swift */; };
 		F469535ABD213BA8DFD40884 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A0FA03D4355BD1F490FE3B4 /* Country.swift */; };
@@ -148,6 +151,7 @@
 		9A0FA03D4355BD1F490FE3B4 /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
 		9CEEE051D57ED64054C2E3FD /* ColorviaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorviaApp.swift; sourceTree = "<group>"; };
 		9F7432E1D1B0C7F76039CE60 /* VisitDataDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitDataDocument.swift; sourceTree = "<group>"; };
+		A2CE52F38EFB09EDF7645224 /* LegalDocumentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegalDocumentView.swift; sourceTree = "<group>"; };
 		A73CFE93E0B2158A4FF2BD1E /* FileVisitStateRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileVisitStateRepository.swift; sourceTree = "<group>"; };
 		A9A117E1C8E09450D9A13433 /* PlaceSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceSearch.swift; sourceTree = "<group>"; };
 		AD1CCBC618EFFB8D24258971 /* FranceDepartment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FranceDepartment.swift; sourceTree = "<group>"; };
@@ -166,6 +170,7 @@
 		D53B993D75FE982A8E737A9D /* Prefecture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prefecture.swift; sourceTree = "<group>"; };
 		D630418794DFB4EB9FD2FDB2 /* sg-subdivisions.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "sg-subdivisions.json"; sourceTree = "<group>"; };
 		D6CAC62C03A972AB99E59240 /* be-subdivisions.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "be-subdivisions.json"; sourceTree = "<group>"; };
+		D755BC07691D7AB758EECCDE /* ContactSupportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactSupportView.swift; sourceTree = "<group>"; };
 		D97569D652F710198CBB7047 /* CountrySubdivision.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountrySubdivision.swift; sourceTree = "<group>"; };
 		DA63DB3C3DBCE86665B054CD /* WorldMapStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldMapStore.swift; sourceTree = "<group>"; };
 		DB0B37140D85DCD2FC6DC090 /* my-subdivisions.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "my-subdivisions.json"; sourceTree = "<group>"; };
@@ -176,6 +181,7 @@
 		EEF05AA7C7839AE5D18E6F34 /* FranceMapScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FranceMapScreen.swift; sourceTree = "<group>"; };
 		F0E0F586F476D73800097440 /* th-subdivisions.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "th-subdivisions.json"; sourceTree = "<group>"; };
 		F54C021D2B00D6C5A1144E22 /* eg-map.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "eg-map.json"; sourceTree = "<group>"; };
+		F5B9798EDA56165F498E090F /* SupportAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportAPIClient.swift; sourceTree = "<group>"; };
 		F85DE257DCAF3989820B19A4 /* th-place-search-index.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "th-place-search-index.json"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -310,7 +316,10 @@
 		603AC18218DEA8FEF3983A5B /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				D755BC07691D7AB758EECCDE /* ContactSupportView.swift */,
+				A2CE52F38EFB09EDF7645224 /* LegalDocumentView.swift */,
 				3CF150C708A695D206CD1AB9 /* SettingsView.swift */,
+				F5B9798EDA56165F498E090F /* SupportAPIClient.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -614,6 +623,7 @@
 				C23C6550AFF97FF5BC3A5443 /* AppState.swift in Sources */,
 				439670840BEA5963AB804117 /* ColorviaApp.swift in Sources */,
 				D8D14FF3F660F698C5DA97CA /* ColorviaTheme.swift in Sources */,
+				33D50579A9AAC1515ADB75A0 /* ContactSupportView.swift in Sources */,
 				F469535ABD213BA8DFD40884 /* Country.swift in Sources */,
 				72796FBB384215C46A9D2274 /* CountryDetailView.swift in Sources */,
 				5A08402A5DF3E925628C0019 /* CountryPickerView.swift in Sources */,
@@ -630,6 +640,7 @@
 				62D276D830C799D14351FA3F /* JapanMapStore.swift in Sources */,
 				CEDD8179EEF2CD96199C0A8E /* JapanMapView.swift in Sources */,
 				5903E5F8BC59AF93449426C5 /* L10n.swift in Sources */,
+				EE538A79A0EC88793B5F8397 /* LegalDocumentView.swift in Sources */,
 				44D90F32D84B9104EB974EC7 /* OnboardingView.swift in Sources */,
 				944F69693C6E135D4205B1B9 /* PlaceSearch.swift in Sources */,
 				2F0DFDE058D58746AA2312C8 /* Prefecture.swift in Sources */,
@@ -641,6 +652,7 @@
 				C9B8772C926FAC3985ED0710 /* SubdivisionListView.swift in Sources */,
 				AE1AFF988FAA2477F5B91203 /* SubdivisionMapScreen.swift in Sources */,
 				C47E5C58AAB415459B07284B /* SubdivisionShareSheet.swift in Sources */,
+				47285FC06CBDAD3469AC23B9 /* SupportAPIClient.swift in Sources */,
 				065436C2D4CF3E5FB0187603 /* VisitDataDocument.swift in Sources */,
 				47CB5430C115CC15A647DC3C /* WorldMapStore.swift in Sources */,
 				B8CABB666298D49AC52FBCAF /* WorldMapView.swift in Sources */,

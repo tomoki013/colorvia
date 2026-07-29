@@ -38,7 +38,7 @@ struct SettingsView: View {
         }
       }
     }
-    .presentationDetents([.medium, .large])
+    .presentationDetents([.large])
     .presentationDragIndicator(.visible)
     .presentationContentInteraction(.scrolls)
     .tint(ColorviaTheme.accentDeep)
@@ -153,12 +153,20 @@ struct SettingsView: View {
         )
       }
       NavigationLink {
-        InAppArticleView(page: .privacy)
+        LegalDocumentView(
+          title: L10n.text("settings.privacy"),
+          url: SupportAPIConfiguration.privacyPolicy,
+          sections: InAppArticlePage.privacy.sections
+        )
       } label: {
         internalRow(icon: "hand.raised", title: L10n.text("settings.privacy"))
       }
       NavigationLink {
-        InAppArticleView(page: .terms)
+        LegalDocumentView(
+          title: L10n.text("settings.terms"),
+          url: SupportAPIConfiguration.termsOfService,
+          sections: InAppArticlePage.terms.sections
+        )
       } label: {
         internalRow(icon: "doc.text", title: L10n.text("settings.terms"))
       }
@@ -610,55 +618,5 @@ private struct InAppArticleView: View {
     .background(ColorviaTheme.background)
     .navigationTitle(page.title)
     .navigationBarTitleDisplayMode(.inline)
-  }
-}
-
-private struct ContactSupportView: View {
-  @State private var email = ""
-  @State private var message = ""
-  @State private var showingSentMessage = false
-
-  var body: some View {
-    Form {
-      Section {
-        TextField(L10n.text("contact.email_placeholder"), text: $email)
-          .textContentType(.emailAddress)
-          .keyboardType(.emailAddress)
-          .textInputAutocapitalization(.never)
-
-        TextEditor(text: $message)
-          .frame(minHeight: 150)
-          .overlay(alignment: .topLeading) {
-            if message.isEmpty {
-              Text(L10n.text("contact.message_placeholder"))
-                .foregroundStyle(.secondary)
-                .padding(.horizontal, 5)
-                .padding(.vertical, 8)
-                .allowsHitTesting(false)
-            }
-          }
-      } header: {
-        Text(L10n.text("contact.form_title"))
-      } footer: {
-        Text(L10n.text("contact.footer"))
-      }
-
-      Section {
-        Button(L10n.text("contact.send")) {
-          showingSentMessage = true
-        }
-        .frame(maxWidth: .infinity)
-        .disabled(email.isEmpty || message.isEmpty)
-      }
-    }
-    .scrollContentBackground(.hidden)
-    .background(ColorviaTheme.background)
-    .navigationTitle(L10n.text("settings.contact"))
-    .navigationBarTitleDisplayMode(.inline)
-    .alert(L10n.text("contact.sent_title"), isPresented: $showingSentMessage) {
-      Button(L10n.text("common.close"), role: .cancel) {}
-    } message: {
-      Text(L10n.text("contact.sent_body"))
-    }
   }
 }
