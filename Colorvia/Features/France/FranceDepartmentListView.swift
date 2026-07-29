@@ -103,7 +103,7 @@ struct FranceDepartmentListView: View {
         }
       }
     }
-    .presentationDetents([.medium, .large])
+    .presentationDetents([.large])
     .presentationDragIndicator(.visible)
     .presentationContentInteraction(.scrolls)
     .tint(ColorviaTheme.accentDeep)

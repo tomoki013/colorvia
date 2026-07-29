@@ -1,0 +1,161 @@
+import Foundation
+
+enum SupportAPIConfiguration {
+  static let endpoint = URL(
+    string: "https://tomokichi-api.tomoki-ttttt.workers.dev/api/support"
+  )!
+  static let privacyPolicy = URL(string: "https://colorvia.tmkch.io/privacy")!
+  static let termsOfService = URL(string: "https://colorvia.tmkch.io/terms")!
+}
+
+struct SupportRequest: Codable, Sendable {
+  let requestId: UUID
+  let clientId: UUID
+  let source: String
+  let app: String
+  let category: String
+  let name: String
+  let email: String
+  let message: String
+  let appVersion: String
+  let buildNumber: String
+  let osVersion: String
+  let locale: String
+  let submittedAt: Date
+  let website: String
+}
+
+struct SupportResponse: Decodable, Sendable {
+  let requestId: UUID
+
+  private enum CodingKeys: String, CodingKey {
+    case requestId
+    case receiptId
+    case id
+    case data
+  }
+
+  private struct NestedResponse: Decodable {
+    let requestId: UUID?
+    let receiptId: UUID?
+    let id: UUID?
+  }
+
+  init(requestId: UUID) {
+    self.requestId = requestId
+  }
+
+  init(from decoder: any Decoder) throws {
+    let container = try decoder.container(keyedBy: CodingKeys.self)
+    if let requestId = try container.decodeIfPresent(UUID.self, forKey: .requestId) {
+      self.requestId = requestId
+    } else if let receiptId = try container.decodeIfPresent(UUID.self, forKey: .receiptId) {
+      self.requestId = receiptId
+    } else if let id = try container.decodeIfPresent(UUID.self, forKey: .id) {
+      self.requestId = id
+    } else if let data = try container.decodeIfPresent(NestedResponse.self, forKey: .data),
+      let nestedID = data.requestId ?? data.receiptId ?? data.id
+    {
+      self.requestId = nestedID
+    } else {
+      throw DecodingError.keyNotFound(
+        CodingKeys.requestId,
+        .init(codingPath: decoder.codingPath, debugDescription: "A request ID is required.")
+      )
+    }
+  }
+}
+
+enum SupportAPIError: Error, Equatable {
+  case invalidRequest
+  case rateLimited
+  case deliveryFailed
+  case serverError
+  case networkUnavailable
+  case timedOut
+  case invalidResponse
+}
+
+struct SupportAPIClient: Sendable {
+  private let session: URLSession
+
+  init(session: URLSession = .shared) {
+    self.session = session
+  }
+
+  func submit(_ request: SupportRequest) async throws -> SupportResponse {
+    var urlRequest = URLRequest(url: SupportAPIConfiguration.endpoint)
+    urlRequest.httpMethod = "POST"
+    urlRequest.timeoutInterval = 20
+    urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
+    urlRequest.setValue("application/json", forHTTPHeaderField: "Accept")
+
+    let encoder = JSONEncoder()
+    encoder.dateEncodingStrategy = .iso8601
+    do {
+      urlRequest.httpBody = try encoder.encode(request)
+    } catch {
+      throw SupportAPIError.invalidRequest
+    }
+
+    do {
+      let (data, response) = try await session.data(for: urlRequest)
+      guard let response = response as? HTTPURLResponse else {
+        throw SupportAPIError.invalidResponse
+      }
+      guard (200..<300).contains(response.statusCode) else {
+        throw Self.apiError(statusCode: response.statusCode, data: data)
+      }
+
+      if let decoded = try? JSONDecoder().decode(SupportResponse.self, from: data) {
+        return decoded
+      }
+      if let object = try? JSONSerialization.jsonObject(with: data) as? [String: Any],
+        object["ok"] as? Bool == true || object["success"] as? Bool == true
+      {
+        return SupportResponse(requestId: request.requestId)
+      }
+      throw SupportAPIError.invalidResponse
+    } catch is CancellationError {
+      throw CancellationError()
+    } catch let error as SupportAPIError {
+      throw error
+    } catch let error as URLError {
+      switch error.code {
+      case .timedOut:
+        throw SupportAPIError.timedOut
+      default:
+        throw SupportAPIError.networkUnavailable
+      }
+    } catch {
+      throw SupportAPIError.networkUnavailable
+    }
+  }
+
+  private struct ErrorEnvelope: Decodable {
+    let code: String?
+  }
+
+  private static func apiError(statusCode: Int, data: Data) -> SupportAPIError {
+    let code = (try? JSONDecoder().decode(ErrorEnvelope.self, from: data).code)?
+      .lowercased()
+      .replacingOccurrences(of: "-", with: "_")
+
+    switch code {
+    case "invalid_request", "validation_error":
+      return .invalidRequest
+    case "rate_limited", "too_many_requests":
+      return .rateLimited
+    case "delivery_failed", "email_delivery_failed":
+      return .deliveryFailed
+    default:
+      switch statusCode {
+      case 400, 422: return .invalidRequest
+      case 429: return .rateLimited
+      case 502: return .deliveryFailed
+      case 500...599: return .serverError
+      default: return .invalidResponse
+      }
+    }
+  }
+}
