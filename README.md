@@ -9,7 +9,7 @@
 - Xcode 26.6+
 - iOS 18+
 - SwiftUI / Observation
-- No external runtime dependencies
+- Google Mobile Ads SDK (banner ads + UMP consent) via Swift Package Manager
 
 ```sh
 xcodegen generate
@@ -19,3 +19,5 @@ xcodebuild -project Colorvia.xcodeproj -scheme Colorvia \
 
 Map geometry is derived from public-domain Natural Earth data. See
 `Documentation/MAP_DATA.md`.
+
+AdMob setup (production IDs, `app-ads.txt`, privacy): `Documentation/ADMOB.md`.

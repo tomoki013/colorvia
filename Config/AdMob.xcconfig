@@ -1,0 +1,20 @@
+// AdMob identifiers for Colorvia.
+//
+// Debug builds always request Google's official test banner unit ID in code
+// (see AdMobConfiguration). GADApplicationIdentifier still must be set so the
+// Mobile Ads SDK can start.
+//
+// Before shipping a Release build:
+// 1. Create the Colorvia app and banner unit in AdMob.
+// 2. Replace the values below with production IDs.
+// 3. Host app-ads.txt at https://tmkch.io/app-ads.txt
+//
+// ~  → AdMob App ID
+// /  → Banner ad unit ID
+
+// Google sample App ID (safe for local development and CI).
+ADMOB_APP_ID = ca-app-pub-3940256099942544~1458002511
+
+// Production banner unit ID for Release. Debug ignores this and uses the
+// official test unit. Replace before App Store distribution.
+ADMOB_BANNER_AD_UNIT_ID = ca-app-pub-REPLACE_WITH_PRODUCTION_BANNER_UNIT_ID

@@ -23,7 +23,18 @@ EXPECTED_LANGUAGES = {
     "zh-Hant",
     "ru",
 }
-ALLOWED_RAW_UI_STRINGS = {"Colorvia", "©︎ Colorvia", "Natural Earth"}
+ALLOWED_RAW_UI_STRINGS = {
+    "Colorvia",
+    "©︎ Colorvia",
+    "COLORVIA",
+    "Natural Earth",
+    "Insee COG 2026",
+    "Geolonia Japanese Addresses",
+    "GeoNames",
+    "U.S. Census Bureau",
+    "Singapore URA",
+    "OK",
+}
 UI_LITERAL_PATTERN = re.compile(
     r'(?:Text|Button|Section|navigationTitle|accessibilityLabel|LabeledContent)\("([^"]+)"'
 )
@@ -73,6 +84,9 @@ def main():
         source = source_path.read_text(encoding="utf-8")
         referenced_keys.update(LOCALIZATION_KEY_PATTERN.findall(source))
         for literal in UI_LITERAL_PATTERN.findall(source):
+            # Skip interpolations / nested quotes that the naive scanner catches.
+            if "\\(" in literal:
+                continue
             if literal not in ALLOWED_RAW_UI_STRINGS:
                 errors.append(
                     f'{source_path}: raw UI string "{literal}" must use L10n.text'

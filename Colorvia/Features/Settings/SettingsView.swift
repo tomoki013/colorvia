@@ -2,6 +2,7 @@ import SwiftUI
 
 struct SettingsView: View {
   @Environment(AppState.self) private var appState
+  @Environment(AdMobConsentManager.self) private var consentManager
   @Environment(\.dismiss) private var dismiss
   @State private var confirmingReset = false
 
@@ -151,6 +152,17 @@ struct SettingsView: View {
           title: L10n.text("settings.app_details"),
           showsExternalIndicator: false
         )
+      }
+      if consentManager.isPrivacyOptionsRequired {
+        Button {
+          Task { await consentManager.presentPrivacyOptions() }
+        } label: {
+          settingLinkRow(
+            icon: "hand.raised.circle",
+            title: L10n.text("settings.privacy_choices"),
+            showsExternalIndicator: false
+          )
+        }
       }
       NavigationLink {
         LegalDocumentView(
@@ -433,6 +445,15 @@ private struct DataManagementView: View {
 private struct OpenSourceLicensesView: View {
   var body: some View {
     List {
+      Section(L10n.text("settings.admob_license_title")) {
+        Text(L10n.text("settings.admob_license_description"))
+          .font(.subheadline)
+          .foregroundStyle(ColorviaTheme.secondaryInk)
+        Link(
+          L10n.text("settings.view_source"),
+          destination: URL(string: "https://developers.google.com/admob/ios/download")!
+        )
+      }
       Section("Natural Earth") {
         Text(L10n.text("settings.natural_earth_description"))
           .font(.subheadline)
@@ -470,7 +491,7 @@ private struct OpenSourceLicensesView: View {
         )
       }
       Section("U.S. Census Bureau") {
-        Text("2024 state-equivalent cartographic boundary data for the United States map.")
+        Text(L10n.text("settings.us_census_description"))
           .font(.subheadline)
           .foregroundStyle(ColorviaTheme.secondaryInk)
         Link(
@@ -482,11 +503,9 @@ private struct OpenSourceLicensesView: View {
         )
       }
       Section("Singapore URA") {
-        Text(
-          "Master Plan 2019 Planning Area Boundary data, provided under the Singapore Open Data Licence."
-        )
-        .font(.subheadline)
-        .foregroundStyle(ColorviaTheme.secondaryInk)
+        Text(L10n.text("settings.singapore_ura_description"))
+          .font(.subheadline)
+          .foregroundStyle(ColorviaTheme.secondaryInk)
         Link(
           L10n.text("settings.view_source"),
           destination: URL(
@@ -567,6 +586,10 @@ private enum InAppArticlePage {
         (
           L10n.text("privacy.storage.title"),
           L10n.text("privacy.storage.body")
+        ),
+        (
+          L10n.text("privacy.ads.title"),
+          L10n.text("privacy.ads.body")
         ),
         (
           L10n.text("privacy.analytics.title"),

@@ -4,6 +4,10 @@ options:
   deploymentTarget:
     iOS: "18.0"
   createIntermediateGroups: true
+packages:
+  GoogleMobileAds:
+    url: https://github.com/googleads/swift-package-manager-google-mobile-ads.git
+    from: 13.0.0
 settings:
   base:
     SWIFT_VERSION: "6.0"
@@ -18,17 +22,24 @@ settings:
     INFOPLIST_KEY_UILaunchScreen_Generation: YES
     INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone: UIInterfaceOrientationPortrait
     ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+configFiles:
+  Debug: Config/AdMob.xcconfig
+  Release: Config/AdMob.xcconfig
 targets:
   Colorvia:
     type: application
     platform: iOS
     sources:
       - path: Colorvia
+    dependencies:
+      - package: GoogleMobileAds
+        product: GoogleMobileAds
     settings:
       base:
         CODE_SIGN_ENTITLEMENTS: Colorvia/Colorvia.entitlements
         PRODUCT_BUNDLE_IDENTIFIER: io.tmkch.colorvia
         TARGETED_DEVICE_FAMILY: "1,2"
+        INFOPLIST_FILE: Colorvia/Info.plist
     scheme:
       testTargets:
         - ColorviaTests

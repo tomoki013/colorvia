@@ -11,8 +11,11 @@
 		065436C2D4CF3E5FB0187603 /* VisitDataDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7432E1D1B0C7F76039CE60 /* VisitDataDocument.swift */; };
 		0B5C55E83D270EA4FC83CFD2 /* us-map.json in Resources */ = {isa = PBXBuildFile; fileRef = 741D5F29B425AF05B12FA5B9 /* us-map.json */; };
 		0F6CC944D18A7B76FC6BB958 /* kr-subdivisions.json in Resources */ = {isa = PBXBuildFile; fileRef = 17564F03267C2614F0BCA353 /* kr-subdivisions.json */; };
+		0FC5ED1CE69068FE87037E71 /* AdMobConsentManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CAF8C6A125BC646003B0DD4 /* AdMobConsentManager.swift */; };
 		12BF4945C7F025D171E8D1DC /* JapanDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E8311FC617211F299BD9822 /* JapanDetailView.swift */; };
+		1926D907B25997FF0FE95DAB /* AdMobConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4781546413B603F3BE7DC60A /* AdMobConfiguration.swift */; };
 		1998A33F643F146FEE9A2622 /* sg-planning-areas.json in Resources */ = {isa = PBXBuildFile; fileRef = 0BCB5961E7719E0F058EA73F /* sg-planning-areas.json */; };
+		19C7D369BE7AEB0269B242BD /* BannerAdContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CDF920807669CE9C01A7BB0 /* BannerAdContainer.swift */; };
 		1B2E67C9419E65EEE31BD62B /* tr-subdivisions.json in Resources */ = {isa = PBXBuildFile; fileRef = 279620BDCC1CCE269F8B97EF /* tr-subdivisions.json */; };
 		1F686C743A52C07FF4B493F6 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B62B4DA711226F149795E36 /* HomeView.swift */; };
 		2253DA1851D8E8DC34B4B505 /* sg-place-search-index.json in Resources */ = {isa = PBXBuildFile; fileRef = 8FD7F40B367A088C111AA3E3 /* sg-place-search-index.json */; };
@@ -27,6 +30,7 @@
 		3C33FDB4B479C3F6965227FE /* FranceDepartment.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1CCBC618EFFB8D24258971 /* FranceDepartment.swift */; };
 		3DB51DB99523E8B014C14FC3 /* my-subdivisions.json in Resources */ = {isa = PBXBuildFile; fileRef = DB0B37140D85DCD2FC6DC090 /* my-subdivisions.json */; };
 		4005AF0C0EE72F1D50B2D868 /* kr-map.json in Resources */ = {isa = PBXBuildFile; fileRef = 0365D5D25DF7BD96E8FC313B /* kr-map.json */; };
+		422A7B5193CEFAD1E488B692 /* BannerAdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555EAC31C80323B10AA6856B /* BannerAdView.swift */; };
 		439670840BEA5963AB804117 /* ColorviaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEEE051D57ED64054C2E3FD /* ColorviaApp.swift */; };
 		44D90F32D84B9104EB974EC7 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439D34D0EA0B7D278BFA0073 /* OnboardingView.swift */; };
 		47285FC06CBDAD3469AC23B9 /* SupportAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B9798EDA56165F498E090F /* SupportAPIClient.swift */; };
@@ -43,6 +47,7 @@
 		6AA1E4D692A3FAA30A9D24C9 /* SubdivisionCountryDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B052C3928ACEFF96EA85D0B0 /* SubdivisionCountryDetailView.swift */; };
 		6C29DED453844ED577804EA6 /* tr-map.json in Resources */ = {isa = PBXBuildFile; fileRef = 4081222B198E30AB7ED3244A /* tr-map.json */; };
 		6C824B80871F3258D7F872DA /* france-place-search-index.json in Resources */ = {isa = PBXBuildFile; fileRef = 132A0FCA55489532D9E621EE /* france-place-search-index.json */; };
+		6E621D91AF54F8C6B960E314 /* AdEntitlementStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B0BB7A2FA573E939A43F5F /* AdEntitlementStore.swift */; };
 		72796FBB384215C46A9D2274 /* CountryDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E49DA7D76F9323C3660D1F /* CountryDetailView.swift */; };
 		785D6D7FFECE44A08234AA66 /* kr-place-search-index.json in Resources */ = {isa = PBXBuildFile; fileRef = 7E5CB462AC0E7937E73A4087 /* kr-place-search-index.json */; };
 		78D9706EE3882E6D3BE83AB1 /* es-map.json in Resources */ = {isa = PBXBuildFile; fileRef = 957D45F9AF37DDF78AA0E620 /* es-map.json */; };
@@ -54,6 +59,7 @@
 		944F69693C6E135D4205B1B9 /* PlaceSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A117E1C8E09450D9A13433 /* PlaceSearch.swift */; };
 		9B327DF229BC538035AA79CE /* eg-map.json in Resources */ = {isa = PBXBuildFile; fileRef = F54C021D2B00D6C5A1144E22 /* eg-map.json */; };
 		A20716DCCEABC4F9C02980C1 /* StatisticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088F978FCCC3EF778E0248E1 /* StatisticsView.swift */; };
+		A283CDCCA1EB392ECD7F595D /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = 652090FE541F80BFDD1E0FB8 /* GoogleMobileAds */; };
 		A4E4B39A5E61ABE526DCEE1A /* th-place-search-index.json in Resources */ = {isa = PBXBuildFile; fileRef = F85DE257DCAF3989820B19A4 /* th-place-search-index.json */; };
 		A5ADC63ADDE72D2C13CEF1DA /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF150C708A695D206CD1AB9 /* SettingsView.swift */; };
 		A702E1D865B0AA1730D683A5 /* japan-place-search-index.json in Resources */ = {isa = PBXBuildFile; fileRef = 3A41FFF4CDE5D569C838292C /* japan-place-search-index.json */; };
@@ -101,7 +107,8 @@
 
 /* Begin PBXFileReference section */
 		0365D5D25DF7BD96E8FC313B /* kr-map.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "kr-map.json"; sourceTree = "<group>"; };
-		063DCF90BE28079DC8068201 /* Colorvia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Colorvia.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		04B0BB7A2FA573E939A43F5F /* AdEntitlementStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdEntitlementStore.swift; sourceTree = "<group>"; };
+		063DCF90BE28079DC8068201 /* Colorvia.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Colorvia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		088F978FCCC3EF778E0248E1 /* StatisticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsView.swift; sourceTree = "<group>"; };
 		0B9D34C5AAE06EB903847DCE /* eg-place-search-index.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "eg-place-search-index.json"; sourceTree = "<group>"; };
 		0BC09B273BF476F90E5E7241 /* countries.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = countries.json; sourceTree = "<group>"; };
@@ -119,16 +126,20 @@
 		3875E4FAE474E54CD330151C /* sg-map.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "sg-map.json"; sourceTree = "<group>"; };
 		38BDBFCFC63E053860D1472A /* SubdivisionMapScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubdivisionMapScreen.swift; sourceTree = "<group>"; };
 		3A41FFF4CDE5D569C838292C /* japan-place-search-index.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "japan-place-search-index.json"; sourceTree = "<group>"; };
+		3CDF920807669CE9C01A7BB0 /* BannerAdContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerAdContainer.swift; sourceTree = "<group>"; };
 		3CF150C708A695D206CD1AB9 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		3CFCDACF240E1F4A1FF5B43E /* france-departments.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "france-departments.json"; sourceTree = "<group>"; };
 		4081222B198E30AB7ED3244A /* tr-map.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "tr-map.json"; sourceTree = "<group>"; };
 		439D34D0EA0B7D278BFA0073 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		4781546413B603F3BE7DC60A /* AdMobConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdMobConfiguration.swift; sourceTree = "<group>"; };
 		4B62B4DA711226F149795E36 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		500413565FA4B9B4892BEB39 /* us-source-regions.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "us-source-regions.json"; sourceTree = "<group>"; };
 		51547EE1483B3222565E21C9 /* WorldMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldMapView.swift; sourceTree = "<group>"; };
 		520C0FB967AE13AAAE8DFBC5 /* world-map.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "world-map.json"; sourceTree = "<group>"; };
 		5454AD3F0F5E8CB7D9B9EE22 /* JapanMapStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JapanMapStore.swift; sourceTree = "<group>"; };
+		555EAC31C80323B10AA6856B /* BannerAdView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerAdView.swift; sourceTree = "<group>"; };
 		59E49DA7D76F9323C3660D1F /* CountryDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryDetailView.swift; sourceTree = "<group>"; };
+		5CAF8C6A125BC646003B0DD4 /* AdMobConsentManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdMobConsentManager.swift; sourceTree = "<group>"; };
 		5E7E4F02CE07B45EE2CC339B /* FranceDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FranceDetailView.swift; sourceTree = "<group>"; };
 		60B184E9D06FEA19CED0FE57 /* my-map.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "my-map.json"; sourceTree = "<group>"; };
 		685509F4D226B24460F481BF /* tr-place-search-index.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "tr-place-search-index.json"; sourceTree = "<group>"; };
@@ -149,6 +160,7 @@
 		957D45F9AF37DDF78AA0E620 /* es-map.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "es-map.json"; sourceTree = "<group>"; };
 		994046E137431869FA45F1BB /* japan-map.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "japan-map.json"; sourceTree = "<group>"; };
 		9A0FA03D4355BD1F490FE3B4 /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
+		9B364C0C761ACDF804AAFB56 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		9CEEE051D57ED64054C2E3FD /* ColorviaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorviaApp.swift; sourceTree = "<group>"; };
 		9F7432E1D1B0C7F76039CE60 /* VisitDataDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitDataDocument.swift; sourceTree = "<group>"; };
 		A2CE52F38EFB09EDF7645224 /* LegalDocumentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegalDocumentView.swift; sourceTree = "<group>"; };
@@ -167,6 +179,7 @@
 		CCBDDC80937AD8B575CF7310 /* us-place-search-index.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "us-place-search-index.json"; sourceTree = "<group>"; };
 		D177DCBED58403440FED28FE /* my-place-search-index.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "my-place-search-index.json"; sourceTree = "<group>"; };
 		D3704B8FF1F5A494D674E7D8 /* es-place-search-index.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "es-place-search-index.json"; sourceTree = "<group>"; };
+		D393C433FF5CB00137509659 /* AdMob.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = AdMob.xcconfig; sourceTree = "<group>"; };
 		D53B993D75FE982A8E737A9D /* Prefecture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prefecture.swift; sourceTree = "<group>"; };
 		D630418794DFB4EB9FD2FDB2 /* sg-subdivisions.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "sg-subdivisions.json"; sourceTree = "<group>"; };
 		D6CAC62C03A972AB99E59240 /* be-subdivisions.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "be-subdivisions.json"; sourceTree = "<group>"; };
@@ -184,6 +197,17 @@
 		F5B9798EDA56165F498E090F /* SupportAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportAPIClient.swift; sourceTree = "<group>"; };
 		F85DE257DCAF3989820B19A4 /* th-place-search-index.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "th-place-search-index.json"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E187234519A659BEDBF3C6CB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A283CDCCA1EB392ECD7F595D /* GoogleMobileAds in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		000210169D96D2D395A3CCDA /* Products */ = {
@@ -304,6 +328,8 @@
 			isa = PBXGroup;
 			children = (
 				EE1BD3F91D2987B8D1824934 /* Colorvia.entitlements */,
+				9B364C0C761ACDF804AAFB56 /* Info.plist */,
+				F490EAE412D5AE9B52B66D0C /* Advertising */,
 				CE9B00487E0DE45122BA482A /* App */,
 				9ED41B007C35A51CBC7C5ED0 /* Core */,
 				E9FFDB353FE4ED2545766C3D /* DesignSystem */,
@@ -346,6 +372,7 @@
 			children = (
 				5CBE842AFF7B05A7928EE5A1 /* Colorvia */,
 				1C6AB602D3FB5D1E8AC85427 /* ColorviaTests */,
+				DBB30FC876F59056832552BF /* Config */,
 				000210169D96D2D395A3CCDA /* Products */,
 			);
 			sourceTree = "<group>";
@@ -449,6 +476,14 @@
 			path = App;
 			sourceTree = "<group>";
 		};
+		DBB30FC876F59056832552BF /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				D393C433FF5CB00137509659 /* AdMob.xcconfig */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
 		E7B0EF86C959C017259C4686 /* Japan */ = {
 			isa = PBXGroup;
 			children = (
@@ -475,6 +510,18 @@
 			path = DesignSystem;
 			sourceTree = "<group>";
 		};
+		F490EAE412D5AE9B52B66D0C /* Advertising */ = {
+			isa = PBXGroup;
+			children = (
+				04B0BB7A2FA573E939A43F5F /* AdEntitlementStore.swift */,
+				4781546413B603F3BE7DC60A /* AdMobConfiguration.swift */,
+				5CAF8C6A125BC646003B0DD4 /* AdMobConsentManager.swift */,
+				3CDF920807669CE9C01A7BB0 /* BannerAdContainer.swift */,
+				555EAC31C80323B10AA6856B /* BannerAdView.swift */,
+			);
+			path = Advertising;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -484,6 +531,7 @@
 			buildPhases = (
 				05E18D989506B4FD5573E9E4 /* Sources */,
 				36CB3F184339B8DD0FE7172E /* Resources */,
+				E187234519A659BEDBF3C6CB /* Frameworks */,
 			);
 			buildRules = (
 			);
@@ -491,6 +539,7 @@
 			);
 			name = Colorvia;
 			packageProductDependencies = (
+				652090FE541F80BFDD1E0FB8 /* GoogleMobileAds */,
 			);
 			productName = Colorvia;
 			productReference = 063DCF90BE28079DC8068201 /* Colorvia.app */;
@@ -524,6 +573,7 @@
 				LastUpgradeCheck = 1430;
 				TargetAttributes = {
 					7E79EDC6BEB77A6B93C94113 = {
+						DevelopmentTeam = "";
 						ProvisioningStyle = Automatic;
 					};
 					870207106C29BA655475DE38 = {
@@ -551,6 +601,9 @@
 			);
 			mainGroup = 8AE19BE1D8F8F417D6D93EB4;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				F79A67B54F874C47B79A6E58 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 000210169D96D2D395A3CCDA /* Products */;
 			projectDirPath = "";
@@ -619,8 +672,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6E621D91AF54F8C6B960E314 /* AdEntitlementStore.swift in Sources */,
+				1926D907B25997FF0FE95DAB /* AdMobConfiguration.swift in Sources */,
+				0FC5ED1CE69068FE87037E71 /* AdMobConsentManager.swift in Sources */,
 				889ED512F161ABFEE8429007 /* AppRoute.swift in Sources */,
 				C23C6550AFF97FF5BC3A5443 /* AppState.swift in Sources */,
+				19C7D369BE7AEB0269B242BD /* BannerAdContainer.swift in Sources */,
+				422A7B5193CEFAD1E488B692 /* BannerAdView.swift in Sources */,
 				439670840BEA5963AB804117 /* ColorviaApp.swift in Sources */,
 				D8D14FF3F660F698C5DA97CA /* ColorviaTheme.swift in Sources */,
 				33D50579A9AAC1515ADB75A0 /* ContactSupportView.swift in Sources */,
@@ -680,6 +738,7 @@
 /* Begin XCBuildConfiguration section */
 		1564ACAFC03AF1675FA45C82 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D393C433FF5CB00137509659 /* AdMob.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -767,7 +826,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Colorvia/Colorvia.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEVELOPMENT_TEAM = 7GU925RQ99;
+				INFOPLIST_FILE = Colorvia/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -796,6 +855,7 @@
 		};
 		8DE343CC72C267880AD344E8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D393C433FF5CB00137509659 /* AdMob.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -874,7 +934,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Colorvia/Colorvia.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEVELOPMENT_TEAM = 7GU925RQ99;
+				INFOPLIST_FILE = Colorvia/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -916,6 +976,25 @@
 			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F79A67B54F874C47B79A6E58 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/googleads/swift-package-manager-google-mobile-ads.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 13.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		652090FE541F80BFDD1E0FB8 /* GoogleMobileAds */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F79A67B54F874C47B79A6E58 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */;
+			productName = GoogleMobileAds;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 432F661559AFFE726C767D24 /* Project object */;
 }

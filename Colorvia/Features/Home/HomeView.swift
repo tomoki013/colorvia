@@ -1,4 +1,5 @@
 import SwiftUI
+import UIKit
 
 struct HomeView: View {
   @Environment(AppState.self) private var appState
@@ -6,6 +7,12 @@ struct HomeView: View {
   @State private var showingPicker = false
   @State private var showingSettings = false
   @State private var isStatisticsExpanded = false
+
+  /// Screen-based gate so showing the banner cannot flip this decision and loop.
+  private var isBannerLayoutAllowed: Bool {
+    // iPhone SE-class heights leave too little map after sheet + 50pt banner.
+    UIScreen.main.bounds.height >= 700
+  }
 
   var body: some View {
     NavigationStack(path: $path) {
@@ -44,6 +51,12 @@ struct HomeView: View {
         }
       }
       .background(ColorviaTheme.background.ignoresSafeArea())
+      .safeAreaInset(edge: .bottom, spacing: 0) {
+        // Sits under the map / statistics sheet (including the expanded
+        // visited-country list). Never overlays the map or floating controls.
+        BannerAdContainer(isEnabled: isBannerLayoutAllowed)
+          .frame(maxWidth: .infinity)
+      }
       .navigationDestination(for: AppRoute.self) { route in
         switch route {
         case .countryDetail(let countryCode):

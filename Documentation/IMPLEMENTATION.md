@@ -34,8 +34,12 @@ suggests a painting tool.
   names, and selected tourist aliases back to their parent subdivision.
 - Feature views contain presentation and interaction only.
 
-No account, backend, location, photo, notification, or third-party runtime
-dependency is used.
+No account, backend, location, photo, or notification dependency is used.
+
+The free build may show a fixed 320×50 Google AdMob banner on the home screen
+only. Consent is gathered with the User Messaging Platform before any ad
+request. Visit history and map activity are never sent as ad targeting data.
+See `Documentation/ADMOB.md`.
 
 Visit data is mirrored through the app's iCloud key-value store when iCloud is
 available. Local atomic JSON remains the fallback. Country and region records
