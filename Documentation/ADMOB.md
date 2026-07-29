@@ -10,15 +10,16 @@ and statistics sheet). Other formats and screens are intentionally out of scope.
 2. Put the real IDs in `Config/AdMob.xcconfig`:
 
    ```text
-   ADMOB_APP_ID = ca-app-pub-xxxxxxxxxxxxxxxx~yyyyyyyyyy
-   ADMOB_BANNER_AD_UNIT_ID = ca-app-pub-xxxxxxxxxxxxxxxx/zzzzzzzzzz
+   ADMOB_APP_ID = ca-app-pub-8687520805381056~7543227876
+   ADMOB_BANNER_AD_UNIT_ID = ca-app-pub-8687520805381056/8545318350
    ```
 
    - Values with `~` are the **App ID** (`GADApplicationIdentifier`).
    - Values with `/` are the **banner ad unit ID**.
+   - `pub-8687520805381056` is the **Publisher ID** for `app-ads.txt` only.
 
-3. Host `app-ads.txt` at `https://tmkch.io/app-ads.txt` using the publisher line
-   from the AdMob UI. A template lives at `Documentation/app-ads.txt`.
+3. Host `app-ads.txt` at `https://tmkch.io/app-ads.txt` (see
+   `Documentation/app-ads.txt`).
 4. In App Store Connect, set the developer / marketing URL host to the same
    `tmkch.io` site that serves `app-ads.txt`.
 5. Update App Store Connect **App Privacy** for Google Mobile Ads (device IDs,

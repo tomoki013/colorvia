@@ -1,6 +1,6 @@
 # Publish this file at https://tmkch.io/app-ads.txt
-# Replace pub-XXXXXXXXXXXXXXXX with the Publisher ID from the AdMob console.
+# Publisher ID from AdMob (Tomokichi App Studio / Colorvia).
 # Format (IAB app-ads.txt):
 # google.com, pub-XXXXXXXXXXXXXXXX, DIRECT, f08c47fec0942fa0
 
-google.com, pub-XXXXXXXXXXXXXXXX, DIRECT, f08c47fec0942fa0
+google.com, pub-8687520805381056, DIRECT, f08c47fec0942fa0
