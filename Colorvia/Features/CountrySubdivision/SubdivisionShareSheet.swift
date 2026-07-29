@@ -161,36 +161,30 @@ private struct SubdivisionPosterView: View {
   let visitedColor: Color
   let variant: SubdivisionPosterVariant
 
+  private var titleText: String {
+    "MY \(englishCountryName.uppercased())"
+  }
+
+  private var countText: String {
+    "\(visitedCodes.count) / \(definition.totalCount) \(definition.nativeUnitName.uppercased())"
+  }
+
+  private var percentageText: String {
+    (Double(visitedCodes.count) / Double(definition.totalCount) * 100)
+      .formatted(.number.precision(.fractionLength(1))) + "%"
+  }
+
   var body: some View {
     VStack(spacing: variant.isStory ? 44 : 20) {
       if !variant.isMapOnly {
-        VStack(spacing: 5) {
-          Text("MY \(englishCountryName.uppercased())")
-            .font(.system(size: variant.isStory ? 34 : 27, weight: .bold, design: .rounded))
-          Text("COLORVIA")
-            .font(.system(size: 10, weight: .semibold, design: .rounded))
-            .tracking(3)
-            .foregroundStyle(posterSecondary)
-        }
+        header
       }
 
       posterMap
         .frame(height: mapHeight)
 
       if !variant.isMapOnly {
-        VStack(spacing: 7) {
-          Text(
-            "\(visitedCodes.count) / \(definition.totalCount) \(definition.nativeUnitName.uppercased())"
-          )
-          .font(.system(size: 21, weight: .semibold, design: .rounded))
-          .minimumScaleFactor(0.7)
-          Text(
-            (Double(visitedCodes.count) / Double(definition.totalCount) * 100)
-              .formatted(.number.precision(.fractionLength(1))) + "%"
-          )
-          .font(.system(size: 15, weight: .medium, design: .rounded))
-          .foregroundStyle(posterSecondary)
-        }
+        stats
       } else {
         Text("Colorvia")
           .font(.system(size: 15, weight: .semibold, design: .serif))
@@ -202,6 +196,28 @@ private struct SubdivisionPosterView: View {
     .frame(maxWidth: .infinity, maxHeight: .infinity)
     .background(Color(red: 0.95, green: 0.97, blue: 0.95))
     .foregroundStyle(Color(red: 0.10, green: 0.19, blue: 0.20))
+  }
+
+  private var header: some View {
+    VStack(spacing: 5) {
+      Text(titleText)
+        .font(.system(size: variant.isStory ? 34 : 27, weight: .bold, design: .rounded))
+      Text("COLORVIA")
+        .font(.system(size: 10, weight: .semibold, design: .rounded))
+        .tracking(3)
+        .foregroundStyle(posterSecondary)
+    }
+  }
+
+  private var stats: some View {
+    VStack(spacing: 7) {
+      Text(countText)
+        .font(.system(size: 21, weight: .semibold, design: .rounded))
+        .minimumScaleFactor(0.7)
+      Text(percentageText)
+        .font(.system(size: 15, weight: .medium, design: .rounded))
+        .foregroundStyle(posterSecondary)
+    }
   }
 
   private var posterMap: some View {

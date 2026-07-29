@@ -170,38 +170,51 @@ private struct FrancePosterView: View {
   let visitedColor: Color
   let size: CGSize
 
+  private var isTall: Bool { size.height > 600 }
+
+  private var departmentCountText: String {
+    "\(visitedCodes.count) / 101 \(L10n.text("france_share.departments"))"
+  }
+
+  private var percentageText: String {
+    let percentage = (Double(visitedCodes.count) / 101 * 100)
+      .formatted(.number.precision(.fractionLength(1)))
+    return L10n.text("france_share.percentage_prefix") + percentage + "%"
+  }
+
   var body: some View {
-    VStack(spacing: size.height > 600 ? 44 : 20) {
-      VStack(spacing: 5) {
-        Text(L10n.text("france_share.poster_title"))
-          .font(.system(size: size.height > 600 ? 34 : 27, weight: .bold, design: .rounded))
-        Text("COLORVIA")
-          .font(.system(size: 10, weight: .semibold, design: .rounded))
-          .tracking(3)
-          .foregroundStyle(Color(red: 0.22, green: 0.42, blue: 0.43))
-      }
-
+    VStack(spacing: isTall ? 44 : 20) {
+      header
       posterMap
-        .frame(height: size.height > 600 ? 540 : 330)
-
-      VStack(spacing: 7) {
-        Text("\(visitedCodes.count) / 101 \(L10n.text("france_share.departments"))")
-          .font(.system(size: 23, weight: .semibold, design: .rounded))
-        Text(
-          L10n.text("france_share.percentage_prefix")
-            + (Double(visitedCodes.count) / 101 * 100).formatted(
-              .number.precision(.fractionLength(1))
-            ) + "%"
-        )
-        .font(.system(size: 15, weight: .medium, design: .rounded))
-        .foregroundStyle(Color(red: 0.28, green: 0.36, blue: 0.37))
-      }
+        .frame(height: isTall ? 540 : 330)
+      stats
     }
     .padding(.horizontal, 38)
-    .padding(.vertical, size.height > 600 ? 76 : 30)
+    .padding(.vertical, isTall ? 76 : 30)
     .frame(maxWidth: .infinity, maxHeight: .infinity)
     .background(Color(red: 0.95, green: 0.97, blue: 0.95))
     .foregroundStyle(Color(red: 0.10, green: 0.19, blue: 0.20))
+  }
+
+  private var header: some View {
+    VStack(spacing: 5) {
+      Text(L10n.text("france_share.poster_title"))
+        .font(.system(size: isTall ? 34 : 27, weight: .bold, design: .rounded))
+      Text("COLORVIA")
+        .font(.system(size: 10, weight: .semibold, design: .rounded))
+        .tracking(3)
+        .foregroundStyle(Color(red: 0.22, green: 0.42, blue: 0.43))
+    }
+  }
+
+  private var stats: some View {
+    VStack(spacing: 7) {
+      Text(departmentCountText)
+        .font(.system(size: 23, weight: .semibold, design: .rounded))
+      Text(percentageText)
+        .font(.system(size: 15, weight: .medium, design: .rounded))
+        .foregroundStyle(Color(red: 0.28, green: 0.36, blue: 0.37))
+    }
   }
 
   private var posterMap: some View {
