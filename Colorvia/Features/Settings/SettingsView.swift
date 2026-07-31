@@ -183,6 +183,15 @@ struct SettingsView: View {
         internalRow(icon: "doc.text", title: L10n.text("settings.terms"))
       }
       NavigationLink {
+        LegalDocumentView(
+          title: InAppArticlePage.commercial.title,
+          url: SupportAPIConfiguration.commercialTransactions,
+          sections: InAppArticlePage.commercial.sections
+        )
+      } label: {
+        internalRow(icon: "building.columns", title: InAppArticlePage.commercial.title)
+      }
+      NavigationLink {
         OpenSourceLicensesView()
       } label: {
         settingLinkRow(
@@ -527,6 +536,7 @@ private enum InAppArticlePage {
   case updates
   case privacy
   case terms
+  case commercial
 
   var title: String {
     switch self {
@@ -535,6 +545,11 @@ private enum InAppArticlePage {
     case .updates: L10n.text("settings.updates")
     case .privacy: L10n.text("settings.privacy")
     case .terms: L10n.text("settings.terms")
+    case .commercial:
+      localizedLegalText(
+        english: "Commercial transactions disclosure",
+        japanese: "特定商取引法に基づく表記"
+      )
     }
   }
 
@@ -610,6 +625,19 @@ private enum InAppArticlePage {
           L10n.text("terms.disclaimer.title"),
           L10n.text("terms.disclaimer.body")
         ),
+      ]
+    case .commercial:
+      [
+        (
+          localizedLegalText(
+            english: "Latest disclosure",
+            japanese: "最新の表記"
+          ),
+          localizedLegalText(
+            english: "Connect to the internet to view the current commercial transactions disclosure on the official Colorvia website.",
+            japanese: "公式Colorviaサイトで最新の特定商取引法に基づく表記を確認するには、インターネットに接続してください。"
+          )
+        )
       ]
     }
   }

@@ -2,10 +2,13 @@ import Foundation
 
 enum SupportAPIConfiguration {
   static let endpoint = URL(
-    string: "https://tomokichi-api.tomoki-ttttt.workers.dev/api/support"
+    string: "https://api.tmkch.io/api/support"
   )!
   static let privacyPolicy = URL(string: "https://colorvia.tmkch.io/privacy")!
   static let termsOfService = URL(string: "https://colorvia.tmkch.io/terms")!
+  static let commercialTransactions = URL(
+    string: "https://colorvia.tmkch.io/commercial-transactions"
+  )!
 }
 
 struct SupportRequest: Codable, Sendable {

@@ -173,7 +173,7 @@ private struct OfflineLegalDocument: View {
   }
 }
 
-private func localizedLegalText(english: String, japanese: String) -> String {
+func localizedLegalText(english: String, japanese: String) -> String {
   let language = Bundle.main.preferredLocalizations.first ?? "en"
   return language.hasPrefix("ja") ? japanese : english
 }
