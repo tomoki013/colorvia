@@ -79,7 +79,7 @@ private struct LegalWebView: UIViewRepresentable {
 
   private static let hideSiteChrome = """
     var style = document.createElement('style');
-    style.textContent = '.mock-header,.mock-footer{display:none !important;}';
+    style.textContent = '.app-site-header,.app-site-footer,.mock-header,.mock-footer{display:none !important;}';
     document.documentElement.appendChild(style);
     """
 
