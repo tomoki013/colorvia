@@ -130,7 +130,6 @@ private struct FranceStatisticsBottomSheet: View {
           .lineLimit(1)
           .padding(.top, 18)
       }
-      Spacer(minLength: 10)
     }
     .frame(maxWidth: .infinity)
     .frame(height: expandedHeight, alignment: .top)
@@ -210,6 +209,7 @@ private struct FranceStatisticsBottomSheet: View {
       }
       .scrollIndicators(.hidden)
     }
+    .frame(maxHeight: .infinity, alignment: .top)
   }
 
   private func statistic(icon: String, value: String, suffix: String) -> some View {

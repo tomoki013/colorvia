@@ -2,7 +2,7 @@ import SwiftUI
 
 struct SettingsView: View {
   @Environment(AppState.self) private var appState
-  @Environment(AdMobConsentManager.self) private var consentManager
+  @Environment(AdServiceController.self) private var adController
   @Environment(\.dismiss) private var dismiss
   @State private var confirmingReset = false
 
@@ -14,7 +14,6 @@ struct SettingsView: View {
         supportSection
         informationSection
         copyrightText
-        developerLinksSection
       }
       .scrollContentBackground(.hidden)
       .background(ColorviaTheme.background)
@@ -153,16 +152,17 @@ struct SettingsView: View {
           showsExternalIndicator: false
         )
       }
-      if consentManager.isPrivacyOptionsRequired {
-        Button {
-          Task { await consentManager.presentPrivacyOptions() }
-        } label: {
-          settingLinkRow(
-            icon: "hand.raised.circle",
-            title: L10n.text("settings.privacy_choices"),
-            showsExternalIndicator: false
-          )
-        }
+      NavigationLink {
+        SupportedRegionsView()
+      } label: {
+        settingLinkRow(
+          icon: "map",
+          title: localizedLegalText(
+            english: "Supported regional maps",
+            japanese: "対応地域一覧"
+          ),
+          showsExternalIndicator: false
+        )
       }
       NavigationLink {
         LegalDocumentView(
@@ -172,6 +172,20 @@ struct SettingsView: View {
         )
       } label: {
         internalRow(icon: "hand.raised", title: L10n.text("settings.privacy"))
+      }
+      if adController.isPrivacyOptionsRequired {
+        Button {
+          Task { await adController.presentPrivacyOptions() }
+        } label: {
+          internalRow(
+            icon: "checkmark.shield",
+            title: localizedLegalText(
+              english: "Ad privacy options",
+              japanese: "広告のプライバシー設定"
+            )
+          )
+        }
+        .foregroundStyle(ColorviaTheme.ink)
       }
       NavigationLink {
         LegalDocumentView(
@@ -211,23 +225,6 @@ struct SettingsView: View {
       .listRowBackground(Color.clear)
       .listRowSeparator(.hidden)
       .padding(.top, 6)
-  }
-
-  private var developerLinksSection: some View {
-    Section {
-      externalRow(
-        icon: "person.crop.circle",
-        title: L10n.text("settings.developer_site"),
-        subtitle: "tomokichi.dev",
-        url: "https://tomokichi.dev"
-      )
-      externalRow(
-        icon: "building.2",
-        title: L10n.text("settings.app_studio"),
-        subtitle: "tmkch.io",
-        url: "https://tmkch.io"
-      )
-    }
   }
 
   private func internalRow(icon: String, title: String) -> some View {
@@ -274,17 +271,6 @@ struct SettingsView: View {
     .foregroundStyle(destructive ? Color.red : ColorviaTheme.ink)
   }
 
-  private func externalRow(
-    icon: String,
-    title: String,
-    subtitle: String? = nil,
-    url: String
-  ) -> some View {
-    Link(destination: URL(string: url)!) {
-      settingLinkRow(icon: icon, title: title, subtitle: subtitle)
-    }
-  }
-
   private var currentLanguageCode: String {
     Locale.current.language.languageCode?.identifier ?? "en"
   }
@@ -298,13 +284,78 @@ struct SettingsView: View {
 private struct AppDetailsView: View {
   var body: some View {
     List {
-      Section {
-        Link(destination: URL(string: "https://colorvia.tmkch.io")!) {
+      Section(
+        localizedLegalText(english: "Version information", japanese: "バージョン情報")
+      ) {
+        LabeledContent(L10n.text("settings.version"), value: appVersion)
+        LabeledContent(
+          localizedLegalText(english: "Build", japanese: "ビルド"),
+          value: buildNumber
+        )
+        LabeledContent(
+          localizedLegalText(english: "Minimum OS", japanese: "対応OS"),
+          value: "iOS 18.0+"
+        )
+      }
+
+      Section(
+        localizedLegalText(english: "App capabilities", japanese: "アプリの機能")
+      ) {
+        detailRow(
+          icon: "person.crop.circle.badge.xmark",
+          title: localizedLegalText(english: "Account", japanese: "アカウント"),
+          value: localizedLegalText(english: "Not required", japanese: "不要")
+        )
+        detailRow(
+          icon: "internaldrive",
+          title: localizedLegalText(english: "Visit data", japanese: "訪問データ"),
+          value: localizedLegalText(english: "Stored on this device", japanese: "この端末内に保存")
+        )
+        detailRow(
+          icon: "wifi.slash",
+          title: localizedLegalText(english: "Maps and search", japanese: "地図と検索"),
+          value: localizedLegalText(english: "Available offline", japanese: "オフライン対応")
+        )
+        detailRow(
+          icon: "rectangle.badge.checkmark",
+          title: localizedLegalText(english: "Advertising", japanese: "広告"),
+          value: advertisingStatus
+        )
+      }
+
+      Section(
+        localizedLegalText(english: "Coverage", japanese: "収録内容")
+      ) {
+        detailRow(
+          icon: "globe",
+          title: localizedLegalText(english: "World map", japanese: "世界地図"),
+          value: localizedLegalText(english: "195 countries", japanese: "195か国")
+        )
+        detailRow(
+          icon: "map",
+          title: localizedLegalText(english: "Regional maps", japanese: "国内地域地図"),
+          value: localizedLegalText(english: "11 countries", japanese: "11か国")
+        )
+        detailRow(
+          icon: "character.bubble",
+          title: localizedLegalText(english: "Interface languages", japanese: "表示言語"),
+          value: localizedLegalText(english: "11 languages", japanese: "11言語")
+        )
+      }
+
+      Section(
+        localizedLegalText(english: "Links and support", japanese: "リンクとサポート")
+      ) {
+        Link(destination: AppConfiguration.current.marketingURL) {
           LabeledContent(L10n.text("settings.official_site"), value: "colorvia.tmkch.io")
         }
-        LabeledContent(L10n.text("settings.version"), value: appVersion)
-        Link(destination: URL(string: "mailto:support@tmkch.io?subject=Colorvia")!) {
-          LabeledContent(L10n.text("settings.email"), value: "support@tmkch.io")
+        Link(destination: AppConfiguration.current.supportURL) {
+          LabeledContent(L10n.text("settings.support"), value: "tmkch.io/support")
+        }
+        if let emailURL = URL(string: "mailto:support@tmkch.io?subject=Colorvia") {
+          Link(destination: emailURL) {
+            LabeledContent(L10n.text("settings.email"), value: "support@tmkch.io")
+          }
         }
       }
     }
@@ -316,6 +367,73 @@ private struct AppDetailsView: View {
 
   private var appVersion: String {
     Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? "1.0.0"
+  }
+
+  private var buildNumber: String {
+    Bundle.main.object(forInfoDictionaryKey: "CFBundleVersion") as? String ?? "1"
+  }
+
+  private var advertisingStatus: String {
+    #if DEBUG
+      localizedLegalText(english: "Google test banner", japanese: "Googleテストバナー")
+    #else
+      localizedLegalText(english: "Disabled", japanese: "無効")
+    #endif
+  }
+
+  private func detailRow(icon: String, title: String, value: String) -> some View {
+    LabeledContent {
+      Text(value)
+        .foregroundStyle(ColorviaTheme.secondaryInk)
+        .multilineTextAlignment(.trailing)
+    } label: {
+      Label(title, systemImage: icon)
+    }
+  }
+}
+
+private struct SupportedRegionsView: View {
+  @Environment(AppState.self) private var appState
+
+  var body: some View {
+    List {
+      Section {
+        ForEach(CountrySubdivisionRegistry.definitions, id: \.countryCode) { definition in
+          HStack(spacing: 12) {
+            Text(country(for: definition.countryCode)?.flag ?? "🗺️")
+              .font(.title2)
+            VStack(alignment: .leading, spacing: 2) {
+              Text(country(for: definition.countryCode)?.localizedName ?? definition.countryCode)
+              Text(
+                localizedLegalText(
+                  english: "\(definition.totalCount) regions",
+                  japanese: "\(definition.totalCount)地域"
+                )
+              )
+                .font(.caption)
+                .foregroundStyle(ColorviaTheme.secondaryInk)
+            }
+          }
+        }
+      } footer: {
+        Text(
+          localizedLegalText(
+            english: "All countries can be recorded on the world map. The countries above also include offline regional maps and place search.",
+            japanese: "世界地図ではすべての国を記録できます。上記の国では、オフラインの国内地域地図と地名検索も利用できます。"
+          )
+        )
+      }
+    }
+    .scrollContentBackground(.hidden)
+    .background(ColorviaTheme.background)
+    .navigationTitle(
+      localizedLegalText(english: "Supported regions", japanese: "対応地域一覧")
+    )
+    .navigationBarTitleDisplayMode(.inline)
+  }
+
+  private func country(for code: String) -> Country? {
+    appState.countries.first { $0.id == code }
   }
 }
 
@@ -454,15 +572,6 @@ private struct DataManagementView: View {
 private struct OpenSourceLicensesView: View {
   var body: some View {
     List {
-      Section(L10n.text("settings.admob_license_title")) {
-        Text(L10n.text("settings.admob_license_description"))
-          .font(.subheadline)
-          .foregroundStyle(ColorviaTheme.secondaryInk)
-        Link(
-          L10n.text("settings.view_source"),
-          destination: URL(string: "https://developers.google.com/admob/ios/download")!
-        )
-      }
       Section("Natural Earth") {
         Text(L10n.text("settings.natural_earth_description"))
           .font(.subheadline)
@@ -601,10 +710,6 @@ private enum InAppArticlePage {
         (
           L10n.text("privacy.storage.title"),
           L10n.text("privacy.storage.body")
-        ),
-        (
-          L10n.text("privacy.ads.title"),
-          L10n.text("privacy.ads.body")
         ),
         (
           L10n.text("privacy.analytics.title"),

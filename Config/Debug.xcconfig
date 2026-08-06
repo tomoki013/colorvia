@@ -1,0 +1,6 @@
+// Google-owned demo IDs. They are safe for development and never used by Release.
+ADS_ENABLED = YES
+CLOUD_SYNC_ENABLED = NO
+ADMOB_APP_ID = ca-app-pub-3940256099942544~1458002511
+ADMOB_BANNER_AD_UNIT_ID = ca-app-pub-3940256099942544/2934735716
+ICLOUD_CONTAINER_ID =

@@ -2,7 +2,6 @@ import GoogleMobileAds
 import SwiftUI
 import UIKit
 
-/// UIKit banner wrapper. Loads once; does not reload in `updateUIView`.
 struct BannerAdView: UIViewRepresentable {
   let onLoadStateChanged: (Bool) -> Void
 
@@ -17,15 +16,11 @@ struct BannerAdView: UIViewRepresentable {
     bannerView.rootViewController = Self.presentingViewController()
     bannerView.backgroundColor = .clear
 
-    let unitID = AdMobConfiguration.bannerAdUnitID
-    if unitID.isEmpty {
-      DispatchQueue.main.async {
-        onLoadStateChanged(false)
-      }
+    if AdMobConfiguration.bannerAdUnitID == nil {
+      DispatchQueue.main.async { onLoadStateChanged(false) }
     } else {
       bannerView.load(Request())
     }
-
     return bannerView
   }
 
@@ -37,11 +32,8 @@ struct BannerAdView: UIViewRepresentable {
 
   private static func presentingViewController() -> UIViewController? {
     let scenes = UIApplication.shared.connectedScenes.compactMap { $0 as? UIWindowScene }
-    let window =
-      scenes
-      .flatMap(\.windows)
-      .first(where: \.isKeyWindow) ?? scenes.first?.windows.first
-    return window?.rootViewController
+    return scenes.flatMap(\.windows).first(where: \.isKeyWindow)?.rootViewController
+      ?? scenes.first?.windows.first?.rootViewController
   }
 
   final class Coordinator: NSObject, BannerViewDelegate {
@@ -56,7 +48,6 @@ struct BannerAdView: UIViewRepresentable {
     }
 
     func bannerView(_ bannerView: BannerView, didFailToReceiveAdWithError error: Error) {
-      print("[AdMob] Banner load failed: \(error.localizedDescription)")
       onLoadStateChanged(false)
     }
   }

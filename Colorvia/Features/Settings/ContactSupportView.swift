@@ -124,7 +124,7 @@ struct ContactSupportView: View {
     let request = SupportRequest(
       requestId: requestID,
       clientId: supportClientID,
-      source: "colorvia-ios",
+      source: SupportAPIConfiguration.source,
       app: "colorvia",
       category: "question",
       name: "",

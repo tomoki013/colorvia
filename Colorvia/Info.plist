@@ -2,10 +2,26 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>GADApplicationIdentifier</key>
+	<key>ADMOB_APP_ID</key>
 	<string>$(ADMOB_APP_ID)</string>
 	<key>ADMOB_BANNER_AD_UNIT_ID</key>
 	<string>$(ADMOB_BANNER_AD_UNIT_ID)</string>
+	<key>ADS_ENABLED</key>
+	<string>$(ADS_ENABLED)</string>
+	<key>CLOUD_SYNC_ENABLED</key>
+	<string>$(CLOUD_SYNC_ENABLED)</string>
+	<key>GADApplicationIdentifier</key>
+	<string>$(ADMOB_APP_ID)</string>
+	<key>ICLOUD_CONTAINER_ID</key>
+	<string>$(ICLOUD_CONTAINER_ID)</string>
+	<key>ITSAppUsesNonExemptEncryption</key>
+	<false/>
+	<key>MARKETING_URL</key>
+	<string>https://colorvia.tmkch.io</string>
+	<key>NSUserTrackingUsageDescription</key>
+	<string>Your permission allows Colorvia to use a device identifier to deliver and measure personalized ads. Your travel records are never shared with advertisers.</string>
+	<key>PRIVACY_POLICY_URL</key>
+	<string>https://colorvia.tmkch.io/privacy</string>
 	<key>SKAdNetworkItems</key>
 	<array>
 		<dict>
@@ -209,5 +225,9 @@
 			<string>3qcr597p9d.skadnetwork</string>
 		</dict>
 	</array>
+	<key>SUPPORT_URL</key>
+	<string>https://tmkch.io/support</string>
+	<key>TERMS_URL</key>
+	<string>https://colorvia.tmkch.io/terms</string>
 </dict>
 </plist>

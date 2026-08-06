@@ -533,6 +533,122 @@ struct AppStateTests {
     #expect(migrated.subdivisionCodesByCountry["FR"] == ["FR-75"])
   }
 
+  @Test func resetClearsCountriesRegionsAndPersistedData() async throws {
+    let repository = MemoryVisitStateRepository()
+    let state = await AppState(defaults: testDefaults(), repository: repository)
+    await state.load()
+    await state.setVisited(true, countryCode: "JP")
+    await state.replaceVisitedPrefectures(with: ["JP-13"])
+
+    await state.resetAllData()
+
+    #expect(await state.visitedCodes.isEmpty)
+    #expect(await state.visitedPrefectureCodes.isEmpty)
+    let persisted = await repository.snapshot()
+    #expect(persisted.countryStates.isEmpty)
+    #expect(persisted.regionStates.isEmpty)
+  }
+
+  @Test func externalServicesAreSafeWhenDisabledAndIDsAreMissing() async {
+    let configuration = AppConfiguration(
+      adsEnabled: false,
+      cloudSyncEnabled: false,
+      admobAppID: " ",
+      bannerAdUnitID: nil,
+      privacyPolicyURL: URL(string: "https://tmkch.io/privacy")!,
+      termsURL: URL(string: "https://tmkch.io/terms")!,
+      supportURL: URL(string: "https://tmkch.io/support")!,
+      marketingURL: URL(string: "https://tmkch.io/apps/colorvia")!
+    )
+    let service = DisabledAdService()
+
+    await service.initialize()
+
+    #expect(!configuration.adsEnabled)
+    #expect(!configuration.cloudSyncEnabled)
+    #expect(configuration.admobAppID == nil)
+    #expect(!configuration.hasCompleteAdMobConfiguration)
+    #expect(await !service.canShowAds)
+  }
+
+  @Test func productionAdsStayOffWhenConsentIsNotGranted() async {
+    let configuration = Self.adsEnabledConfiguration
+    let consent = await FakeConsentGatherer(canRequestAds: false)
+    let tracking = await FakeTrackingAuthorizationProvider()
+    let service = await ProductionAdMobService(
+      configuration: configuration,
+      trackingAuthorization: tracking,
+      consent: consent
+    )
+
+    await service.initialize()
+
+    #expect(await consent.gatherCallCount == 1)
+    #expect(await tracking.requestCallCount == 1)
+    #expect(await !service.canShowAds)
+  }
+
+  @Test func productionAdsNeverAskForConsentWhileAdsAreDisabled() async {
+    let consent = await FakeConsentGatherer(canRequestAds: true)
+    let tracking = await FakeTrackingAuthorizationProvider()
+    let service = await ProductionAdMobService(
+      configuration: Self.adsDisabledConfiguration,
+      trackingAuthorization: tracking,
+      consent: consent
+    )
+
+    await service.initialize()
+
+    #expect(await consent.gatherCallCount == 0)
+    #expect(await tracking.requestCallCount == 0)
+    #expect(await !service.canShowAds)
+  }
+
+  private static var adsEnabledConfiguration: AppConfiguration {
+    AppConfiguration(
+      adsEnabled: true,
+      cloudSyncEnabled: false,
+      admobAppID: "ca-app-pub-0000000000000000~0000000000",
+      bannerAdUnitID: "ca-app-pub-0000000000000000/0000000000",
+      privacyPolicyURL: URL(string: "https://colorvia.tmkch.io/privacy")!,
+      termsURL: URL(string: "https://colorvia.tmkch.io/terms")!,
+      supportURL: URL(string: "https://tmkch.io/support")!,
+      marketingURL: URL(string: "https://colorvia.tmkch.io")!
+    )
+  }
+
+  private static var adsDisabledConfiguration: AppConfiguration {
+    AppConfiguration(
+      adsEnabled: false,
+      cloudSyncEnabled: false,
+      admobAppID: "ca-app-pub-0000000000000000~0000000000",
+      bannerAdUnitID: "ca-app-pub-0000000000000000/0000000000",
+      privacyPolicyURL: URL(string: "https://colorvia.tmkch.io/privacy")!,
+      termsURL: URL(string: "https://colorvia.tmkch.io/terms")!,
+      supportURL: URL(string: "https://tmkch.io/support")!,
+      marketingURL: URL(string: "https://colorvia.tmkch.io")!
+    )
+  }
+
+  @Test func legalDocumentsUseJapaneseOnlyForJapaneseAndEnglishOtherwise() {
+    let privacyURL = URL(string: "https://colorvia.tmkch.io/privacy")!
+
+    #expect(
+      localizedLegalText(english: "Privacy", japanese: "プライバシー", language: "ja-JP")
+        == "プライバシー"
+    )
+    #expect(
+      localizedLegalText(english: "Privacy", japanese: "プライバシー", language: "fr")
+        == "Privacy"
+    )
+    #expect(
+      localizedLegalURL(privacyURL, language: "ja")
+        == URL(string: "https://colorvia.tmkch.io/ja/privacy")
+    )
+    #expect(localizedLegalURL(privacyURL, language: "en") == privacyURL)
+    #expect(localizedLegalURL(privacyURL, language: "ko") == privacyURL)
+  }
+
   @Test func iCloudConflictResolverChoosesTheNewerSnapshot() {
     let older = Date(timeIntervalSince1970: 100)
     let newer = Date(timeIntervalSince1970: 200)
@@ -594,6 +710,35 @@ struct AppStateTests {
   }
 }
 
+@MainActor
+private final class FakeConsentGatherer: ConsentGathering {
+  let canRequestAds: Bool
+  var isPrivacyOptionsRequired = false
+  private(set) var gatherCallCount = 0
+  private(set) var privacyOptionsCallCount = 0
+
+  init(canRequestAds: Bool) {
+    self.canRequestAds = canRequestAds
+  }
+
+  func gatherIfNeeded() async {
+    gatherCallCount += 1
+  }
+
+  func presentPrivacyOptions() async {
+    privacyOptionsCallCount += 1
+  }
+}
+
+@MainActor
+private final class FakeTrackingAuthorizationProvider: TrackingAuthorizationProviding {
+  private(set) var requestCallCount = 0
+
+  func requestIfNeeded() async {
+    requestCallCount += 1
+  }
+}
+
 private actor MemoryVisitStateRepository: VisitStateRepository {
   private var data = VisitData()
 
@@ -603,5 +748,9 @@ private actor MemoryVisitStateRepository: VisitStateRepository {
 
   func saveData(_ data: VisitData) async throws {
     self.data = data
+  }
+
+  func snapshot() -> VisitData {
+    data
   }
 }

@@ -9,7 +9,8 @@
 - Xcode 26.6+
 - iOS 18+
 - SwiftUI / Observation
-- Google Mobile Ads SDK (banner ads + UMP consent) via Swift Package Manager
+- No account, backend, or iCloud capability is required
+- Debug shows Google demo banners; Release serves production AdMob banners after UMP + ATT consent
 
 ```sh
 xcodegen generate
@@ -20,4 +21,5 @@ xcodebuild -project Colorvia.xcodeproj -scheme Colorvia \
 Map geometry is derived from public-domain Natural Earth data. See
 `Documentation/MAP_DATA.md`.
 
-AdMob setup (production IDs, `app-ads.txt`, privacy): `Documentation/ADMOB.md`.
+Advertising is on in both Debug (demo units) and Release (production units); iCloud
+sync is still off. See `Documentation/EXTERNAL_SERVICES.md` and `Documentation/ADMOB.md`.

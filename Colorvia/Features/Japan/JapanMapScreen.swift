@@ -100,8 +100,6 @@ private struct JapanStatisticsBottomSheet: View {
           .padding(.top, 18)
           .transition(.opacity)
       }
-
-      Spacer(minLength: 10)
     }
     .frame(maxWidth: .infinity)
     .frame(height: expandedHeight, alignment: .top)

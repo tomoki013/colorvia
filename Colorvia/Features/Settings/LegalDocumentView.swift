@@ -34,7 +34,7 @@ struct LegalDocumentView: View {
             .foregroundStyle(ColorviaTheme.secondaryInk)
         }
       case .online:
-        LegalWebView(url: url) {
+        LegalWebView(url: localizedURL) {
           availability = .offline
         }
         .ignoresSafeArea(edges: .bottom)
@@ -44,13 +44,13 @@ struct LegalDocumentView: View {
     }
     .navigationTitle(title)
     .navigationBarTitleDisplayMode(.inline)
-    .task(id: url) {
+    .task(id: localizedURL) {
       await checkAvailability()
     }
   }
 
   private func checkAvailability() async {
-    var request = URLRequest(url: url)
+    var request = URLRequest(url: localizedURL)
     request.httpMethod = "GET"
     request.timeoutInterval = 5
     request.cachePolicy = .reloadIgnoringLocalCacheData
@@ -70,6 +70,10 @@ struct LegalDocumentView: View {
     } catch {
       availability = .offline
     }
+  }
+
+  private var localizedURL: URL {
+    localizedLegalURL(url)
   }
 }
 
@@ -173,7 +177,28 @@ private struct OfflineLegalDocument: View {
   }
 }
 
-func localizedLegalText(english: String, japanese: String) -> String {
-  let language = Bundle.main.preferredLocalizations.first ?? "en"
-  return language.hasPrefix("ja") ? japanese : english
+func localizedLegalText(
+  english: String,
+  japanese: String,
+  language: String = appContentLanguage
+) -> String {
+  language.lowercased().hasPrefix("ja") ? japanese : english
+}
+
+func localizedLegalURL(
+  _ englishURL: URL,
+  language: String = appContentLanguage
+) -> URL {
+  guard language.lowercased().hasPrefix("ja") else { return englishURL }
+  guard var components = URLComponents(url: englishURL, resolvingAgainstBaseURL: false) else {
+    return englishURL
+  }
+  let path = components.path.hasPrefix("/") ? components.path : "/\(components.path)"
+  components.path = "/ja\(path)"
+  return components.url ?? englishURL
+}
+
+private var appContentLanguage: String {
+  let preferred = Bundle.main.preferredLocalizations.first?.lowercased() ?? "en"
+  return preferred.hasPrefix("ja") ? "ja" : "en"
 }
