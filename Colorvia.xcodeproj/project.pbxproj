@@ -91,6 +91,7 @@
 		EC420C5F26223C342B332BDB /* prefectures.json in Resources */ = {isa = PBXBuildFile; fileRef = 7409206E2ED969BC382279D2 /* prefectures.json */; };
 		EE538A79A0EC88793B5F8397 /* LegalDocumentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CE52F38EFB09EDF7645224 /* LegalDocumentView.swift */; };
 		F026C5E0EA0E394C5F4F7D82 /* countries.json in Resources */ = {isa = PBXBuildFile; fileRef = 0BC09B273BF476F90E5E7241 /* countries.json */; };
+		F1C46299B2AB42C90EA2A47B /* PurchaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F771C498725366707C0271 /* PurchaseManager.swift */; };
 		F34D1DFF27AE6FA0B0BB1663 /* FranceDepartmentListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7814D2D45592ABCAA4A8E21B /* FranceDepartmentListView.swift */; };
 		F469535ABD213BA8DFD40884 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A0FA03D4355BD1F490FE3B4 /* Country.swift */; };
 		F7A2AFDA6E7D7F838AFD31F0 /* tr-place-search-index.json in Resources */ = {isa = PBXBuildFile; fileRef = 685509F4D226B24460F481BF /* tr-place-search-index.json */; };
@@ -156,6 +157,7 @@
 		7C0657E346137DAB2461126A /* JapanMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JapanMapView.swift; sourceTree = "<group>"; };
 		7E5CB462AC0E7937E73A4087 /* kr-place-search-index.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "kr-place-search-index.json"; sourceTree = "<group>"; };
 		8285A0001343A486C18A5684 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		85F771C498725366707C0271 /* PurchaseManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PurchaseManager.swift; path = PurchaseManager.swift; sourceTree = "<group>"; };
 		860D0D68DBF538BC1C34B550 /* CountryPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryPickerView.swift; sourceTree = "<group>"; };
 		861527F7663B05711A617077 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8A0567673CE31008D3B179D8 /* PrefectureListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrefectureListView.swift; sourceTree = "<group>"; };
@@ -224,6 +226,15 @@
 				C5E451573C611F504FD2ACBD /* ColorviaTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		0A52B6728B1CD4AF0591FF36 /* Purchases */ = {
+			isa = PBXGroup;
+			children = (
+				85F771C498725366707C0271 /* PurchaseManager.swift */,
+			);
+			name = Purchases;
+			path = Purchases;
 			sourceTree = "<group>";
 		};
 		1C6AB602D3FB5D1E8AC85427 /* ColorviaTests */ = {
@@ -343,6 +354,7 @@
 				E9FFDB353FE4ED2545766C3D /* DesignSystem */,
 				4819F9B78CA8B4F7A34680BA /* Features */,
 				C63854B0FDEDBBF0E3C7E202 /* Resources */,
+				0A52B6728B1CD4AF0591FF36 /* Purchases */,
 			);
 			path = Colorvia;
 			sourceTree = "<group>";
@@ -569,8 +581,6 @@
 				68F063236BB5165B417A4E1E /* PBXTargetDependency */,
 			);
 			name = ColorviaTests;
-			packageProductDependencies = (
-			);
 			productName = ColorviaTests;
 			productReference = C5E451573C611F504FD2ACBD /* ColorviaTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -751,6 +761,7 @@
 				065436C2D4CF3E5FB0187603 /* VisitDataDocument.swift in Sources */,
 				47CB5430C115CC15A647DC3C /* WorldMapStore.swift in Sources */,
 				B8CABB666298D49AC52FBCAF /* WorldMapView.swift in Sources */,
+				F1C46299B2AB42C90EA2A47B /* PurchaseManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

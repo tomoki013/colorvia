@@ -3,12 +3,15 @@ import SwiftUI
 struct SettingsView: View {
   @Environment(AppState.self) private var appState
   @Environment(AdServiceController.self) private var adController
+  @Environment(AdEntitlementStore.self) private var entitlementStore
+  @Environment(PurchaseManager.self) private var purchaseManager
   @Environment(\.dismiss) private var dismiss
   @State private var confirmingReset = false
 
   var body: some View {
     NavigationStack {
       List {
+        removeAdsSection
         personalizationSection
         dataSection
         supportSection
@@ -97,6 +100,74 @@ struct SettingsView: View {
         )
       }
     }
+  }
+
+  @ViewBuilder
+  private var removeAdsSection: some View {
+    if AppConfiguration.current.adsEnabled {
+      Section {
+        removeAdsCard
+      }
+      .listRowInsets(EdgeInsets())
+      .listRowBackground(Color.clear)
+    }
+  }
+
+  private var removeAdsCard: some View {
+    VStack(alignment: .leading, spacing: 14) {
+      Label(
+        entitlementStore.isAdFree
+          ? L10n.text("settings.remove_ads_thanks_title") : L10n.text("settings.remove_ads"),
+        systemImage: entitlementStore.isAdFree ? "checkmark.seal.fill" : "rectangle.slash"
+      )
+      .font(.headline)
+      .foregroundStyle(ColorviaTheme.ink)
+
+      Text(
+        entitlementStore.isAdFree
+          ? L10n.text("settings.remove_ads_thanks_message") : L10n.text("settings.remove_ads_footer")
+      )
+      .font(.subheadline)
+      .foregroundStyle(ColorviaTheme.secondaryInk)
+      .fixedSize(horizontal: false, vertical: true)
+
+      if !entitlementStore.isAdFree {
+        Button {
+          Task { await purchaseManager.purchaseRemoveAds() }
+        } label: {
+          HStack {
+            if purchaseManager.purchaseInFlight {
+              ProgressView()
+                .tint(ColorviaTheme.background)
+            }
+            Text(L10n.text("settings.remove_ads"))
+            Spacer()
+            if let price = purchaseManager.removeAdsProduct?.displayPrice {
+              Text(price)
+            }
+          }
+          .font(.subheadline.weight(.semibold))
+          .foregroundStyle(ColorviaTheme.background)
+          .padding(.horizontal, 16)
+          .frame(height: 48)
+          .background(ColorviaTheme.accentDeep, in: RoundedRectangle(cornerRadius: 12))
+        }
+        .buttonStyle(.plain)
+        .disabled(purchaseManager.removeAdsProduct == nil || purchaseManager.purchaseInFlight)
+      }
+
+      Button {
+        Task { await purchaseManager.restorePurchases() }
+      } label: {
+        Text(L10n.text("settings.restore_purchases"))
+      }
+      .font(.caption)
+      .foregroundStyle(ColorviaTheme.secondaryInk)
+      .disabled(purchaseManager.purchaseInFlight)
+    }
+    .padding(18)
+    .frame(maxWidth: .infinity, alignment: .leading)
+    .background(ColorviaTheme.card, in: RoundedRectangle(cornerRadius: 20))
   }
 
   private var dataSection: some View {
@@ -282,6 +353,9 @@ struct SettingsView: View {
 }
 
 private struct AppDetailsView: View {
+  @Environment(AdServiceController.self) private var adController
+  @Environment(AdEntitlementStore.self) private var entitlementStore
+
   var body: some View {
     List {
       Section(
@@ -374,10 +448,15 @@ private struct AppDetailsView: View {
   }
 
   private var advertisingStatus: String {
+    if entitlementStore.isAdFree {
+      return localizedLegalText(english: "Removed (purchased)", japanese: "削除済み(購入済み)")
+    }
     #if DEBUG
-      localizedLegalText(english: "Google test banner", japanese: "Googleテストバナー")
+      return localizedLegalText(english: "Google test banner", japanese: "Googleテストバナー")
     #else
-      localizedLegalText(english: "Disabled", japanese: "無効")
+      return adController.canShowAds
+        ? localizedLegalText(english: "Enabled", japanese: "有効")
+        : localizedLegalText(english: "Disabled", japanese: "無効")
     #endif
   }
 
