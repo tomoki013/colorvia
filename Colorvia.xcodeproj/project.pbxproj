@@ -25,6 +25,7 @@
 		2C44FF20E6D4ED021C557D8C /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FAE63DD192DB49310C45B5E /* RootView.swift */; };
 		2DBB3C7D89D861228E16A65C /* FranceMapScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF05AA7C7839AE5D18E6F34 /* FranceMapScreen.swift */; };
 		2F0DFDE058D58746AA2312C8 /* Prefecture.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53B993D75FE982A8E737A9D /* Prefecture.swift */; };
+		3365FF2E48DBF5C690AA378E /* PurchaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01FF43388363773DBF4E2A1 /* PurchaseManager.swift */; };
 		33D50579A9AAC1515ADB75A0 /* ContactSupportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D755BC07691D7AB758EECCDE /* ContactSupportView.swift */; };
 		3B1063F5AB294789B9A3437B /* world-map.json in Resources */ = {isa = PBXBuildFile; fileRef = 520C0FB967AE13AAAE8DFBC5 /* world-map.json */; };
 		3C1B050D42480CA831161B68 /* us-source-regions.json in Resources */ = {isa = PBXBuildFile; fileRef = 500413565FA4B9B4892BEB39 /* us-source-regions.json */; };
@@ -67,6 +68,7 @@
 		AA135A527108673EB7EB4D72 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = AAC4B26D76933C9E6296C198 /* PrivacyInfo.xcprivacy */; };
 		ABA6531F58064270E4257E6F /* france-departments.json in Resources */ = {isa = PBXBuildFile; fileRef = 3CFCDACF240E1F4A1FF5B43E /* france-departments.json */; };
 		ABDBD70EFC964EA0D71FAE9C /* be-place-search-index.json in Resources */ = {isa = PBXBuildFile; fileRef = 31C27495BF28523539D33FEA /* be-place-search-index.json */; };
+		AD996EB957EA05F2CF6ECE37 /* AppStoreScreenshotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9DBFFC701F20E1917A2053 /* AppStoreScreenshotTests.swift */; };
 		AE1AFF988FAA2477F5B91203 /* SubdivisionMapScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BDBFCFC63E053860D1472A /* SubdivisionMapScreen.swift */; };
 		B00B77DCE07C715B8AA88A28 /* CountrySubdivision.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97569D652F710198CBB7047 /* CountrySubdivision.swift */; };
 		B4D96BAD6715EFD4292A770C /* AppStateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C521C79E2753A0A22EC61A /* AppStateTests.swift */; };
@@ -91,7 +93,6 @@
 		EC420C5F26223C342B332BDB /* prefectures.json in Resources */ = {isa = PBXBuildFile; fileRef = 7409206E2ED969BC382279D2 /* prefectures.json */; };
 		EE538A79A0EC88793B5F8397 /* LegalDocumentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CE52F38EFB09EDF7645224 /* LegalDocumentView.swift */; };
 		F026C5E0EA0E394C5F4F7D82 /* countries.json in Resources */ = {isa = PBXBuildFile; fileRef = 0BC09B273BF476F90E5E7241 /* countries.json */; };
-		F1C46299B2AB42C90EA2A47B /* PurchaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F771C498725366707C0271 /* PurchaseManager.swift */; };
 		F34D1DFF27AE6FA0B0BB1663 /* FranceDepartmentListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7814D2D45592ABCAA4A8E21B /* FranceDepartmentListView.swift */; };
 		F469535ABD213BA8DFD40884 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A0FA03D4355BD1F490FE3B4 /* Country.swift */; };
 		F7A2AFDA6E7D7F838AFD31F0 /* tr-place-search-index.json in Resources */ = {isa = PBXBuildFile; fileRef = 685509F4D226B24460F481BF /* tr-place-search-index.json */; };
@@ -100,6 +101,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		0131876C3516FE71382DC12D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 432F661559AFFE726C767D24 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7E79EDC6BEB77A6B93C94113;
+			remoteInfo = Colorvia;
+		};
 		EB468906DEC9C9E83EDA5360 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 432F661559AFFE726C767D24 /* Project object */;
@@ -157,7 +165,6 @@
 		7C0657E346137DAB2461126A /* JapanMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JapanMapView.swift; sourceTree = "<group>"; };
 		7E5CB462AC0E7937E73A4087 /* kr-place-search-index.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "kr-place-search-index.json"; sourceTree = "<group>"; };
 		8285A0001343A486C18A5684 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
-		85F771C498725366707C0271 /* PurchaseManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PurchaseManager.swift; path = PurchaseManager.swift; sourceTree = "<group>"; };
 		860D0D68DBF538BC1C34B550 /* CountryPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryPickerView.swift; sourceTree = "<group>"; };
 		861527F7663B05711A617077 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8A0567673CE31008D3B179D8 /* PrefectureListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrefectureListView.swift; sourceTree = "<group>"; };
@@ -170,6 +177,7 @@
 		9B364C0C761ACDF804AAFB56 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		9CEEE051D57ED64054C2E3FD /* ColorviaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorviaApp.swift; sourceTree = "<group>"; };
 		9F7432E1D1B0C7F76039CE60 /* VisitDataDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitDataDocument.swift; sourceTree = "<group>"; };
+		A01FF43388363773DBF4E2A1 /* PurchaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseManager.swift; sourceTree = "<group>"; };
 		A2CE52F38EFB09EDF7645224 /* LegalDocumentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegalDocumentView.swift; sourceTree = "<group>"; };
 		A73CFE93E0B2158A4FF2BD1E /* FileVisitStateRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileVisitStateRepository.swift; sourceTree = "<group>"; };
 		A9A117E1C8E09450D9A13433 /* PlaceSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceSearch.swift; sourceTree = "<group>"; };
@@ -195,9 +203,11 @@
 		D97569D652F710198CBB7047 /* CountrySubdivision.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountrySubdivision.swift; sourceTree = "<group>"; };
 		DA63DB3C3DBCE86665B054CD /* WorldMapStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldMapStore.swift; sourceTree = "<group>"; };
 		DB0B37140D85DCD2FC6DC090 /* my-subdivisions.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "my-subdivisions.json"; sourceTree = "<group>"; };
+		DD9DBFFC701F20E1917A2053 /* AppStoreScreenshotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoreScreenshotTests.swift; sourceTree = "<group>"; };
 		DF641294B6B841D569BC7C8C /* th-map.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "th-map.json"; sourceTree = "<group>"; };
 		E4BE1AA59C3E2E148B13FC6C /* AppRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRoute.swift; sourceTree = "<group>"; };
 		E5C3A8AE91C7619DF148C066 /* france-map.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "france-map.json"; sourceTree = "<group>"; };
+		EDADC84FBBCB487FE09319A7 /* ColorviaUITests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = ColorviaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE1BD3F91D2987B8D1824934 /* Colorvia.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Colorvia.entitlements; sourceTree = "<group>"; };
 		EEF05AA7C7839AE5D18E6F34 /* FranceMapScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FranceMapScreen.swift; sourceTree = "<group>"; };
 		F0E0F586F476D73800097440 /* th-subdivisions.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "th-subdivisions.json"; sourceTree = "<group>"; };
@@ -224,17 +234,9 @@
 			children = (
 				063DCF90BE28079DC8068201 /* Colorvia.app */,
 				C5E451573C611F504FD2ACBD /* ColorviaTests.xctest */,
+				EDADC84FBBCB487FE09319A7 /* ColorviaUITests.xctest */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		0A52B6728B1CD4AF0591FF36 /* Purchases */ = {
-			isa = PBXGroup;
-			children = (
-				85F771C498725366707C0271 /* PurchaseManager.swift */,
-			);
-			name = Purchases;
-			path = Purchases;
 			sourceTree = "<group>";
 		};
 		1C6AB602D3FB5D1E8AC85427 /* ColorviaTests */ = {
@@ -353,8 +355,8 @@
 				9ED41B007C35A51CBC7C5ED0 /* Core */,
 				E9FFDB353FE4ED2545766C3D /* DesignSystem */,
 				4819F9B78CA8B4F7A34680BA /* Features */,
+				B8C4D4F37B8AB43F0AC6C25E /* Purchases */,
 				C63854B0FDEDBBF0E3C7E202 /* Resources */,
-				0A52B6728B1CD4AF0591FF36 /* Purchases */,
 			);
 			path = Colorvia;
 			sourceTree = "<group>";
@@ -379,6 +381,14 @@
 			path = WorldMap;
 			sourceTree = "<group>";
 		};
+		823C719D945EF77A73EDD5A8 /* ColorviaUITests */ = {
+			isa = PBXGroup;
+			children = (
+				DD9DBFFC701F20E1917A2053 /* AppStoreScreenshotTests.swift */,
+			);
+			path = ColorviaUITests;
+			sourceTree = "<group>";
+		};
 		873882CFC36156F0FCFF78A7 /* CountryPicker */ = {
 			isa = PBXGroup;
 			children = (
@@ -392,6 +402,7 @@
 			children = (
 				5CBE842AFF7B05A7928EE5A1 /* Colorvia */,
 				1C6AB602D3FB5D1E8AC85427 /* ColorviaTests */,
+				823C719D945EF77A73EDD5A8 /* ColorviaUITests */,
 				DBB30FC876F59056832552BF /* Config */,
 				000210169D96D2D395A3CCDA /* Products */,
 			);
@@ -426,6 +437,14 @@
 				6C86EDB695F0F79B8AF626AD /* WorldMap */,
 			);
 			path = Core;
+			sourceTree = "<group>";
+		};
+		B8C4D4F37B8AB43F0AC6C25E /* Purchases */ = {
+			isa = PBXGroup;
+			children = (
+				A01FF43388363773DBF4E2A1 /* PurchaseManager.swift */,
+			);
+			path = Purchases;
 			sourceTree = "<group>";
 		};
 		C63854B0FDEDBBF0E3C7E202 /* Resources */ = {
@@ -548,6 +567,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		217FB4C455613FFADC87D5EE /* ColorviaUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3D3703E3F9C94622F389007B /* Build configuration list for PBXNativeTarget "ColorviaUITests" */;
+			buildPhases = (
+				88E9A0EE1907E7A151390BEB /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				36478DB21752939601C661E1 /* PBXTargetDependency */,
+			);
+			name = ColorviaUITests;
+			packageProductDependencies = (
+			);
+			productName = ColorviaUITests;
+			productReference = EDADC84FBBCB487FE09319A7 /* ColorviaUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		7E79EDC6BEB77A6B93C94113 /* Colorvia */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6700EBAF2879D20E7923A0EA /* Build configuration list for PBXNativeTarget "Colorvia" */;
@@ -581,6 +618,8 @@
 				68F063236BB5165B417A4E1E /* PBXTargetDependency */,
 			);
 			name = ColorviaTests;
+			packageProductDependencies = (
+			);
 			productName = ColorviaTests;
 			productReference = C5E451573C611F504FD2ACBD /* ColorviaTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -594,6 +633,11 @@
 				BuildIndependentTargetsInParallel = YES;
 				LastUpgradeCheck = 1430;
 				TargetAttributes = {
+					217FB4C455613FFADC87D5EE = {
+						DevelopmentTeam = 7GU925RQ99;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 7E79EDC6BEB77A6B93C94113;
+					};
 					7E79EDC6BEB77A6B93C94113 = {
 						DevelopmentTeam = 7GU925RQ99;
 						ProvisioningStyle = Automatic;
@@ -633,6 +677,7 @@
 			targets = (
 				7E79EDC6BEB77A6B93C94113 /* Colorvia */,
 				870207106C29BA655475DE38 /* ColorviaTests */,
+				217FB4C455613FFADC87D5EE /* ColorviaUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -750,6 +795,7 @@
 				944F69693C6E135D4205B1B9 /* PlaceSearch.swift in Sources */,
 				2F0DFDE058D58746AA2312C8 /* Prefecture.swift in Sources */,
 				E1A16FF6CEFF6950717CA547 /* PrefectureListView.swift in Sources */,
+				3365FF2E48DBF5C690AA378E /* PurchaseManager.swift in Sources */,
 				2C44FF20E6D4ED021C557D8C /* RootView.swift in Sources */,
 				A5ADC63ADDE72D2C13CEF1DA /* SettingsView.swift in Sources */,
 				A20716DCCEABC4F9C02980C1 /* StatisticsView.swift in Sources */,
@@ -761,7 +807,14 @@
 				065436C2D4CF3E5FB0187603 /* VisitDataDocument.swift in Sources */,
 				47CB5430C115CC15A647DC3C /* WorldMapStore.swift in Sources */,
 				B8CABB666298D49AC52FBCAF /* WorldMapView.swift in Sources */,
-				F1C46299B2AB42C90EA2A47B /* PurchaseManager.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		88E9A0EE1907E7A151390BEB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AD996EB957EA05F2CF6ECE37 /* AppStoreScreenshotTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -776,6 +829,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		36478DB21752939601C661E1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7E79EDC6BEB77A6B93C94113 /* Colorvia */;
+			targetProxy = 0131876C3516FE71382DC12D /* PBXContainerItemProxy */;
+		};
 		68F063236BB5165B417A4E1E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 7E79EDC6BEB77A6B93C94113 /* Colorvia */;
@@ -784,6 +842,22 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		01ADF0E582A42543CA2CA03A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = io.tmkch.colorvia.uitests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Colorvia;
+			};
+			name = Debug;
+		};
 		1564ACAFC03AF1675FA45C82 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = CCB17EA43F3D9C7DC090A8C2 /* Release.xcconfig */;
@@ -821,7 +895,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 7;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 7GU925RQ99;
 				ENABLE_NS_ASSERTIONS = NO;
@@ -939,7 +1013,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 7;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = 7GU925RQ99;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -995,9 +1069,34 @@
 			};
 			name = Release;
 		};
+		C661E5B825D20036B08632E8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = io.tmkch.colorvia.uitests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Colorvia;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		3D3703E3F9C94622F389007B /* Build configuration list for PBXNativeTarget "ColorviaUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				01ADF0E582A42543CA2CA03A /* Debug */,
+				C661E5B825D20036B08632E8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
 		6700EBAF2879D20E7923A0EA /* Build configuration list for PBXNativeTarget "Colorvia" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

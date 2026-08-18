@@ -32,6 +32,7 @@ struct HomeView: View {
             .padding(.horizontal, 14)
             .padding(.top, 6)
             .padding(.bottom, collapsedHeight - 22)
+            .accessibilityIdentifier("world-map")
           }
 
           if !isStatisticsExpanded {
@@ -122,6 +123,7 @@ struct HomeView: View {
             .contentShape(Rectangle())
         }
         .accessibilityLabel(L10n.text("settings.title"))
+        .accessibilityIdentifier("settings-button")
       }
       .font(.system(size: 23, weight: .regular))
     }
@@ -144,6 +146,7 @@ struct HomeView: View {
         .shadow(color: ColorviaTheme.ink.opacity(0.18), radius: 12, y: 6)
     }
     .accessibilityLabel(L10n.text("home.add_country"))
+    .accessibilityIdentifier("add-country-button")
   }
 }
 
@@ -189,6 +192,7 @@ private struct StatisticsBottomSheet: View {
         isExpanded.toggle()
       }
     }
+    .accessibilityIdentifier("statistics-sheet")
   }
 
   private var dragHandle: some View {
