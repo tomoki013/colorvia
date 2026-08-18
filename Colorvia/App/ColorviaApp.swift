@@ -54,6 +54,18 @@ enum ScreenshotMode {
     return args[index + 1]
   }
 
+  /// Country code to land HomeView's NavigationStack on directly, e.g. `JP`
+  /// to open Japan's SubdivisionMapScreen instead of the world map — lets
+  /// screenshot capture reach a screen no amount of launch-time seeding can
+  /// put you on without an actual tap.
+  static var subdivisionCountryCode: String? {
+    let args = ProcessInfo.processInfo.arguments
+    guard let index = args.firstIndex(of: "-ScreenshotSubdivision"), index + 1 < args.count else {
+      return nil
+    }
+    return args[index + 1]
+  }
+
   /// A representative spread across continents so the map and statistics
   /// screens both look genuinely used rather than empty.
   private static let demoVisitedCountries: Set<String> = [
@@ -74,5 +86,16 @@ enum ScreenshotMode {
     // persisted from an earlier screenshot launch never bleeds into this one.
     appState.setMapColor(variant == "coral" ? .coral : .teal)
     appState.setAppearance(variant == "dark" ? .dark : .light)
+
+    // A capture of Japan's SubdivisionMapScreen with only the seed onboarding
+    // ran through — 3 of 47 prefectures — reads as barely used. Fill in a
+    // representative spread (roughly every third prefecture) so the map
+    // actually looks like a travelled country.
+    if subdivisionCountryCode == "JP" {
+      let spread = Set(
+        appState.prefectures.enumerated().filter { $0.offset % 3 == 0 }.map(\.element.id)
+      )
+      await appState.replaceVisitedPrefectures(with: spread)
+    }
   }
 }

@@ -58,6 +58,15 @@ struct HomeView: View {
         BannerAdContainer(isEnabled: isBannerLayoutAllowed)
           .frame(maxWidth: .infinity)
       }
+      .task {
+        guard let code = ScreenshotMode.subdivisionCountryCode else { return }
+        // HomeView can appear before the app-level ScreenshotMode.apply(to:)
+        // task finishes seeding visitedCodes; without this the destination's
+        // `visitedCodes.contains(countryCode)` guard fails and we'd land on
+        // SubdivisionCountryDetailView instead of the actual map screen.
+        try? await Task.sleep(for: .milliseconds(300))
+        path = [.subdivisionMap(countryCode: code)]
+      }
       .navigationDestination(for: AppRoute.self) { route in
         switch route {
         case .countryDetail(let countryCode):
