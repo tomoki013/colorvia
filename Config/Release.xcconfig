@@ -1,0 +1,10 @@
+// Production external-service values.
+// The Release build phase fails when ads are enabled without both AdMob identifiers.
+ADS_ENABLED = YES
+CLOUD_SYNC_ENABLED = NO
+// AdMob identifiers for Colorvia (Tomokichi App Studio).
+// ~  → AdMob App ID (Info.plist GADApplicationIdentifier)
+// /  → Banner ad unit ID
+ADMOB_APP_ID = ca-app-pub-8687520805381056~7543227876
+ADMOB_BANNER_AD_UNIT_ID = ca-app-pub-8687520805381056/8545318350
+ICLOUD_CONTAINER_ID =

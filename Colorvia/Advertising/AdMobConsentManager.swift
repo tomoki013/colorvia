@@ -1,73 +1,212 @@
+import AppTrackingTransparency
 import Foundation
-import GoogleMobileAds
+@preconcurrency import GoogleMobileAds
+import Observation
+import UIKit
 import UserMessagingPlatform
 
-/// Gathers UMP consent, starts Mobile Ads once, and exposes privacy-options state.
 @MainActor
-@Observable
-final class AdMobConsentManager {
-  static let shared = AdMobConsentManager()
+protocol TrackingAuthorizationProviding: AnyObject {
+  func requestIfNeeded() async
+}
 
-  private(set) var canRequestAds = false
-  private(set) var isPrivacyOptionsRequired = false
-  private(set) var isPrepared = false
+@MainActor
+final class SystemTrackingAuthorizationProvider: TrackingAuthorizationProviding {
+  static let shared = SystemTrackingAuthorizationProvider()
 
-  private var didStartMobileAds = false
-  private var prepareTask: Task<Void, Never>?
+  func requestIfNeeded() async {
+    guard ATTrackingManager.trackingAuthorizationStatus == .notDetermined else { return }
+    _ = await ATTrackingManager.requestTrackingAuthorization()
+  }
+}
 
-  private init() {}
+/// Google User Messaging Platform consent, isolated behind a protocol so tests
+/// never reach the network.
+@MainActor
+protocol ConsentGathering: AnyObject {
+  /// True once UMP reports that ad requests are permitted for this user.
+  var canRequestAds: Bool { get }
+  /// True in regions where the user must be able to reopen the consent form.
+  var isPrivacyOptionsRequired: Bool { get }
+  func gatherIfNeeded() async
+  func presentPrivacyOptions() async
+}
 
-  /// Call once from the app entry point. Safe to call again; concurrent calls share work.
-  func prepare() async {
-    if let prepareTask {
-      await prepareTask.value
-      return
-    }
+@MainActor
+final class UMPConsentGatherer: ConsentGathering {
+  static let shared = UMPConsentGatherer()
 
-    let task = Task { @MainActor in
-      await self.performPrepare()
-    }
-    prepareTask = task
-    await task.value
+  var canRequestAds: Bool { ConsentInformation.shared.canRequestAds }
+
+  var isPrivacyOptionsRequired: Bool {
+    ConsentInformation.shared.privacyOptionsRequirementStatus == .required
   }
 
-  private func performPrepare() async {
-    let parameters = RequestParameters()
+  func gatherIfNeeded() async {
+    let parameters = UserMessagingPlatform.RequestParameters()
+    parameters.isTaggedForUnderAgeOfConsent = false
 
-    do {
-      try await ConsentInformation.shared.requestConsentInfoUpdate(with: parameters)
-      try await ConsentForm.loadAndPresentIfRequired(from: nil)
-    } catch {
-      print("[AdMob] Consent error: \(error.localizedDescription)")
+    await withCheckedContinuation { continuation in
+      ConsentInformation.shared.requestConsentInfoUpdate(with: parameters) { _ in
+        // A failed update leaves `canRequestAds` false, which keeps ads off.
+        continuation.resume()
+      }
     }
 
-    refreshConsentFlags()
-    startMobileAdsIfNeeded()
+    guard let controller = PresentingViewController.current() else { return }
+    await withCheckedContinuation { continuation in
+      ConsentForm.loadAndPresentIfRequired(from: controller) { _ in
+        continuation.resume()
+      }
+    }
+  }
+
+  func presentPrivacyOptions() async {
+    guard let controller = PresentingViewController.current() else { return }
+    await withCheckedContinuation { continuation in
+      ConsentForm.presentPrivacyOptionsForm(from: controller) { _ in
+        continuation.resume()
+      }
+    }
+  }
+}
+
+enum PresentingViewController {
+  @MainActor
+  static func current() -> UIViewController? {
+    let scenes = UIApplication.shared.connectedScenes.compactMap { $0 as? UIWindowScene }
+    let root =
+      scenes.flatMap(\.windows).first(where: \.isKeyWindow)?.rootViewController
+      ?? scenes.first?.windows.first?.rootViewController
+    var presented = root
+    while let next = presented?.presentedViewController {
+      presented = next
+    }
+    return presented
+  }
+}
+
+@MainActor
+protocol AdService: AnyObject {
+  var canShowAds: Bool { get }
+  var isPrivacyOptionsRequired: Bool { get }
+  func initialize() async
+  func presentPrivacyOptions() async
+}
+
+extension AdService {
+  var isPrivacyOptionsRequired: Bool { false }
+  func presentPrivacyOptions() async {}
+}
+
+@MainActor
+final class DisabledAdService: AdService {
+  var canShowAds: Bool { false }
+  func initialize() async {}
+}
+
+/// Release advertising. Consent is gathered before the SDK starts, and any
+/// failure along the way simply leaves the app ad-free.
+@MainActor
+final class ProductionAdMobService: AdService {
+  private let configuration: AppConfiguration
+  private let trackingAuthorization: any TrackingAuthorizationProviding
+  private let consent: any ConsentGathering
+
+  private(set) var canShowAds = false
+
+  init(
+    configuration: AppConfiguration,
+    trackingAuthorization: any TrackingAuthorizationProviding =
+      SystemTrackingAuthorizationProvider.shared,
+    consent: any ConsentGathering = UMPConsentGatherer.shared
+  ) {
+    self.configuration = configuration
+    self.trackingAuthorization = trackingAuthorization
+    self.consent = consent
+  }
+
+  var isPrivacyOptionsRequired: Bool {
+    configuration.adsEnabled && consent.isPrivacyOptionsRequired
+  }
+
+  func initialize() async {
+    guard configuration.adsEnabled, configuration.hasCompleteAdMobConfiguration else { return }
+
+    // UMP first: its message can explain tracking before the system ATT alert.
+    await consent.gatherIfNeeded()
+    await trackingAuthorization.requestIfNeeded()
+
+    guard consent.canRequestAds else { return }
+
+    MobileAds.shared.requestConfiguration.setPublisherFirstPartyIDEnabled(false)
+    _ = await MobileAds.shared.start()
+    canShowAds = true
+  }
+
+  func presentPrivacyOptions() async {
+    await consent.presentPrivacyOptions()
+  }
+}
+
+/// Debug-only service backed by Google's demo app and banner unit IDs.
+@MainActor
+final class TestAdMobService: AdService {
+  private(set) var canShowAds = false
+  private let trackingAuthorization: any TrackingAuthorizationProviding
+
+  init(
+    trackingAuthorization: any TrackingAuthorizationProviding =
+      SystemTrackingAuthorizationProvider.shared
+  ) {
+    self.trackingAuthorization = trackingAuthorization
+  }
+
+  func initialize() async {
+    await trackingAuthorization.requestIfNeeded()
+    MobileAds.shared.requestConfiguration.setPublisherFirstPartyIDEnabled(false)
+    Task { @MainActor in
+      let _ = await MobileAds.shared.start()
+    }
+    canShowAds = true
+  }
+}
+
+/// UI-facing state. App startup and local data loading never wait for ads.
+@MainActor
+@Observable
+final class AdServiceController {
+  static let shared = AdServiceController(configuration: .current)
+
+  private(set) var canShowAds = false
+  private(set) var isPrepared = false
+  private(set) var isPrivacyOptionsRequired = false
+  private let service: any AdService
+
+  init(configuration: AppConfiguration, service: (any AdService)? = nil) {
+    if let service {
+      self.service = service
+    } else if configuration.adsEnabled {
+      #if DEBUG
+        self.service = TestAdMobService()
+      #else
+        self.service = ProductionAdMobService(configuration: configuration)
+      #endif
+    } else {
+      self.service = DisabledAdService()
+    }
+  }
+
+  func prepare() async {
+    guard !isPrepared else { return }
+    await service.initialize()
+    canShowAds = service.canShowAds
+    isPrivacyOptionsRequired = service.isPrivacyOptionsRequired
     isPrepared = true
   }
 
   func presentPrivacyOptions() async {
-    do {
-      try await ConsentForm.presentPrivacyOptionsForm(from: nil)
-      refreshConsentFlags()
-    } catch {
-      print("[AdMob] Privacy options error: \(error.localizedDescription)")
-    }
-  }
-
-  private func refreshConsentFlags() {
-    canRequestAds = ConsentInformation.shared.canRequestAds
-    isPrivacyOptionsRequired =
-      ConsentInformation.shared.privacyOptionsRequirementStatus == .required
-  }
-
-  private func startMobileAdsIfNeeded() {
-    guard canRequestAds, !didStartMobileAds else { return }
-
-    didStartMobileAds = true
-
-    // Prefer map experience privacy: do not use publisher first-party IDs for ads.
-    MobileAds.shared.requestConfiguration.setPublisherFirstPartyIDEnabled(false)
-    MobileAds.shared.start()
+    await service.presentPrivacyOptions()
+    isPrivacyOptionsRequired = service.isPrivacyOptionsRequired
   }
 }

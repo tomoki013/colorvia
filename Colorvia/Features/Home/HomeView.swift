@@ -32,6 +32,7 @@ struct HomeView: View {
             .padding(.horizontal, 14)
             .padding(.top, 6)
             .padding(.bottom, collapsedHeight - 22)
+            .accessibilityIdentifier("world-map")
           }
 
           if !isStatisticsExpanded {
@@ -56,6 +57,15 @@ struct HomeView: View {
         // visited-country list). Never overlays the map or floating controls.
         BannerAdContainer(isEnabled: isBannerLayoutAllowed)
           .frame(maxWidth: .infinity)
+      }
+      .task {
+        guard let code = ScreenshotMode.subdivisionCountryCode else { return }
+        // HomeView can appear before the app-level ScreenshotMode.apply(to:)
+        // task finishes seeding visitedCodes; without this the destination's
+        // `visitedCodes.contains(countryCode)` guard fails and we'd land on
+        // SubdivisionCountryDetailView instead of the actual map screen.
+        try? await Task.sleep(for: .milliseconds(300))
+        path = [.subdivisionMap(countryCode: code)]
       }
       .navigationDestination(for: AppRoute.self) { route in
         switch route {
@@ -122,6 +132,7 @@ struct HomeView: View {
             .contentShape(Rectangle())
         }
         .accessibilityLabel(L10n.text("settings.title"))
+        .accessibilityIdentifier("settings-button")
       }
       .font(.system(size: 23, weight: .regular))
     }
@@ -144,6 +155,7 @@ struct HomeView: View {
         .shadow(color: ColorviaTheme.ink.opacity(0.18), radius: 12, y: 6)
     }
     .accessibilityLabel(L10n.text("home.add_country"))
+    .accessibilityIdentifier("add-country-button")
   }
 }
 
@@ -173,8 +185,6 @@ private struct StatisticsBottomSheet: View {
           .padding(.top, 18)
           .transition(.opacity)
       }
-
-      Spacer(minLength: 10)
     }
     .frame(maxWidth: .infinity)
     .frame(height: expandedHeight, alignment: .top)
@@ -191,6 +201,7 @@ private struct StatisticsBottomSheet: View {
         isExpanded.toggle()
       }
     }
+    .accessibilityIdentifier("statistics-sheet")
   }
 
   private var dragHandle: some View {

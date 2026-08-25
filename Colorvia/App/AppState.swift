@@ -215,19 +215,17 @@ final class AppState {
   }
 
   func resetAllData() async {
-    let now = Date()
-    for countryCode in visitedCodes {
-      countryVisitStatesByCode[countryCode] = CountryVisitState(
-        countryCode: countryCode,
-        isVisited: false,
-        updatedAt: now
-      )
-      clearVisitedRegions(countryCode: countryCode, updatedAt: now)
-    }
     visitedCodes.removeAll()
+    visitedSubdivisionCodesByCountry.removeAll()
+    countryVisitStatesByCode.removeAll()
+    regionVisitStatesByCountry.removeAll()
     hasCompletedOnboarding = false
     defaults.set(false, forKey: PreferenceKeys.onboardingCompleted)
-    await persist()
+    do {
+      try await repository.resetData()
+    } catch {
+      lastError = error.localizedDescription
+    }
   }
 
   func exportedVisitData() throws -> Data {

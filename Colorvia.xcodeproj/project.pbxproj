@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		00E0C09A9EC5BB90CFC3D190 /* us-place-search-index.json in Resources */ = {isa = PBXBuildFile; fileRef = CCBDDC80937AD8B575CF7310 /* us-place-search-index.json */; };
+		03F216D8C3DAE6FA66919C7B /* AppConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA868B29C1557F53BFE9D43 /* AppConfiguration.swift */; };
 		065436C2D4CF3E5FB0187603 /* VisitDataDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7432E1D1B0C7F76039CE60 /* VisitDataDocument.swift */; };
 		0B5C55E83D270EA4FC83CFD2 /* us-map.json in Resources */ = {isa = PBXBuildFile; fileRef = 741D5F29B425AF05B12FA5B9 /* us-map.json */; };
 		0F6CC944D18A7B76FC6BB958 /* kr-subdivisions.json in Resources */ = {isa = PBXBuildFile; fileRef = 17564F03267C2614F0BCA353 /* kr-subdivisions.json */; };
@@ -24,6 +25,7 @@
 		2C44FF20E6D4ED021C557D8C /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FAE63DD192DB49310C45B5E /* RootView.swift */; };
 		2DBB3C7D89D861228E16A65C /* FranceMapScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF05AA7C7839AE5D18E6F34 /* FranceMapScreen.swift */; };
 		2F0DFDE058D58746AA2312C8 /* Prefecture.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53B993D75FE982A8E737A9D /* Prefecture.swift */; };
+		3365FF2E48DBF5C690AA378E /* PurchaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01FF43388363773DBF4E2A1 /* PurchaseManager.swift */; };
 		33D50579A9AAC1515ADB75A0 /* ContactSupportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D755BC07691D7AB758EECCDE /* ContactSupportView.swift */; };
 		3B1063F5AB294789B9A3437B /* world-map.json in Resources */ = {isa = PBXBuildFile; fileRef = 520C0FB967AE13AAAE8DFBC5 /* world-map.json */; };
 		3C1B050D42480CA831161B68 /* us-source-regions.json in Resources */ = {isa = PBXBuildFile; fileRef = 500413565FA4B9B4892BEB39 /* us-source-regions.json */; };
@@ -63,8 +65,10 @@
 		A4E4B39A5E61ABE526DCEE1A /* th-place-search-index.json in Resources */ = {isa = PBXBuildFile; fileRef = F85DE257DCAF3989820B19A4 /* th-place-search-index.json */; };
 		A5ADC63ADDE72D2C13CEF1DA /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF150C708A695D206CD1AB9 /* SettingsView.swift */; };
 		A702E1D865B0AA1730D683A5 /* japan-place-search-index.json in Resources */ = {isa = PBXBuildFile; fileRef = 3A41FFF4CDE5D569C838292C /* japan-place-search-index.json */; };
+		AA135A527108673EB7EB4D72 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = AAC4B26D76933C9E6296C198 /* PrivacyInfo.xcprivacy */; };
 		ABA6531F58064270E4257E6F /* france-departments.json in Resources */ = {isa = PBXBuildFile; fileRef = 3CFCDACF240E1F4A1FF5B43E /* france-departments.json */; };
 		ABDBD70EFC964EA0D71FAE9C /* be-place-search-index.json in Resources */ = {isa = PBXBuildFile; fileRef = 31C27495BF28523539D33FEA /* be-place-search-index.json */; };
+		AD996EB957EA05F2CF6ECE37 /* AppStoreScreenshotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9DBFFC701F20E1917A2053 /* AppStoreScreenshotTests.swift */; };
 		AE1AFF988FAA2477F5B91203 /* SubdivisionMapScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BDBFCFC63E053860D1472A /* SubdivisionMapScreen.swift */; };
 		B00B77DCE07C715B8AA88A28 /* CountrySubdivision.swift in Sources */ = {isa = PBXBuildFile; fileRef = D97569D652F710198CBB7047 /* CountrySubdivision.swift */; };
 		B4D96BAD6715EFD4292A770C /* AppStateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C521C79E2753A0A22EC61A /* AppStateTests.swift */; };
@@ -85,6 +89,7 @@
 		E02005221174C16D30924532 /* my-source-regions.json in Resources */ = {isa = PBXBuildFile; fileRef = 0C9FB37CFB9A0B22A8B8DE18 /* my-source-regions.json */; };
 		E0C9E98C963930FAA408A5E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 861527F7663B05711A617077 /* Assets.xcassets */; };
 		E1A16FF6CEFF6950717CA547 /* PrefectureListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0567673CE31008D3B179D8 /* PrefectureListView.swift */; };
+		E6F9EC4207DF7B532549EFF1 /* InfoPlist.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = F321FB549489633C36E1696E /* InfoPlist.xcstrings */; };
 		EC420C5F26223C342B332BDB /* prefectures.json in Resources */ = {isa = PBXBuildFile; fileRef = 7409206E2ED969BC382279D2 /* prefectures.json */; };
 		EE538A79A0EC88793B5F8397 /* LegalDocumentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CE52F38EFB09EDF7645224 /* LegalDocumentView.swift */; };
 		F026C5E0EA0E394C5F4F7D82 /* countries.json in Resources */ = {isa = PBXBuildFile; fileRef = 0BC09B273BF476F90E5E7241 /* countries.json */; };
@@ -96,6 +101,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		0131876C3516FE71382DC12D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 432F661559AFFE726C767D24 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7E79EDC6BEB77A6B93C94113;
+			remoteInfo = Colorvia;
+		};
 		EB468906DEC9C9E83EDA5360 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 432F661559AFFE726C767D24 /* Project object */;
@@ -133,6 +145,7 @@
 		439D34D0EA0B7D278BFA0073 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		4781546413B603F3BE7DC60A /* AdMobConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdMobConfiguration.swift; sourceTree = "<group>"; };
 		4B62B4DA711226F149795E36 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		4CA868B29C1557F53BFE9D43 /* AppConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfiguration.swift; sourceTree = "<group>"; };
 		500413565FA4B9B4892BEB39 /* us-source-regions.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "us-source-regions.json"; sourceTree = "<group>"; };
 		51547EE1483B3222565E21C9 /* WorldMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldMapView.swift; sourceTree = "<group>"; };
 		520C0FB967AE13AAAE8DFBC5 /* world-map.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "world-map.json"; sourceTree = "<group>"; };
@@ -144,6 +157,7 @@
 		60B184E9D06FEA19CED0FE57 /* my-map.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "my-map.json"; sourceTree = "<group>"; };
 		685509F4D226B24460F481BF /* tr-place-search-index.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "tr-place-search-index.json"; sourceTree = "<group>"; };
 		69970AEDFD350CCBC2F95CC5 /* JapanMapScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JapanMapScreen.swift; sourceTree = "<group>"; };
+		6DD5808B08F03B4BB193D0A1 /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
 		6FB90EC83715387311C03A54 /* us-subdivisions.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "us-subdivisions.json"; sourceTree = "<group>"; };
 		7409206E2ED969BC382279D2 /* prefectures.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = prefectures.json; sourceTree = "<group>"; };
 		741D5F29B425AF05B12FA5B9 /* us-map.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "us-map.json"; sourceTree = "<group>"; };
@@ -163,9 +177,11 @@
 		9B364C0C761ACDF804AAFB56 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		9CEEE051D57ED64054C2E3FD /* ColorviaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorviaApp.swift; sourceTree = "<group>"; };
 		9F7432E1D1B0C7F76039CE60 /* VisitDataDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitDataDocument.swift; sourceTree = "<group>"; };
+		A01FF43388363773DBF4E2A1 /* PurchaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseManager.swift; sourceTree = "<group>"; };
 		A2CE52F38EFB09EDF7645224 /* LegalDocumentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegalDocumentView.swift; sourceTree = "<group>"; };
 		A73CFE93E0B2158A4FF2BD1E /* FileVisitStateRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileVisitStateRepository.swift; sourceTree = "<group>"; };
 		A9A117E1C8E09450D9A13433 /* PlaceSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceSearch.swift; sourceTree = "<group>"; };
+		AAC4B26D76933C9E6296C198 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		AD1CCBC618EFFB8D24258971 /* FranceDepartment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FranceDepartment.swift; sourceTree = "<group>"; };
 		B052C3928ACEFF96EA85D0B0 /* SubdivisionCountryDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubdivisionCountryDetailView.swift; sourceTree = "<group>"; };
 		B09303E4CFE941F03903F84D /* SubdivisionListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubdivisionListView.swift; sourceTree = "<group>"; };
@@ -176,10 +192,10 @@
 		C5E451573C611F504FD2ACBD /* ColorviaTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = ColorviaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7ACA4BBE7C7C19A6903B4DB /* be-map.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "be-map.json"; sourceTree = "<group>"; };
 		CC2DB817C950F061BAE7A3D1 /* es-subdivisions.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "es-subdivisions.json"; sourceTree = "<group>"; };
+		CCB17EA43F3D9C7DC090A8C2 /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
 		CCBDDC80937AD8B575CF7310 /* us-place-search-index.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "us-place-search-index.json"; sourceTree = "<group>"; };
 		D177DCBED58403440FED28FE /* my-place-search-index.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "my-place-search-index.json"; sourceTree = "<group>"; };
 		D3704B8FF1F5A494D674E7D8 /* es-place-search-index.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "es-place-search-index.json"; sourceTree = "<group>"; };
-		D393C433FF5CB00137509659 /* AdMob.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = AdMob.xcconfig; sourceTree = "<group>"; };
 		D53B993D75FE982A8E737A9D /* Prefecture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prefecture.swift; sourceTree = "<group>"; };
 		D630418794DFB4EB9FD2FDB2 /* sg-subdivisions.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "sg-subdivisions.json"; sourceTree = "<group>"; };
 		D6CAC62C03A972AB99E59240 /* be-subdivisions.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "be-subdivisions.json"; sourceTree = "<group>"; };
@@ -187,12 +203,15 @@
 		D97569D652F710198CBB7047 /* CountrySubdivision.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountrySubdivision.swift; sourceTree = "<group>"; };
 		DA63DB3C3DBCE86665B054CD /* WorldMapStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldMapStore.swift; sourceTree = "<group>"; };
 		DB0B37140D85DCD2FC6DC090 /* my-subdivisions.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "my-subdivisions.json"; sourceTree = "<group>"; };
+		DD9DBFFC701F20E1917A2053 /* AppStoreScreenshotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoreScreenshotTests.swift; sourceTree = "<group>"; };
 		DF641294B6B841D569BC7C8C /* th-map.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "th-map.json"; sourceTree = "<group>"; };
 		E4BE1AA59C3E2E148B13FC6C /* AppRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRoute.swift; sourceTree = "<group>"; };
 		E5C3A8AE91C7619DF148C066 /* france-map.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "france-map.json"; sourceTree = "<group>"; };
+		EDADC84FBBCB487FE09319A7 /* ColorviaUITests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = ColorviaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE1BD3F91D2987B8D1824934 /* Colorvia.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Colorvia.entitlements; sourceTree = "<group>"; };
 		EEF05AA7C7839AE5D18E6F34 /* FranceMapScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FranceMapScreen.swift; sourceTree = "<group>"; };
 		F0E0F586F476D73800097440 /* th-subdivisions.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "th-subdivisions.json"; sourceTree = "<group>"; };
+		F321FB549489633C36E1696E /* InfoPlist.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = InfoPlist.xcstrings; sourceTree = "<group>"; };
 		F54C021D2B00D6C5A1144E22 /* eg-map.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "eg-map.json"; sourceTree = "<group>"; };
 		F5B9798EDA56165F498E090F /* SupportAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportAPIClient.swift; sourceTree = "<group>"; };
 		F85DE257DCAF3989820B19A4 /* th-place-search-index.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "th-place-search-index.json"; sourceTree = "<group>"; };
@@ -215,6 +234,7 @@
 			children = (
 				063DCF90BE28079DC8068201 /* Colorvia.app */,
 				C5E451573C611F504FD2ACBD /* ColorviaTests.xctest */,
+				EDADC84FBBCB487FE09319A7 /* ColorviaUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -329,11 +349,13 @@
 			children = (
 				EE1BD3F91D2987B8D1824934 /* Colorvia.entitlements */,
 				9B364C0C761ACDF804AAFB56 /* Info.plist */,
+				AAC4B26D76933C9E6296C198 /* PrivacyInfo.xcprivacy */,
 				F490EAE412D5AE9B52B66D0C /* Advertising */,
 				CE9B00487E0DE45122BA482A /* App */,
 				9ED41B007C35A51CBC7C5ED0 /* Core */,
 				E9FFDB353FE4ED2545766C3D /* DesignSystem */,
 				4819F9B78CA8B4F7A34680BA /* Features */,
+				B8C4D4F37B8AB43F0AC6C25E /* Purchases */,
 				C63854B0FDEDBBF0E3C7E202 /* Resources */,
 			);
 			path = Colorvia;
@@ -359,6 +381,14 @@
 			path = WorldMap;
 			sourceTree = "<group>";
 		};
+		823C719D945EF77A73EDD5A8 /* ColorviaUITests */ = {
+			isa = PBXGroup;
+			children = (
+				DD9DBFFC701F20E1917A2053 /* AppStoreScreenshotTests.swift */,
+			);
+			path = ColorviaUITests;
+			sourceTree = "<group>";
+		};
 		873882CFC36156F0FCFF78A7 /* CountryPicker */ = {
 			isa = PBXGroup;
 			children = (
@@ -372,6 +402,7 @@
 			children = (
 				5CBE842AFF7B05A7928EE5A1 /* Colorvia */,
 				1C6AB602D3FB5D1E8AC85427 /* ColorviaTests */,
+				823C719D945EF77A73EDD5A8 /* ColorviaUITests */,
 				DBB30FC876F59056832552BF /* Config */,
 				000210169D96D2D395A3CCDA /* Products */,
 			);
@@ -408,6 +439,14 @@
 			path = Core;
 			sourceTree = "<group>";
 		};
+		B8C4D4F37B8AB43F0AC6C25E /* Purchases */ = {
+			isa = PBXGroup;
+			children = (
+				A01FF43388363773DBF4E2A1 /* PurchaseManager.swift */,
+			);
+			path = Purchases;
+			sourceTree = "<group>";
+		};
 		C63854B0FDEDBBF0E3C7E202 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -426,6 +465,7 @@
 				3CFCDACF240E1F4A1FF5B43E /* france-departments.json */,
 				E5C3A8AE91C7619DF148C066 /* france-map.json */,
 				132A0FCA55489532D9E621EE /* france-place-search-index.json */,
+				F321FB549489633C36E1696E /* InfoPlist.xcstrings */,
 				994046E137431869FA45F1BB /* japan-map.json */,
 				3A41FFF4CDE5D569C838292C /* japan-place-search-index.json */,
 				0365D5D25DF7BD96E8FC313B /* kr-map.json */,
@@ -468,6 +508,7 @@
 		CE9B00487E0DE45122BA482A /* App */ = {
 			isa = PBXGroup;
 			children = (
+				4CA868B29C1557F53BFE9D43 /* AppConfiguration.swift */,
 				E4BE1AA59C3E2E148B13FC6C /* AppRoute.swift */,
 				25B0A607ED04D3FED250D616 /* AppState.swift */,
 				9CEEE051D57ED64054C2E3FD /* ColorviaApp.swift */,
@@ -479,7 +520,8 @@
 		DBB30FC876F59056832552BF /* Config */ = {
 			isa = PBXGroup;
 			children = (
-				D393C433FF5CB00137509659 /* AdMob.xcconfig */,
+				6DD5808B08F03B4BB193D0A1 /* Debug.xcconfig */,
+				CCB17EA43F3D9C7DC090A8C2 /* Release.xcconfig */,
 			);
 			path = Config;
 			sourceTree = "<group>";
@@ -525,10 +567,29 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		217FB4C455613FFADC87D5EE /* ColorviaUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3D3703E3F9C94622F389007B /* Build configuration list for PBXNativeTarget "ColorviaUITests" */;
+			buildPhases = (
+				88E9A0EE1907E7A151390BEB /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				36478DB21752939601C661E1 /* PBXTargetDependency */,
+			);
+			name = ColorviaUITests;
+			packageProductDependencies = (
+			);
+			productName = ColorviaUITests;
+			productReference = EDADC84FBBCB487FE09319A7 /* ColorviaUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		7E79EDC6BEB77A6B93C94113 /* Colorvia */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6700EBAF2879D20E7923A0EA /* Build configuration list for PBXNativeTarget "Colorvia" */;
 			buildPhases = (
+				676C3A06AE8607A26BC90D1F /* Validate external service configuration */,
 				05E18D989506B4FD5573E9E4 /* Sources */,
 				36CB3F184339B8DD0FE7172E /* Resources */,
 				E187234519A659BEDBF3C6CB /* Frameworks */,
@@ -572,12 +633,17 @@
 				BuildIndependentTargetsInParallel = YES;
 				LastUpgradeCheck = 1430;
 				TargetAttributes = {
+					217FB4C455613FFADC87D5EE = {
+						DevelopmentTeam = 7GU925RQ99;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 7E79EDC6BEB77A6B93C94113;
+					};
 					7E79EDC6BEB77A6B93C94113 = {
-						DevelopmentTeam = "";
+						DevelopmentTeam = 7GU925RQ99;
 						ProvisioningStyle = Automatic;
 					};
 					870207106C29BA655475DE38 = {
-						DevelopmentTeam = "";
+						DevelopmentTeam = 7GU925RQ99;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -611,6 +677,7 @@
 			targets = (
 				7E79EDC6BEB77A6B93C94113 /* Colorvia */,
 				870207106C29BA655475DE38 /* ColorviaTests */,
+				217FB4C455613FFADC87D5EE /* ColorviaUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -621,7 +688,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				E0C9E98C963930FAA408A5E4 /* Assets.xcassets in Resources */,
+				E6F9EC4207DF7B532549EFF1 /* InfoPlist.xcstrings in Resources */,
 				B915BBCACDDE7B2D2A4C4AF6 /* Localizable.xcstrings in Resources */,
+				AA135A527108673EB7EB4D72 /* PrivacyInfo.xcprivacy in Resources */,
 				FB1F0825501BE7980F4DA6AC /* be-map.json in Resources */,
 				ABDBD70EFC964EA0D71FAE9C /* be-place-search-index.json in Resources */,
 				D7380314D326A515C568C551 /* be-source-regions.json in Resources */,
@@ -667,6 +736,28 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		676C3A06AE8607A26BC90D1F /* Validate external service configuration */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Validate external service configuration";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [ \"$CONFIGURATION\" = \"Release\" ] && [ \"$ADS_ENABLED\" = \"YES\" ]; then\n  if [ -z \"$ADMOB_APP_ID\" ] || [ -z \"$ADMOB_BANNER_AD_UNIT_ID\" ]; then\n    echo \"error: ADS_ENABLED=YES requires ADMOB_APP_ID and ADMOB_BANNER_AD_UNIT_ID\"\n    exit 1\n  fi\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		05E18D989506B4FD5573E9E4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -675,6 +766,7 @@
 				6E621D91AF54F8C6B960E314 /* AdEntitlementStore.swift in Sources */,
 				1926D907B25997FF0FE95DAB /* AdMobConfiguration.swift in Sources */,
 				0FC5ED1CE69068FE87037E71 /* AdMobConsentManager.swift in Sources */,
+				03F216D8C3DAE6FA66919C7B /* AppConfiguration.swift in Sources */,
 				889ED512F161ABFEE8429007 /* AppRoute.swift in Sources */,
 				C23C6550AFF97FF5BC3A5443 /* AppState.swift in Sources */,
 				19C7D369BE7AEB0269B242BD /* BannerAdContainer.swift in Sources */,
@@ -703,6 +795,7 @@
 				944F69693C6E135D4205B1B9 /* PlaceSearch.swift in Sources */,
 				2F0DFDE058D58746AA2312C8 /* Prefecture.swift in Sources */,
 				E1A16FF6CEFF6950717CA547 /* PrefectureListView.swift in Sources */,
+				3365FF2E48DBF5C690AA378E /* PurchaseManager.swift in Sources */,
 				2C44FF20E6D4ED021C557D8C /* RootView.swift in Sources */,
 				A5ADC63ADDE72D2C13CEF1DA /* SettingsView.swift in Sources */,
 				A20716DCCEABC4F9C02980C1 /* StatisticsView.swift in Sources */,
@@ -717,6 +810,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		88E9A0EE1907E7A151390BEB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AD996EB957EA05F2CF6ECE37 /* AppStoreScreenshotTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C183DB22B6BB66D953907096 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -728,6 +829,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		36478DB21752939601C661E1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7E79EDC6BEB77A6B93C94113 /* Colorvia */;
+			targetProxy = 0131876C3516FE71382DC12D /* PBXContainerItemProxy */;
+		};
 		68F063236BB5165B417A4E1E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 7E79EDC6BEB77A6B93C94113 /* Colorvia */;
@@ -736,9 +842,25 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		01ADF0E582A42543CA2CA03A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = io.tmkch.colorvia.uitests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Colorvia;
+			};
+			name = Debug;
+		};
 		1564ACAFC03AF1675FA45C82 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D393C433FF5CB00137509659 /* AdMob.xcconfig */;
+			baseConfigurationReference = CCB17EA43F3D9C7DC090A8C2 /* Release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -773,9 +895,9 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 7;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 7GU925RQ99;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -833,7 +955,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = io.tmkch.colorvia;
 				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -855,7 +978,7 @@
 		};
 		8DE343CC72C267880AD344E8 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D393C433FF5CB00137509659 /* AdMob.xcconfig */;
+			baseConfigurationReference = 6DD5808B08F03B4BB193D0A1 /* Debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -890,9 +1013,9 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 7;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 7GU925RQ99;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -941,13 +1064,39 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = io.tmkch.colorvia;
 				SDKROOT = iphoneos;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		C661E5B825D20036B08632E8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = io.tmkch.colorvia.uitests;
+				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Colorvia;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		3D3703E3F9C94622F389007B /* Build configuration list for PBXNativeTarget "ColorviaUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				01ADF0E582A42543CA2CA03A /* Debug */,
+				C661E5B825D20036B08632E8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
 		6700EBAF2879D20E7923A0EA /* Build configuration list for PBXNativeTarget "Colorvia" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -983,7 +1132,7 @@
 			repositoryURL = "https://github.com/googleads/swift-package-manager-google-mobile-ads.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 13.0.0;
+				minimumVersion = 13.7.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */

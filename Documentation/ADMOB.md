@@ -1,68 +1,53 @@
-# AdMob integration notes
+# AdMob integration
 
-Colorvia shows a fixed **320×50** banner on the home screen only (under the map
-and statistics sheet). Other formats and screens are intentionally out of scope.
+Debug builds use Google's official demo App ID and banner unit ID through
+`TestAdMobService`. The banner collapses until it loads and is safe to click in
+test mode.
 
-## Production checklist
-
-1. Register **Colorvia** in [AdMob](https://apps.admob.com/) and create a Banner
-   unit named `colorvia_ios_banner`.
-2. Put the real IDs in `Config/AdMob.xcconfig`:
-
-   ```text
-   ADMOB_APP_ID = ca-app-pub-8687520805381056~7543227876
-   ADMOB_BANNER_AD_UNIT_ID = ca-app-pub-8687520805381056/8545318350
-   ```
-
-   - Values with `~` are the **App ID** (`GADApplicationIdentifier`).
-   - Values with `/` are the **banner ad unit ID**.
-   - `pub-8687520805381056` is the **Publisher ID** for `app-ads.txt` only.
-
-3. Host `app-ads.txt` at `https://tmkch.io/app-ads.txt` (see
-   `Documentation/app-ads.txt`).
-4. In App Store Connect, set the developer / marketing URL host to the same
-   `tmkch.io` site that serves `app-ads.txt`.
-5. Update App Store Connect **App Privacy** for Google Mobile Ads (device IDs,
-   diagnostics, advertising data as applicable). Re-check after each SDK update
-   with Xcode’s Privacy Report.
-6. Confirm the hosted privacy policy matches the in-app copy (Advertising +
-   Analytics sections).
-7. In AdMob **Privacy & messaging**, configure the GDPR / consent message that
-   UMP should present.
-
-## Debug vs Release
-
-| Build | Banner unit ID | App ID |
-| --- | --- | --- |
-| Debug | Google test unit (hard-coded) | From `ADMOB_APP_ID` (sample OK) |
-| Release | `ADMOB_BANNER_AD_UNIT_ID` from Info.plist | From `ADMOB_APP_ID` |
-
-Never tap production ads on a development device. Debug always uses:
+Release builds use `ProductionAdMobService` with the production identifiers in
+`Config/Release.xcconfig`:
 
 ```text
-ca-app-pub-3940256099942544/2435281174
+ADS_ENABLED = YES
+ADMOB_APP_ID = ca-app-pub-8687520805381056~7543227876
+ADMOB_BANNER_AD_UNIT_ID = ca-app-pub-8687520805381056/8545318350
 ```
 
-## Runtime behavior
+## Startup order
 
-1. App launches and shows Colorvia immediately.
-2. `AdMobConsentManager.prepare()` updates UMP consent and presents a form only
-   when required. The UI is never blocked on this work.
-3. When `canRequestAds` is true and the user is not ad-free, Mobile Ads starts
-   once with publisher first-party IDs disabled.
-4. `BannerAdContainer` loads a banner; height is 0 until a successful fill so
-   failed / no-fill states leave no empty gap.
-5. Screens shorter than 700pt hide the home banner so the map stays usable.
-6. Settings shows **Privacy choices** only when UMP reports that entry point as
-   required.
+`AdServiceController.prepare()` runs once per active scene and never blocks app
+startup or local data loading:
 
-## Future ad removal
+1. UMP consent info update, then `ConsentForm.loadAndPresentIfRequired`.
+2. ATT (`ATTrackingManager.requestTrackingAuthorization`) once UMP has had its
+   chance to explain tracking.
+3. Only when `ConsentInformation.shared.canRequestAds` is true does the Mobile
+   Ads SDK start and `canShowAds` become true.
 
-`AdEntitlementStore.isAdFree` is the single gate. When StoreKit 2 is added,
-update that store only; banner views already skip requests when `isAdFree` is
-true.
+Any failure — consent update error, form load error, refused consent — leaves
+`canShowAds` false, so the app simply runs without ads. Consent rejection never
+blocks the map, search, local persistence, settings, or export/import.
 
-## Out of scope (this version)
+Where UMP reports `privacyOptionsRequirementStatus == .required` (EEA/UK),
+Settings → Information shows an "Ad privacy options" row that reopens the
+consent form.
 
-Interstitial, app open, rewarded, native ads, mediation, Firebase, ATT prompts,
-and StoreKit purchase UI.
+`setPublisherFirstPartyIDEnabled(false)` is set before the SDK starts. Never
+attach visit history, map activity, or search terms to ad requests.
+
+## Privacy manifest
+
+`Colorvia/PrivacyInfo.xcprivacy` keeps `NSPrivacyTracking` false and omits the
+`NSPrivacyTrackingDomains` key, matching the Google Mobile Ads SDK manifest. The
+two keys must stay consistent — build 4 was rejected as ITMS-91064 for declaring
+`NSPrivacyTracking` true with an empty domain list. Listing Google's ad-serving
+hosts would also make iOS block ad requests for every user who declines ATT.
+
+## Remaining verification
+
+- `Documentation/app-ads.txt` must be published at `https://tmkch.io/app-ads.txt`
+  and verified in the AdMob console.
+- Banner fill cannot be verified in the Simulator. Check banner display, failed
+  ad loading, keyboard display, compact screens, and dark mode on a real device.
+- Recheck Google's current SKAdNetwork entries in `Info.plist` against the
+  official integration guide before each release.

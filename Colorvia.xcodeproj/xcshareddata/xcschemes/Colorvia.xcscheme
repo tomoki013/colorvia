@@ -50,6 +50,17 @@
                ReferencedContainer = "container:Colorvia.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "217FB4C455613FFADC87D5EE"
+               BuildableName = "ColorviaUITests.xctest"
+               BlueprintName = "ColorviaUITests"
+               ReferencedContainer = "container:Colorvia.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <CommandLineArguments>
       </CommandLineArguments>

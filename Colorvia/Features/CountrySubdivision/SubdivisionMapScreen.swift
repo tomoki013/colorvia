@@ -151,13 +151,13 @@ private struct SubdivisionStatisticsCard: View {
           }
         }
         .scrollIndicators(.hidden)
+        .frame(maxHeight: .infinity, alignment: .top)
       } else {
         Text(L10n.text("stats.swipe_up"))
           .font(.subheadline)
           .foregroundStyle(ColorviaTheme.secondaryInk)
           .padding(.top, 18)
       }
-      Spacer(minLength: 10)
     }
     .frame(maxWidth: .infinity)
     .frame(height: expandedHeight, alignment: .top)

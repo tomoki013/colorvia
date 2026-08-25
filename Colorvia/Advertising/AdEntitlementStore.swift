@@ -11,8 +11,8 @@ final class AdEntitlementStore {
 
   private init() {}
 
-  /// Test / future StoreKit hook. Production remains `false` until purchase is wired.
-  func setAdFreeForTesting(_ value: Bool) {
-    isAdFree = value
+  /// Called by `PurchaseManager` when the remove-ads entitlement changes.
+  func applyPurchaseState(_ owned: Bool) {
+    isAdFree = owned
   }
 }

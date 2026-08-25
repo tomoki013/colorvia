@@ -3,6 +3,13 @@ import Foundation
 protocol VisitStateRepository: Sendable {
   func loadData() async throws -> VisitData
   func saveData(_ data: VisitData) async throws
+  func resetData() async throws
+}
+
+extension VisitStateRepository {
+  func resetData() async throws {
+    try await saveData(VisitData())
+  }
 }
 
 enum VisitDataConflictResolver {
@@ -14,16 +21,6 @@ enum VisitDataConflictResolver {
 
 actor FileVisitStateRepository: VisitStateRepository {
   private let fileManager = FileManager.default
-  private let cloudStore = NSUbiquitousKeyValueStore.default
-  private static let cloudDataKey = "visit-states-v5"
-  private static let cloudTimestampKey = "visit-states-v5-updated-at"
-  private static let legacyCloudDataKey = "visit-states-v3"
-  private static let legacyCloudTimestampKey = "visit-states-v3-updated-at"
-  private static let v4CloudDataKey = "visit-states-v4"
-  private static let v4CloudTimestampKey = "visit-states-v4-updated-at"
-  private static let regionCountryCodes = [
-    "JP", "FR", "ES", "KR", "EG", "TH", "TR", "US", "MY", "BE", "SG",
-  ]
 
   private var fileURL: URL {
     get throws {
@@ -40,59 +37,18 @@ actor FileVisitStateRepository: VisitStateRepository {
 
   func loadData() async throws -> VisitData {
     let url = try fileURL
-    let localSnapshot: (data: Data, timestamp: Date)? =
-      if fileManager.fileExists(atPath: url.path) {
-        (
-          try Data(contentsOf: url),
-          (try? url.resourceValues(forKeys: [.contentModificationDateKey])
-            .contentModificationDate) ?? .distantPast
-        )
-      } else {
-        nil
-      }
+    guard fileManager.fileExists(atPath: url.path) else { return VisitData() }
 
-    cloudStore.synchronize()
-    let cloudData =
-      cloudStore.data(forKey: Self.cloudDataKey)
-      ?? cloudStore.data(forKey: Self.v4CloudDataKey)
-      ?? cloudStore.data(forKey: Self.legacyCloudDataKey)
-    let cloudTimestamp = Date(
-      timeIntervalSince1970: max(
-        cloudStore.double(forKey: Self.cloudTimestampKey),
-        max(
-          cloudStore.double(forKey: Self.v4CloudTimestampKey),
-          cloudStore.double(forKey: Self.legacyCloudTimestampKey)
-        )
-      )
-    )
-
-    let local = try localSnapshot.map { snapshot in
-      if Self.formatVersion(of: snapshot.data) < 5 {
-        try backupBeforeMigration(snapshot.data)
-      }
-      return try Self.decode(snapshot.data)
+    let data = try Data(contentsOf: url)
+    if Self.formatVersion(of: data) < 5 {
+      try backupBeforeMigration(data)
     }
-    var cloud = try cloudData.map(Self.decode)
-    let perCountryRegions = loadPerCountryRegionStates()
-    if !perCountryRegions.isEmpty {
-      var snapshot = cloud ?? VisitData()
-      snapshot.regionStates = Self.mergeRegionStates(snapshot.regionStates, perCountryRegions)
-      cloud = snapshot
+    do {
+      return try Self.decode(data)
+    } catch {
+      try quarantineCorruptData(data)
+      return VisitData()
     }
-
-    let merged =
-      if let local, let cloud {
-        Self.merge(local: local, cloud: cloud)
-      } else {
-        local ?? cloud ?? VisitData()
-      }
-    let encoder = Self.encoder()
-    let mergedData = try encoder.encode(merged)
-    try mergedData.write(to: url, options: [.atomic])
-    if cloudData == nil || (localSnapshot?.timestamp ?? .distantPast) > cloudTimestamp {
-      publishToCloud(mergedData, visitData: merged, updatedAt: Date())
-    }
-    return merged
   }
 
   nonisolated static func decode(_ data: Data) throws -> VisitData {
@@ -124,33 +80,12 @@ actor FileVisitStateRepository: VisitStateRepository {
     let encoder = Self.encoder()
     let data = try encoder.encode(visitData)
     try data.write(to: fileURL, options: [.atomic])
-    publishToCloud(data, visitData: visitData, updatedAt: Date())
   }
 
-  private func publishToCloud(_ data: Data, visitData: VisitData, updatedAt: Date) {
-    cloudStore.set(data, forKey: Self.cloudDataKey)
-    cloudStore.set(updatedAt.timeIntervalSince1970, forKey: Self.cloudTimestampKey)
-    let encoder = Self.encoder()
-    for countryCode in Self.regionCountryCodes {
-      let states = visitData.regionStates.filter { $0.countryCode == countryCode }
-      if let encoded = try? encoder.encode(states) {
-        cloudStore.set(encoded, forKey: "colorvia.visit.regions.\(countryCode.lowercased())")
-      }
-    }
-    cloudStore.synchronize()
-  }
-
-  private func loadPerCountryRegionStates() -> [RegionVisitState] {
-    let decoder = JSONDecoder()
-    decoder.dateDecodingStrategy = .iso8601
-    return Self.regionCountryCodes.flatMap { countryCode -> [RegionVisitState] in
-      guard
-        let data = cloudStore.data(
-          forKey: "colorvia.visit.regions.\(countryCode.lowercased())"
-        )
-      else { return [RegionVisitState]() }
-      return (try? decoder.decode([RegionVisitState].self, from: data)) ?? []
-    }
+  func resetData() async throws {
+    let url = try fileURL
+    guard fileManager.fileExists(atPath: url.path) else { return }
+    try fileManager.removeItem(at: url)
   }
 
   private func backupBeforeMigration(_ data: Data) throws {
@@ -163,6 +98,15 @@ actor FileVisitStateRepository: VisitStateRepository {
         throw CocoaError(.fileWriteUnknown)
       }
       return
+    }
+  }
+
+  private func quarantineCorruptData(_ data: Data) throws {
+    let corruptURL = try fileURL.deletingLastPathComponent()
+      .appending(path: "visit-states-corrupt-backup.json")
+    guard !fileManager.fileExists(atPath: corruptURL.path) else { return }
+    guard fileManager.createFile(atPath: corruptURL.path, contents: data) else {
+      throw CocoaError(.fileWriteUnknown)
     }
   }
 

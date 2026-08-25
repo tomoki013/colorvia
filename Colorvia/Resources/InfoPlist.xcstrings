@@ -1,0 +1,77 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "NSUserTrackingUsageDescription" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mit deiner Erlaubnis kann Colorvia eine Gerätekennung verwenden, um personalisierte Werbung bereitzustellen und zu messen. Deine Reisedaten werden niemals an Werbepartner weitergegeben."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Your permission allows Colorvia to use a device identifier to deliver and measure personalized ads. Your travel records are never shared with advertisers."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tu permiso permite que Colorvia use un identificador del dispositivo para ofrecer y medir anuncios personalizados. Tus registros de viaje nunca se comparten con anunciantes."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Votre autorisation permet à Colorvia d’utiliser un identifiant d’appareil pour diffuser et mesurer des publicités personnalisées. Vos voyages ne sont jamais partagés avec les annonceurs."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "La tua autorizzazione consente a Colorvia di usare un identificatore del dispositivo per mostrare e misurare annunci personalizzati. I tuoi viaggi non vengono mai condivisi con gli inserzionisti."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "許可すると、Colorviaはパーソナライズされた広告の配信と効果測定に端末識別子を使用できます。訪問履歴が広告事業者へ共有されることはありません。"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "허용하면 Colorvia가 맞춤형 광고 제공 및 측정을 위해 기기 식별자를 사용할 수 있습니다. 여행 기록은 광고주와 공유되지 않습니다."
+          }
+        },
+        "pt-BR" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sua permissão permite que o Colorvia use um identificador do dispositivo para exibir e medir anúncios personalizados. Seus registros de viagem nunca são compartilhados com anunciantes."
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "С вашего разрешения Colorvia сможет использовать идентификатор устройства для показа и оценки персонализированной рекламы. Ваши данные о поездках не передаются рекламодателям."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "获得你的许可后，Colorvia 可使用设备标识符来投放和衡量个性化广告。你的旅行记录绝不会与广告商共享。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "取得你的許可後，Colorvia 可使用裝置識別碼來投放和衡量個人化廣告。你的旅行紀錄絕不會與廣告商分享。"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

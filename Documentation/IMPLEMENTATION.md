@@ -36,18 +36,18 @@ suggests a painting tool.
 
 No account, backend, location, photo, or notification dependency is used.
 
-The free build may show a fixed 320×50 Google AdMob banner on the home screen
-only. Consent is gathered with the User Messaging Platform before any ad
-request. Visit history and map activity are never sent as ad targeting data.
-See `Documentation/ADMOB.md`.
+Debug builds use Google's official demo App ID and anchored adaptive banner ID.
+`TestAdMobService` initializes the SDK and the banner reserves no space until an
+ad has loaded. Release keeps `ADS_ENABLED=NO`; `ProductionAdMobService` remains
+disabled until production IDs and UMP consent configuration are supplied.
 
-Visit data is mirrored through the app's iCloud key-value store when iCloud is
-available. Local atomic JSON remains the fallback. Country and region records
-merge independently by `updatedAt`, including unvisited tombstones, rather
-than unioning visited sets. Data Management also supports explicit JSON export
-and import; imported country and subdivision IDs are validated against the
-bundled catalogs before replacing local state. An import with regions under an
-unvisited country asks whether to repair the parent or skip those regions.
+Visit data is stored only in an atomic local JSON file through
+`VisitStateRepository`. Corrupt data is quarantined and the app starts with an
+empty state. The repository boundary allows a future cloud-synchronizing
+decorator without coupling UI code to iCloud. `CLOUD_SYNC_ENABLED` is currently
+off and the app has no iCloud entitlement. Data Management also supports
+explicit JSON export and import; imported country and subdivision IDs are
+validated against the bundled catalogs before replacing local state.
 
 ## Localization
 

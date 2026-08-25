@@ -2,10 +2,16 @@ import Foundation
 
 enum SupportAPIConfiguration {
   static let endpoint = URL(
-    string: "https://tomokichi-api.tomoki-ttttt.workers.dev/api/support"
+    string: "https://api.tmkch.io/api/support"
   )!
-  static let privacyPolicy = URL(string: "https://colorvia.tmkch.io/privacy")!
-  static let termsOfService = URL(string: "https://colorvia.tmkch.io/terms")!
+  static let privacyPolicy = AppConfiguration.current.privacyPolicyURL
+  static let termsOfService = AppConfiguration.current.termsURL
+  // The shared support API currently accepts this source for both its website
+  // and native clients; the `app` field still identifies Colorvia.
+  static let source = "main-web"
+  static let commercialTransactions = URL(
+    string: "https://colorvia.tmkch.io/commercial-transactions"
+  )!
 }
 
 struct SupportRequest: Codable, Sendable {
