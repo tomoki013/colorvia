@@ -6,7 +6,7 @@
 - Japanese subtitle: 訪れた国と地域を彩る旅の地図
 - English subtitle: Color your travel map
 - Category: Travel (primary), Lifestyle (secondary)
-- Copyright: © Colorvia
+- Copyright: 2026 Tomokichi Studio
 
 ### Japanese promotional text
 
@@ -49,6 +49,11 @@ location access is required, and visit data stays on your device.
 Verify that each URL is publicly reachable before submission.
 
 ## Screenshot set
+
+- Localized 6.9-inch marketing sets (5 images each):
+  `AppStore/Screenshots/{ja,en-US,de-DE,es-ES,fr-FR,it,pt-BR,ko,zh-Hans,zh-Hant,ru}/6.9-v2/`
+- Every localized source is a 1320 x 2868 PNG and is uploaded to the
+  `APP_IPHONE_67` set for App Store version 1.0.1.
 
 - App Store-ready Japanese 6.9-inch source: `colorvia-home-ja-6.9.jpg`
 - Additional Japanese 6.9-inch sources: `colorvia-country-picker-ja-6.9.jpg`,

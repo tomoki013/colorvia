@@ -7,12 +7,17 @@ import XCTest
 /// sweep, the site only ever shows one capture per screen (locale only
 /// changes the `alt` text), so this launches once per screen instead of
 /// once per language.
+@MainActor
 final class AppStoreScreenshotTests: XCTestCase {
   override func setUpWithError() throws {
     continueAfterFailure = false
   }
 
   func testBrandSiteScreenshots() throws {
+    try XCTSkipUnless(
+      ProcessInfo.processInfo.environment["RUN_SCREENSHOT_TESTS"] == "1",
+      "Set RUN_SCREENSHOT_TESTS=1 when intentionally generating screenshots."
+    )
     try captureHomeAndControls()
     try captureStats()
     try captureVariant(name: "coral", variant: "coral", attachmentName: "colorvia-map-coral")
