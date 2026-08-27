@@ -65,6 +65,7 @@
 		A4E4B39A5E61ABE526DCEE1A /* th-place-search-index.json in Resources */ = {isa = PBXBuildFile; fileRef = F85DE257DCAF3989820B19A4 /* th-place-search-index.json */; };
 		A5ADC63ADDE72D2C13CEF1DA /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF150C708A695D206CD1AB9 /* SettingsView.swift */; };
 		A702E1D865B0AA1730D683A5 /* japan-place-search-index.json in Resources */ = {isa = PBXBuildFile; fileRef = 3A41FFF4CDE5D569C838292C /* japan-place-search-index.json */; };
+		A7BA67FD16684523F4377BA6 /* AppUpdatesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4227A85A65D84598BC0B108D /* AppUpdatesView.swift */; };
 		AA135A527108673EB7EB4D72 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = AAC4B26D76933C9E6296C198 /* PrivacyInfo.xcprivacy */; };
 		ABA6531F58064270E4257E6F /* france-departments.json in Resources */ = {isa = PBXBuildFile; fileRef = 3CFCDACF240E1F4A1FF5B43E /* france-departments.json */; };
 		ABDBD70EFC964EA0D71FAE9C /* be-place-search-index.json in Resources */ = {isa = PBXBuildFile; fileRef = 31C27495BF28523539D33FEA /* be-place-search-index.json */; };
@@ -74,6 +75,7 @@
 		B4D96BAD6715EFD4292A770C /* AppStateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C521C79E2753A0A22EC61A /* AppStateTests.swift */; };
 		B8CABB666298D49AC52FBCAF /* WorldMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51547EE1483B3222565E21C9 /* WorldMapView.swift */; };
 		B915BBCACDDE7B2D2A4C4AF6 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 8285A0001343A486C18A5684 /* Localizable.xcstrings */; };
+		BBC3F5D0CC13CAC80A0E8388 /* LegalDocumentContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068EC9263A85E83278E9427F /* LegalDocumentContent.swift */; };
 		BC3CD912B025983AF9C21A8C /* th-map.json in Resources */ = {isa = PBXBuildFile; fileRef = DF641294B6B841D569BC7C8C /* th-map.json */; };
 		BCA1BB955671E535993C7501 /* th-subdivisions.json in Resources */ = {isa = PBXBuildFile; fileRef = F0E0F586F476D73800097440 /* th-subdivisions.json */; };
 		C23C6550AFF97FF5BC3A5443 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25B0A607ED04D3FED250D616 /* AppState.swift */; };
@@ -121,6 +123,7 @@
 		0365D5D25DF7BD96E8FC313B /* kr-map.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "kr-map.json"; sourceTree = "<group>"; };
 		04B0BB7A2FA573E939A43F5F /* AdEntitlementStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdEntitlementStore.swift; sourceTree = "<group>"; };
 		063DCF90BE28079DC8068201 /* Colorvia.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Colorvia.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		068EC9263A85E83278E9427F /* LegalDocumentContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LegalDocumentContent.swift; sourceTree = "<group>"; };
 		088F978FCCC3EF778E0248E1 /* StatisticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsView.swift; sourceTree = "<group>"; };
 		0B9D34C5AAE06EB903847DCE /* eg-place-search-index.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "eg-place-search-index.json"; sourceTree = "<group>"; };
 		0BC09B273BF476F90E5E7241 /* countries.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = countries.json; sourceTree = "<group>"; };
@@ -142,6 +145,7 @@
 		3CF150C708A695D206CD1AB9 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		3CFCDACF240E1F4A1FF5B43E /* france-departments.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "france-departments.json"; sourceTree = "<group>"; };
 		4081222B198E30AB7ED3244A /* tr-map.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "tr-map.json"; sourceTree = "<group>"; };
+		4227A85A65D84598BC0B108D /* AppUpdatesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUpdatesView.swift; sourceTree = "<group>"; };
 		439D34D0EA0B7D278BFA0073 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		4781546413B603F3BE7DC60A /* AdMobConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdMobConfiguration.swift; sourceTree = "<group>"; };
 		4B62B4DA711226F149795E36 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -364,7 +368,9 @@
 		603AC18218DEA8FEF3983A5B /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				4227A85A65D84598BC0B108D /* AppUpdatesView.swift */,
 				D755BC07691D7AB758EECCDE /* ContactSupportView.swift */,
+				068EC9263A85E83278E9427F /* LegalDocumentContent.swift */,
 				A2CE52F38EFB09EDF7645224 /* LegalDocumentView.swift */,
 				3CF150C708A695D206CD1AB9 /* SettingsView.swift */,
 				F5B9798EDA56165F498E090F /* SupportAPIClient.swift */,
@@ -769,6 +775,7 @@
 				03F216D8C3DAE6FA66919C7B /* AppConfiguration.swift in Sources */,
 				889ED512F161ABFEE8429007 /* AppRoute.swift in Sources */,
 				C23C6550AFF97FF5BC3A5443 /* AppState.swift in Sources */,
+				A7BA67FD16684523F4377BA6 /* AppUpdatesView.swift in Sources */,
 				19C7D369BE7AEB0269B242BD /* BannerAdContainer.swift in Sources */,
 				422A7B5193CEFAD1E488B692 /* BannerAdView.swift in Sources */,
 				439670840BEA5963AB804117 /* ColorviaApp.swift in Sources */,
@@ -790,6 +797,7 @@
 				62D276D830C799D14351FA3F /* JapanMapStore.swift in Sources */,
 				CEDD8179EEF2CD96199C0A8E /* JapanMapView.swift in Sources */,
 				5903E5F8BC59AF93449426C5 /* L10n.swift in Sources */,
+				BBC3F5D0CC13CAC80A0E8388 /* LegalDocumentContent.swift in Sources */,
 				EE538A79A0EC88793B5F8397 /* LegalDocumentView.swift in Sources */,
 				44D90F32D84B9104EB974EC7 /* OnboardingView.swift in Sources */,
 				944F69693C6E135D4205B1B9 /* PlaceSearch.swift in Sources */,
@@ -895,7 +903,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 7;
+				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 7GU925RQ99;
 				ENABLE_NS_ASSERTIONS = NO;
@@ -915,7 +923,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 1.0.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1013,7 +1021,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 7;
+				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = 7GU925RQ99;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -1039,7 +1047,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 1.0.1;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;

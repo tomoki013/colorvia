@@ -143,18 +143,35 @@ private struct OfflineLegalDocument: View {
   var body: some View {
     ScrollView(showsIndicators: false) {
       LazyVStack(alignment: .leading, spacing: 16) {
-        Label(
-          localizedLegalText(
-            english: "You are offline. The copy bundled with the app is shown temporarily.",
-            japanese: "オフラインのため、アプリに同梱した内容を一時的に表示しています。"
-          ),
-          systemImage: "wifi.slash"
-        )
-          .font(.caption)
-          .foregroundStyle(ColorviaTheme.secondaryInk)
-          .frame(maxWidth: .infinity, alignment: .leading)
-          .padding(14)
-          .background(ColorviaTheme.card, in: RoundedRectangle(cornerRadius: 16))
+        Label {
+          VStack(alignment: .leading, spacing: 6) {
+            Text(
+              localizedLegalText(
+                english: "You are offline, so the reference copy bundled with the app is shown.",
+                japanese: "オフラインのため、アプリに同梱した参照用コピーを表示しています。"
+              )
+            )
+            // Said plainly, and every time this copy is read: the bundled text
+            // is a convenience, and the published document is the one that
+            // governs.
+            Text(
+              localizedLegalText(
+                english:
+                  "The version published on the official website is the authoritative one. The latest version is shown again once you are back online.",
+                japanese:
+                  "正本は公式Webサイトに掲載しているものです。オンラインに戻ると最新版を表示します。"
+              )
+            )
+          }
+          .fixedSize(horizontal: false, vertical: true)
+        } icon: {
+          Image(systemName: "wifi.slash")
+        }
+        .font(.caption)
+        .foregroundStyle(ColorviaTheme.secondaryInk)
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .padding(14)
+        .background(ColorviaTheme.card, in: RoundedRectangle(cornerRadius: 16))
 
         ForEach(Array(sections.enumerated()), id: \.offset) { _, section in
           VStack(alignment: .leading, spacing: 9) {
