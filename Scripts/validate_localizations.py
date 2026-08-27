@@ -25,7 +25,7 @@ EXPECTED_LANGUAGES = {
 }
 ALLOWED_RAW_UI_STRINGS = {
     "Colorvia",
-    "©︎ Colorvia",
+    "©︎ Tomokichi Studio",
     "COLORVIA",
     "Natural Earth",
     "Insee COG 2026",

@@ -53,7 +53,7 @@ struct AppConfiguration: Sendable, Equatable {
     )
     supportURL = Self.url(
       bundle.object(forInfoDictionaryKey: "SUPPORT_URL") as? String,
-      fallback: "https://tmkch.io/support"
+      fallback: "https://tmkch.io/support?app=colorvia"
     )
     marketingURL = Self.url(
       bundle.object(forInfoDictionaryKey: "MARKETING_URL") as? String,

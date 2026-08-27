@@ -6,12 +6,58 @@ enum SupportAPIConfiguration {
   )!
   static let privacyPolicy = AppConfiguration.current.privacyPolicyURL
   static let termsOfService = AppConfiguration.current.termsURL
-  // The shared support API currently accepts this source for both its website
-  // and native clients; the `app` field still identifies Colorvia.
-  static let source = "main-web"
+  static let source = "colorvia-ios"
   static let commercialTransactions = URL(
     string: "https://colorvia.tmkch.io/commercial-transactions"
   )!
+  /// Where to send someone when the in-app form cannot reach the API.
+  static let supportPage = AppConfiguration.current.supportURL
+}
+
+/// The four kinds of enquiry the shared support API accepts. Kept in step with
+/// `supportCategories` in the API and with the categories offered on
+/// tmkch.io/support, so a message sent from the app and one sent from the web
+/// arrive filed the same way.
+enum SupportCategory: String, CaseIterable, Codable, Identifiable, Sendable {
+  case question
+  case bug
+  case feature
+  case other
+
+  var id: String { rawValue }
+
+  var localizedName: String {
+    switch self {
+    case .question: L10n.text("contact.category.question")
+    case .bug: L10n.text("contact.category.bug")
+    case .feature: L10n.text("contact.category.feature")
+    case .other: L10n.text("contact.category.other")
+    }
+  }
+
+  var iconName: String {
+    switch self {
+    case .question: "questionmark.circle"
+    case .bug: "ladybug"
+    case .feature: "lightbulb"
+    case .other: "ellipsis.circle"
+    }
+  }
+
+  /// Whether choosing this category is already asking for an answer.
+  ///
+  /// A question is a request for a reply by definition, so offering a "would
+  /// you like a reply?" switch beside it asks something nobody can sensibly
+  /// answer no to: these categories skip the switch and need an address
+  /// outright. A bug report, an idea or a passing remark are all things people
+  /// send without wanting anything back, and those are the ones worth not
+  /// asking an email address for.
+  var impliesReply: Bool {
+    switch self {
+    case .question: true
+    case .bug, .feature, .other: false
+    }
+  }
 }
 
 struct SupportRequest: Codable, Sendable {
@@ -19,7 +65,7 @@ struct SupportRequest: Codable, Sendable {
   let clientId: UUID
   let source: String
   let app: String
-  let category: String
+  let category: SupportCategory
   let name: String
   let email: String
   let message: String
@@ -31,7 +77,7 @@ struct SupportRequest: Codable, Sendable {
   let website: String
 }
 
-struct SupportResponse: Decodable, Sendable {
+struct SupportResponse: Decodable, Equatable, Sendable {
   let requestId: UUID
 
   private enum CodingKeys: String, CodingKey {

@@ -205,7 +205,7 @@ struct SettingsView: View {
         internalRow(icon: "envelope", title: L10n.text("settings.contact"))
       }
       NavigationLink {
-        InAppArticleView(page: .updates)
+        AppUpdatesView()
       } label: {
         internalRow(icon: "sparkles", title: L10n.text("settings.updates"))
       }
@@ -239,7 +239,7 @@ struct SettingsView: View {
         LegalDocumentView(
           title: L10n.text("settings.privacy"),
           url: SupportAPIConfiguration.privacyPolicy,
-          sections: InAppArticlePage.privacy.sections
+          sections: BundledLegalDocument.privacy.sections
         )
       } label: {
         internalRow(icon: "hand.raised", title: L10n.text("settings.privacy"))
@@ -262,7 +262,7 @@ struct SettingsView: View {
         LegalDocumentView(
           title: L10n.text("settings.terms"),
           url: SupportAPIConfiguration.termsOfService,
-          sections: InAppArticlePage.terms.sections
+          sections: BundledLegalDocument.terms.sections
         )
       } label: {
         internalRow(icon: "doc.text", title: L10n.text("settings.terms"))
@@ -289,7 +289,7 @@ struct SettingsView: View {
   }
 
   private var copyrightText: some View {
-    Text("©︎ Colorvia")
+    Text("©︎ Tomokichi Studio")
       .font(.footnote)
       .foregroundStyle(ColorviaTheme.secondaryInk)
       .frame(maxWidth: .infinity)
@@ -423,7 +423,10 @@ private struct AppDetailsView: View {
         Link(destination: AppConfiguration.current.marketingURL) {
           LabeledContent(L10n.text("settings.official_site"), value: "colorvia.tmkch.io")
         }
-        Link(destination: AppConfiguration.current.supportURL) {
+        // The address shown stays short and readable; the link itself carries
+        // the app so the shared form arrives pre-selected, and the locale so a
+        // Japanese reader lands on the Japanese page.
+        Link(destination: localizedLegalURL(AppConfiguration.current.supportURL)) {
           LabeledContent(L10n.text("settings.support"), value: "tmkch.io/support")
         }
         if let emailURL = URL(string: "mailto:support@tmkch.io?subject=Colorvia") {
@@ -721,18 +724,12 @@ private struct OpenSourceLicensesView: View {
 private enum InAppArticlePage {
   case guide
   case faq
-  case updates
-  case privacy
-  case terms
   case commercial
 
   var title: String {
     switch self {
     case .guide: L10n.text("settings.guide")
     case .faq: L10n.text("settings.faq")
-    case .updates: L10n.text("settings.updates")
-    case .privacy: L10n.text("settings.privacy")
-    case .terms: L10n.text("settings.terms")
     case .commercial:
       localizedLegalText(
         english: "Commercial transactions disclosure",
@@ -771,43 +768,6 @@ private enum InAppArticlePage {
         (
           L10n.text("faq.percentage.title"),
           L10n.text("faq.percentage.body")
-        ),
-      ]
-    case .updates:
-      [
-        (
-          L10n.text("updates.version.title"),
-          L10n.text("updates.version.body")
-        )
-      ]
-    case .privacy:
-      [
-        (
-          L10n.text("privacy.collection.title"),
-          L10n.text("privacy.collection.body")
-        ),
-        (
-          L10n.text("privacy.storage.title"),
-          L10n.text("privacy.storage.body")
-        ),
-        (
-          L10n.text("privacy.analytics.title"),
-          L10n.text("privacy.analytics.body")
-        ),
-      ]
-    case .terms:
-      [
-        (
-          L10n.text("terms.service.title"),
-          L10n.text("terms.service.body")
-        ),
-        (
-          L10n.text("terms.use.title"),
-          L10n.text("terms.use.body")
-        ),
-        (
-          L10n.text("terms.disclaimer.title"),
-          L10n.text("terms.disclaimer.body")
         ),
       ]
     case .commercial:
