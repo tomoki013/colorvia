@@ -2,11 +2,16 @@ import Foundation
 
 enum SupportAPIConfiguration {
   static let endpoint = URL(
-    string: "https://api.tmkch.io/api/support"
+    string: "https://api.tmkch.io/api/v1/support"
   )!
   static let privacyPolicy = AppConfiguration.current.privacyPolicyURL
   static let termsOfService = AppConfiguration.current.termsURL
   static let source = "colorvia-ios"
+  /// The name of the header the shared support API reads the client key from.
+  static let clientHeader = "X-Support-Client"
+  /// See `AppConfiguration.supportClientKey`: a filter that keeps the API from
+  /// having to trust `source` alone, not a credential.
+  static var clientKey: String? { AppConfiguration.current.supportClientKey }
   static let commercialTransactions = URL(
     string: "https://colorvia.tmkch.io/commercial-transactions"
   )!
@@ -130,17 +135,32 @@ enum SupportAPIError: Error, Equatable {
 
 struct SupportAPIClient: Sendable {
   private let session: URLSession
+  private let clientKey: String?
 
-  init(session: URLSession = .shared) {
+  init(
+    session: URLSession = .shared,
+    clientKey: String? = SupportAPIConfiguration.clientKey
+  ) {
     self.session = session
+    // Blank is treated as absent, so a build config that never set the value
+    // sends no header at all. The API reads a present-but-wrong value as a
+    // refusal, while a missing header is what an older build legitimately
+    // sends.
+    let trimmed = clientKey?.trimmingCharacters(in: .whitespacesAndNewlines)
+    self.clientKey = (trimmed?.isEmpty == false) ? trimmed : nil
   }
 
-  func submit(_ request: SupportRequest) async throws -> SupportResponse {
+  /// The POST as it leaves the device. Split out from `submit` so the headers
+  /// can be read in a test without a network round trip.
+  func urlRequest(for request: SupportRequest) throws -> URLRequest {
     var urlRequest = URLRequest(url: SupportAPIConfiguration.endpoint)
     urlRequest.httpMethod = "POST"
     urlRequest.timeoutInterval = 20
     urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
     urlRequest.setValue("application/json", forHTTPHeaderField: "Accept")
+    if let clientKey {
+      urlRequest.setValue(clientKey, forHTTPHeaderField: SupportAPIConfiguration.clientHeader)
+    }
 
     let encoder = JSONEncoder()
     encoder.dateEncodingStrategy = .iso8601
@@ -149,6 +169,11 @@ struct SupportAPIClient: Sendable {
     } catch {
       throw SupportAPIError.invalidRequest
     }
+    return urlRequest
+  }
+
+  func submit(_ request: SupportRequest) async throws -> SupportResponse {
+    let urlRequest = try urlRequest(for: request)
 
     do {
       let (data, response) = try await session.data(for: urlRequest)

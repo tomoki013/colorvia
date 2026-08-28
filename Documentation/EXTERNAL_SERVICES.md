@@ -8,7 +8,17 @@ CLOUD_SYNC_ENABLED=NO
 ADMOB_APP_ID=ca-app-pub-8687520805381056~7543227876
 ADMOB_BANNER_AD_UNIT_ID=ca-app-pub-8687520805381056/8545318350
 ICLOUD_CONTAINER_ID=
+SUPPORT_CLIENT_KEY=cec87aa57c013f3749a1bb1a09cbfa3e5e33048c8dd195d0
 ```
+
+`SUPPORT_CLIENT_KEY` is set in `Config/Debug.xcconfig` and `Config/Release.xcconfig`,
+substituted into `Info.plist`, and sent as the `X-Support-Client` header on the
+support POST. It ships inside the binary, so it is a filter that lets the API
+ignore anything merely claiming `source: "colorvia-ios"` — the web form's
+Turnstile check has no meaning without it. It is not a credential and not what
+protects the endpoint. Remeet sends the same value, and the API holds it as the
+`SUPPORT_CLIENT_KEY` secret; unset there means unenforced, so a new value goes
+into the apps first and onto the API second.
 
 ## Current composition
 
