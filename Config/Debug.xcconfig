@@ -4,3 +4,9 @@ CLOUD_SYNC_ENABLED = NO
 ADMOB_APP_ID = ca-app-pub-3940256099942544~1458002511
 ADMOB_BANNER_AD_UNIT_ID = ca-app-pub-3940256099942544/2934735716
 ICLOUD_CONTAINER_ID =
+// The shared support client key. It ships inside the binary, so it is a filter
+// the API uses to ignore anything merely claiming source: "colorvia-ios" — not
+// a credential, and not what keeps the endpoint safe. The same value is set on
+// the API as SUPPORT_CLIENT_KEY; roll it out here first, since unset there
+// means unenforced.
+SUPPORT_CLIENT_KEY = cec87aa57c013f3749a1bb1a09cbfa3e5e33048c8dd195d0

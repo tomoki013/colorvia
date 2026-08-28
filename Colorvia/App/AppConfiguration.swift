@@ -9,6 +9,13 @@ struct AppConfiguration: Sendable, Equatable {
   let termsURL: URL
   let supportURL: URL
   let marketingURL: URL
+  /// What the app sends so the support API can ignore everything that is not
+  /// one of our apps. Not a credential — it ships inside the binary — and the
+  /// API treats it as a filter rather than as authentication: it stops a bare
+  /// `curl` claiming `source: "colorvia-ios"`, not somebody who has opened the
+  /// binary. Injected from the build setting of the same name; `nil` in a build
+  /// that has not set one, in which case the header is simply not sent.
+  let supportClientKey: String?
 
   static let current = AppConfiguration(bundle: .main)
 
@@ -20,7 +27,8 @@ struct AppConfiguration: Sendable, Equatable {
     privacyPolicyURL: URL,
     termsURL: URL,
     supportURL: URL,
-    marketingURL: URL
+    marketingURL: URL,
+    supportClientKey: String? = nil
   ) {
     self.adsEnabled = adsEnabled
     self.cloudSyncEnabled = cloudSyncEnabled
@@ -30,6 +38,7 @@ struct AppConfiguration: Sendable, Equatable {
     self.termsURL = termsURL
     self.supportURL = supportURL
     self.marketingURL = marketingURL
+    self.supportClientKey = Self.nonEmpty(supportClientKey)
   }
 
   init(bundle: Bundle) {
@@ -58,6 +67,9 @@ struct AppConfiguration: Sendable, Equatable {
     marketingURL = Self.url(
       bundle.object(forInfoDictionaryKey: "MARKETING_URL") as? String,
       fallback: "https://colorvia.tmkch.io"
+    )
+    supportClientKey = Self.nonEmpty(
+      bundle.object(forInfoDictionaryKey: "SUPPORT_CLIENT_KEY") as? String
     )
   }
 

@@ -50,6 +50,7 @@
 		6C29DED453844ED577804EA6 /* tr-map.json in Resources */ = {isa = PBXBuildFile; fileRef = 4081222B198E30AB7ED3244A /* tr-map.json */; };
 		6C824B80871F3258D7F872DA /* france-place-search-index.json in Resources */ = {isa = PBXBuildFile; fileRef = 132A0FCA55489532D9E621EE /* france-place-search-index.json */; };
 		6E621D91AF54F8C6B960E314 /* AdEntitlementStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B0BB7A2FA573E939A43F5F /* AdEntitlementStore.swift */; };
+		72157425C0FBAAF58620BC94 /* SupportAPIClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA3079424C14170CF25F09DE /* SupportAPIClientTests.swift */; };
 		72796FBB384215C46A9D2274 /* CountryDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E49DA7D76F9323C3660D1F /* CountryDetailView.swift */; };
 		785D6D7FFECE44A08234AA66 /* kr-place-search-index.json in Resources */ = {isa = PBXBuildFile; fileRef = 7E5CB462AC0E7937E73A4087 /* kr-place-search-index.json */; };
 		78D9706EE3882E6D3BE83AB1 /* es-map.json in Resources */ = {isa = PBXBuildFile; fileRef = 957D45F9AF37DDF78AA0E620 /* es-map.json */; };
@@ -195,6 +196,7 @@
 		C4C477227371CFC5DEDC45E8 /* FranceShareSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FranceShareSheet.swift; sourceTree = "<group>"; };
 		C5E451573C611F504FD2ACBD /* ColorviaTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = ColorviaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7ACA4BBE7C7C19A6903B4DB /* be-map.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "be-map.json"; sourceTree = "<group>"; };
+		CA3079424C14170CF25F09DE /* SupportAPIClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportAPIClientTests.swift; sourceTree = "<group>"; };
 		CC2DB817C950F061BAE7A3D1 /* es-subdivisions.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "es-subdivisions.json"; sourceTree = "<group>"; };
 		CCB17EA43F3D9C7DC090A8C2 /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
 		CCBDDC80937AD8B575CF7310 /* us-place-search-index.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "us-place-search-index.json"; sourceTree = "<group>"; };
@@ -247,6 +249,7 @@
 			isa = PBXGroup;
 			children = (
 				92C521C79E2753A0A22EC61A /* AppStateTests.swift */,
+				CA3079424C14170CF25F09DE /* SupportAPIClientTests.swift */,
 			);
 			path = ColorviaTests;
 			sourceTree = "<group>";
@@ -831,6 +834,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B4D96BAD6715EFD4292A770C /* AppStateTests.swift in Sources */,
+				72157425C0FBAAF58620BC94 /* SupportAPIClientTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -225,6 +225,8 @@
 			<string>3qcr597p9d.skadnetwork</string>
 		</dict>
 	</array>
+	<key>SUPPORT_CLIENT_KEY</key>
+	<string>$(SUPPORT_CLIENT_KEY)</string>
 	<key>SUPPORT_URL</key>
 	<string>https://tmkch.io/support?app=colorvia</string>
 	<key>TERMS_URL</key>
