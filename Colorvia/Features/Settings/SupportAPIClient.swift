@@ -2,7 +2,7 @@ import Foundation
 
 enum SupportAPIConfiguration {
   static let endpoint = URL(
-    string: "https://api.tmkch.io/api/support"
+    string: "https://api.tmkch.io/api/v1/support"
   )!
   static let privacyPolicy = AppConfiguration.current.privacyPolicyURL
   static let termsOfService = AppConfiguration.current.termsURL

@@ -25,6 +25,16 @@ struct SupportAPIClientTests {
     #expect(request.value(forHTTPHeaderField: "X-Support-Client") == nil)
   }
 
+  /// The versioned path, which Remeet also uses. The API still answers the
+  /// unversioned `/api/support` it was written against, so this is about not
+  /// being the only caller left on an alias.
+  @Test func supportPostGoesToTheVersionedEndpoint() throws {
+    let request = try SupportAPIClient(clientKey: nil).urlRequest(for: Self.sampleRequest)
+
+    #expect(request.url == URL(string: "https://api.tmkch.io/api/v1/support"))
+    #expect(request.httpMethod == "POST")
+  }
+
   /// A blank build setting is the same as no build setting: an empty header
   /// would read as a wrong key once the API enforces one, where a missing
   /// header is what a build from before this change sends.
