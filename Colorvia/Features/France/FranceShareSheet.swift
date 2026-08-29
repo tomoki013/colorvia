@@ -1,12 +1,14 @@
 import SwiftUI
+import UIKit
 
 struct FranceShareSheet: View {
   @Environment(\.dismiss) private var dismiss
   let departments: [MapPrefecture]
   let visitedCodes: Set<String>
   let visitedColor: Color
-  @State private var squareURL: URL?
-  @State private var storyURL: URL?
+  @State private var squareImage: UIImage?
+  @State private var storyImage: UIImage?
+  @State private var sharePayload: ColorviaSharePayload?
   @State private var renderError: String?
 
   var body: some View {
@@ -16,13 +18,13 @@ struct FranceShareSheet: View {
           title: L10n.text("france_share.square"),
           subtitle: "1080 × 1080",
           icon: "square",
-          url: squareURL
+          image: squareImage
         )
         shareRow(
           title: L10n.text("france_share.story"),
           subtitle: "1080 × 1920",
           icon: "rectangle.portrait",
-          url: storyURL
+          image: storyImage
         )
       }
       .navigationTitle(L10n.text("france_share.title"))
@@ -41,6 +43,10 @@ struct FranceShareSheet: View {
     .presentationDetents([.medium])
     .presentationDragIndicator(.visible)
     .task { renderPosters() }
+    .sheet(item: $sharePayload) { payload in
+      ColorviaActivityShareSheet(payload: payload)
+        .presentationDetents([.large])
+    }
     .alert(
       L10n.text("france_share.title"),
       isPresented: Binding(
@@ -59,13 +65,15 @@ struct FranceShareSheet: View {
     title: String,
     subtitle: String,
     icon: String,
-    url: URL?
+    image: UIImage?
   ) -> some View {
-    if let url {
-      ShareLink(
-        item: url,
-        preview: SharePreview(title, image: Image(systemName: icon))
-      ) {
+    if let image {
+      Button {
+        sharePayload = ColorviaSharePayload(
+          image: image,
+          message: L10n.franceShareMessage(visitedCodes.count)
+        )
+      } label: {
         Label {
           VStack(alignment: .leading, spacing: 3) {
             Text(title)
@@ -98,13 +106,13 @@ struct FranceShareSheet: View {
   @MainActor
   private func renderPosters() {
     do {
-      squareURL = try FrancePosterRenderer.render(
+      squareImage = try FrancePosterRenderer.render(
         departments: departments,
         visitedCodes: visitedCodes,
         visitedColor: visitedColor,
         layout: .square
       )
-      storyURL = try FrancePosterRenderer.render(
+      storyImage = try FrancePosterRenderer.render(
         departments: departments,
         visitedCodes: visitedCodes,
         visitedColor: visitedColor,
@@ -127,12 +135,6 @@ private enum FrancePosterLayout {
     }
   }
 
-  var fileName: String {
-    switch self {
-    case .square: "colorvia-france-square.png"
-    case .story: "colorvia-france-story.png"
-    }
-  }
 }
 
 @MainActor
@@ -142,7 +144,7 @@ private enum FrancePosterRenderer {
     visitedCodes: Set<String>,
     visitedColor: Color,
     layout: FrancePosterLayout
-  ) throws -> URL {
+  ) throws -> UIImage {
     let size = layout.logicalSize
     let content = FrancePosterView(
       departments: departments,
@@ -155,12 +157,10 @@ private enum FrancePosterRenderer {
     let renderer = ImageRenderer(content: content)
     renderer.proposedSize = ProposedViewSize(size)
     renderer.scale = 2
-    guard let data = renderer.uiImage?.pngData() else {
+    guard let image = renderer.uiImage else {
       throw CocoaError(.fileWriteUnknown)
     }
-    let url = FileManager.default.temporaryDirectory.appending(path: layout.fileName)
-    try data.write(to: url, options: .atomic)
-    return url
+    return image
   }
 }
 

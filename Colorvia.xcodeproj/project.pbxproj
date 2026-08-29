@@ -67,6 +67,7 @@
 		A5ADC63ADDE72D2C13CEF1DA /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF150C708A695D206CD1AB9 /* SettingsView.swift */; };
 		A702E1D865B0AA1730D683A5 /* japan-place-search-index.json in Resources */ = {isa = PBXBuildFile; fileRef = 3A41FFF4CDE5D569C838292C /* japan-place-search-index.json */; };
 		A7BA67FD16684523F4377BA6 /* AppUpdatesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4227A85A65D84598BC0B108D /* AppUpdatesView.swift */; };
+		A7BF46F5E4A5BD1131282AB4 /* ColorviaActivityShareSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3124D07F2628D8A0A81E0DA2 /* ColorviaActivityShareSheet.swift */; };
 		AA135A527108673EB7EB4D72 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = AAC4B26D76933C9E6296C198 /* PrivacyInfo.xcprivacy */; };
 		ABA6531F58064270E4257E6F /* france-departments.json in Resources */ = {isa = PBXBuildFile; fileRef = 3CFCDACF240E1F4A1FF5B43E /* france-departments.json */; };
 		ABDBD70EFC964EA0D71FAE9C /* be-place-search-index.json in Resources */ = {isa = PBXBuildFile; fileRef = 31C27495BF28523539D33FEA /* be-place-search-index.json */; };
@@ -79,6 +80,7 @@
 		BBC3F5D0CC13CAC80A0E8388 /* LegalDocumentContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068EC9263A85E83278E9427F /* LegalDocumentContent.swift */; };
 		BC3CD912B025983AF9C21A8C /* th-map.json in Resources */ = {isa = PBXBuildFile; fileRef = DF641294B6B841D569BC7C8C /* th-map.json */; };
 		BCA1BB955671E535993C7501 /* th-subdivisions.json in Resources */ = {isa = PBXBuildFile; fileRef = F0E0F586F476D73800097440 /* th-subdivisions.json */; };
+		BCF7BA11F60E70F6FC76377D /* WorldShareSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B5D0B75F9BCDF429283595 /* WorldShareSheet.swift */; };
 		C23C6550AFF97FF5BC3A5443 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25B0A607ED04D3FED250D616 /* AppState.swift */; };
 		C350A745A140F98A6C496E96 /* sg-map.json in Resources */ = {isa = PBXBuildFile; fileRef = 3875E4FAE474E54CD330151C /* sg-map.json */; };
 		C47E5C58AAB415459B07284B /* SubdivisionShareSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7197F600ED1B069ADCC17D8 /* SubdivisionShareSheet.swift */; };
@@ -135,9 +137,11 @@
 		17564F03267C2614F0BCA353 /* kr-subdivisions.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "kr-subdivisions.json"; sourceTree = "<group>"; };
 		1F07E87D5E4AB5178114D283 /* L10n.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = L10n.swift; sourceTree = "<group>"; };
 		1FAE63DD192DB49310C45B5E /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		22B5D0B75F9BCDF429283595 /* WorldShareSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldShareSheet.swift; sourceTree = "<group>"; };
 		25B0A607ED04D3FED250D616 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		279620BDCC1CCE269F8B97EF /* tr-subdivisions.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "tr-subdivisions.json"; sourceTree = "<group>"; };
 		2E8311FC617211F299BD9822 /* JapanDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JapanDetailView.swift; sourceTree = "<group>"; };
+		3124D07F2628D8A0A81E0DA2 /* ColorviaActivityShareSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorviaActivityShareSheet.swift; sourceTree = "<group>"; };
 		31C27495BF28523539D33FEA /* be-place-search-index.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "be-place-search-index.json"; sourceTree = "<group>"; };
 		3875E4FAE474E54CD330151C /* sg-map.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "sg-map.json"; sourceTree = "<group>"; };
 		38BDBFCFC63E053860D1472A /* SubdivisionMapScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubdivisionMapScreen.swift; sourceTree = "<group>"; };
@@ -258,6 +262,7 @@
 			isa = PBXGroup;
 			children = (
 				4B62B4DA711226F149795E36 /* HomeView.swift */,
+				22B5D0B75F9BCDF429283595 /* WorldShareSheet.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -329,6 +334,7 @@
 				274D31078EF3C4A9D4CE47F3 /* Japan */,
 				8D3753D798FC25CF3AA18519 /* Onboarding */,
 				603AC18218DEA8FEF3983A5B /* Settings */,
+				72597193150D57B5E31CBC17 /* Sharing */,
 				532DF4C7DF3946918F01CE6F /* Statistics */,
 			);
 			path = Features;
@@ -388,6 +394,14 @@
 				51547EE1483B3222565E21C9 /* WorldMapView.swift */,
 			);
 			path = WorldMap;
+			sourceTree = "<group>";
+		};
+		72597193150D57B5E31CBC17 /* Sharing */ = {
+			isa = PBXGroup;
+			children = (
+				3124D07F2628D8A0A81E0DA2 /* ColorviaActivityShareSheet.swift */,
+			);
+			path = Sharing;
 			sourceTree = "<group>";
 		};
 		823C719D945EF77A73EDD5A8 /* ColorviaUITests */ = {
@@ -781,6 +795,7 @@
 				A7BA67FD16684523F4377BA6 /* AppUpdatesView.swift in Sources */,
 				19C7D369BE7AEB0269B242BD /* BannerAdContainer.swift in Sources */,
 				422A7B5193CEFAD1E488B692 /* BannerAdView.swift in Sources */,
+				A7BF46F5E4A5BD1131282AB4 /* ColorviaActivityShareSheet.swift in Sources */,
 				439670840BEA5963AB804117 /* ColorviaApp.swift in Sources */,
 				D8D14FF3F660F698C5DA97CA /* ColorviaTheme.swift in Sources */,
 				33D50579A9AAC1515ADB75A0 /* ContactSupportView.swift in Sources */,
@@ -818,6 +833,7 @@
 				065436C2D4CF3E5FB0187603 /* VisitDataDocument.swift in Sources */,
 				47CB5430C115CC15A647DC3C /* WorldMapStore.swift in Sources */,
 				B8CABB666298D49AC52FBCAF /* WorldMapView.swift in Sources */,
+				BCF7BA11F60E70F6FC76377D /* WorldShareSheet.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -907,7 +923,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 7GU925RQ99;
 				ENABLE_NS_ASSERTIONS = NO;
@@ -1025,7 +1041,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = 7GU925RQ99;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;

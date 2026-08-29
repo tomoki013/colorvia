@@ -3,6 +3,7 @@ import SwiftUI
 struct JapanMapScreen: View {
   @Environment(AppState.self) private var appState
   @State private var showingPicker = false
+  @State private var showingShareSheet = false
   @State private var isStatisticsExpanded = false
 
   var body: some View {
@@ -40,15 +41,28 @@ struct JapanMapScreen: View {
     .navigationTitle(japanName)
     .navigationBarTitleDisplayMode(.inline)
     .toolbar {
-      ShareLink(item: L10n.japanShareMessage(appState.visitedPrefectureCount)) {
+      Button {
+        showingShareSheet = true
+      } label: {
         Image(systemName: "square.and.arrow.up")
       }
+      .accessibilityLabel(L10n.text("common.share"))
     }
     .sheet(isPresented: $showingPicker) {
       PrefectureListView(initialSelection: appState.visitedPrefectureCodes) { selection in
         Task {
           await appState.replaceVisitedPrefectures(with: selection)
         }
+      }
+    }
+    .sheet(isPresented: $showingShareSheet) {
+      if let definition = CountrySubdivisionRegistry.definition(for: "JP") {
+        SubdivisionShareSheet(
+          definition: definition,
+          geometry: appState.mapPrefectures,
+          visitedCodes: appState.visitedPrefectureCodes,
+          visitedColor: appState.mapColor.color
+        )
       }
     }
     .tint(ColorviaTheme.accentDeep)

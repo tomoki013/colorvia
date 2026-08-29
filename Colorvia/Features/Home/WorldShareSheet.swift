@@ -1,29 +1,30 @@
 import SwiftUI
 import UIKit
 
-struct SubdivisionShareSheet: View {
+struct WorldShareSheet: View {
   @Environment(\.dismiss) private var dismiss
-  let definition: CountrySubdivisionDefinition
-  let geometry: [MapPrefecture]
+  let countries: [MapCountry]
   let visitedCodes: Set<String>
+  let visitedCount: Int
   let visitedColor: Color
-  @State private var renderedImages: [SubdivisionPosterVariant: UIImage] = [:]
+
+  @State private var renderedImages: [WorldPosterVariant: UIImage] = [:]
   @State private var sharePayload: ColorviaSharePayload?
   @State private var renderError: String?
 
   var body: some View {
     NavigationStack {
       List {
-        Section(L10n.text("subdivision_share.country_map")) {
-          shareRow(.countrySquare)
-          shareRow(.countryStory)
+        Section(L10n.text("world_share.full_poster")) {
+          shareRow(.square)
+          shareRow(.story)
         }
         Section(L10n.text("subdivision_share.map_only")) {
           shareRow(.mapSquare)
           shareRow(.mapStory)
         }
       }
-      .navigationTitle(L10n.text("subdivision_share.title"))
+      .navigationTitle(L10n.text("world_share.title"))
       .navigationBarTitleDisplayMode(.inline)
       .toolbar {
         ToolbarItem(placement: .cancellationAction) {
@@ -44,7 +45,7 @@ struct SubdivisionShareSheet: View {
         .presentationDetents([.large])
     }
     .alert(
-      L10n.text("subdivision_share.title"),
+      L10n.text("world_share.title"),
       isPresented: Binding(
         get: { renderError != nil },
         set: { if !$0 { renderError = nil } }
@@ -57,13 +58,12 @@ struct SubdivisionShareSheet: View {
   }
 
   @ViewBuilder
-  private func shareRow(_ variant: SubdivisionPosterVariant) -> some View {
+  private func shareRow(_ variant: WorldPosterVariant) -> some View {
     if let image = renderedImages[variant] {
       Button {
         sharePayload = ColorviaSharePayload(
           image: image,
-          message:
-            "\(definition.localizedCountryName): \(visitedCodes.count) / \(definition.totalCount) · Colorvia"
+          message: L10n.shareMessage(visitedCount)
         )
       } label: {
         Label {
@@ -71,7 +71,8 @@ struct SubdivisionShareSheet: View {
             Text(variant.isStory ? "1080 × 1920" : "1080 × 1080")
             Text(
               variant.isStory
-                ? L10n.text("subdivision_share.story") : L10n.text("subdivision_share.square")
+                ? L10n.text("subdivision_share.story")
+                : L10n.text("subdivision_share.square")
             )
             .font(.caption)
             .foregroundStyle(.secondary)
@@ -95,11 +96,11 @@ struct SubdivisionShareSheet: View {
   @MainActor
   private func renderPosters() {
     do {
-      for variant in SubdivisionPosterVariant.allCases {
-        renderedImages[variant] = try SubdivisionPosterRenderer.render(
-          definition: definition,
-          geometry: geometry,
+      for variant in WorldPosterVariant.allCases {
+        renderedImages[variant] = try WorldPosterRenderer.render(
+          countries: countries,
           visitedCodes: visitedCodes,
+          visitedCount: visitedCount,
           visitedColor: visitedColor,
           variant: variant
         )
@@ -110,38 +111,32 @@ struct SubdivisionShareSheet: View {
   }
 }
 
-private enum SubdivisionPosterVariant: String, CaseIterable {
-  case countrySquare
-  case countryStory
+private enum WorldPosterVariant: CaseIterable, Hashable {
+  case square
+  case story
   case mapSquare
   case mapStory
 
-  var isStory: Bool {
-    self == .countryStory || self == .mapStory
-  }
-
-  var isMapOnly: Bool {
-    self == .mapSquare || self == .mapStory
-  }
-
+  var isStory: Bool { self == .story || self == .mapStory }
+  var isMapOnly: Bool { self == .mapSquare || self == .mapStory }
   var size: CGSize {
     isStory ? CGSize(width: 540, height: 960) : CGSize(width: 540, height: 540)
   }
 }
 
 @MainActor
-private enum SubdivisionPosterRenderer {
+private enum WorldPosterRenderer {
   static func render(
-    definition: CountrySubdivisionDefinition,
-    geometry: [MapPrefecture],
+    countries: [MapCountry],
     visitedCodes: Set<String>,
+    visitedCount: Int,
     visitedColor: Color,
-    variant: SubdivisionPosterVariant
+    variant: WorldPosterVariant
   ) throws -> UIImage {
-    let content = SubdivisionPosterView(
-      definition: definition,
-      geometry: geometry,
+    let content = WorldPosterView(
+      countries: countries,
       visitedCodes: visitedCodes,
+      visitedCount: visitedCount,
       visitedColor: visitedColor,
       variant: variant
     )
@@ -156,28 +151,17 @@ private enum SubdivisionPosterRenderer {
   }
 }
 
-private struct SubdivisionPosterView: View {
-  let definition: CountrySubdivisionDefinition
-  let geometry: [MapPrefecture]
+private struct WorldPosterView: View {
+  let countries: [MapCountry]
   let visitedCodes: Set<String>
+  let visitedCount: Int
   let visitedColor: Color
-  let variant: SubdivisionPosterVariant
+  let variant: WorldPosterVariant
 
-  private var titleText: String {
-    "MY \(englishCountryName.uppercased())"
-  }
-
-  private var countText: String {
-    "\(visitedCodes.count) / \(definition.totalCount) \(definition.nativeUnitName.uppercased())"
-  }
-
-  private var percentageText: String {
-    (Double(visitedCodes.count) / Double(definition.totalCount) * 100)
-      .formatted(.number.precision(.fractionLength(1))) + "%"
-  }
+  private var titleText: String { "MY WORLD" }
 
   var body: some View {
-    VStack(spacing: variant.isStory ? 44 : 20) {
+    VStack(spacing: variant.isStory ? 48 : 24) {
       if !variant.isMapOnly {
         header
       }
@@ -185,25 +169,25 @@ private struct SubdivisionPosterView: View {
       posterMap
         .frame(height: mapHeight)
 
-      if !variant.isMapOnly {
-        stats
-      } else {
+      if variant.isMapOnly {
         Text("Colorvia")
-          .font(.system(size: 15, weight: .semibold, design: .serif))
+          .font(.system(size: 17, weight: .semibold, design: .serif))
           .foregroundStyle(posterSecondary)
+      } else {
+        stats
       }
     }
-    .padding(.horizontal, 38)
-    .padding(.vertical, variant.isStory ? 76 : 30)
+    .padding(.horizontal, variant.isStory ? 38 : 30)
+    .padding(.vertical, variant.isStory ? 78 : 34)
     .frame(maxWidth: .infinity, maxHeight: .infinity)
     .background(Color(red: 0.95, green: 0.97, blue: 0.95))
     .foregroundStyle(Color(red: 0.10, green: 0.19, blue: 0.20))
   }
 
   private var header: some View {
-    VStack(spacing: 5) {
+    VStack(spacing: 6) {
       Text(titleText)
-        .font(.system(size: variant.isStory ? 34 : 27, weight: .bold, design: .rounded))
+        .font(.system(size: variant.isStory ? 38 : 30, weight: .bold, design: .rounded))
       Text("COLORVIA")
         .font(.system(size: 10, weight: .semibold, design: .rounded))
         .tracking(3)
@@ -213,39 +197,44 @@ private struct SubdivisionPosterView: View {
 
   private var stats: some View {
     VStack(spacing: 7) {
-      Text(countText)
-        .font(.system(size: 21, weight: .semibold, design: .rounded))
+      Text("\(visitedCount) / 195 \(L10n.countryUnit(visitedCount).uppercased())")
+        .font(.system(size: 22, weight: .semibold, design: .rounded))
         .minimumScaleFactor(0.7)
-      Text(percentageText)
-        .font(.system(size: 15, weight: .medium, design: .rounded))
-        .foregroundStyle(posterSecondary)
+      Text(
+        (Double(visitedCount) / 195 * 100)
+          .formatted(.number.precision(.fractionLength(1))) + "%"
+      )
+      .font(.system(size: 16, weight: .medium, design: .rounded))
+      .foregroundStyle(posterSecondary)
     }
   }
 
   private var posterMap: some View {
     Canvas { context, size in
-      let side = min(size.width, size.height)
-      let rect = CGRect(
-        x: (size.width - side) / 2,
-        y: (size.height - side) / 2,
-        width: side,
-        height: side
+      let ratio: CGFloat = 2.05
+      let width = min(size.width * 0.94, size.height * ratio)
+      let height = width / ratio
+      let mapRect = CGRect(
+        x: (size.width - width) / 2,
+        y: (size.height - height) / 2,
+        width: width,
+        height: height
       )
-      for subdivision in geometry {
+      for country in countries {
         let path = Path { path in
-          for polygon in subdivision.polygons where polygon.count > 2 {
+          for polygon in country.polygons where polygon.count > 2 {
             let first = polygon[0]
             path.move(
               to: CGPoint(
-                x: rect.minX + first.x * rect.width,
-                y: rect.minY + first.y * rect.height
+                x: mapRect.minX + first.x * mapRect.width,
+                y: mapRect.minY + first.y * mapRect.height
               )
             )
             for point in polygon.dropFirst() {
               path.addLine(
                 to: CGPoint(
-                  x: rect.minX + point.x * rect.width,
-                  y: rect.minY + point.y * rect.height
+                  x: mapRect.minX + point.x * mapRect.width,
+                  y: mapRect.minY + point.y * mapRect.height
                 )
               )
             }
@@ -255,11 +244,11 @@ private struct SubdivisionPosterView: View {
         context.fill(
           path,
           with: .color(
-            visitedCodes.contains(subdivision.code)
+            visitedCodes.contains(country.code)
               ? visitedColor : Color(red: 0.83, green: 0.87, blue: 0.83)
           )
         )
-        context.stroke(path, with: .color(.white.opacity(0.9)), lineWidth: 0.7)
+        context.stroke(path, with: .color(.white.opacity(0.82)), lineWidth: 0.45)
       }
     }
     .background(Color(red: 0.83, green: 0.92, blue: 0.92))
@@ -267,13 +256,8 @@ private struct SubdivisionPosterView: View {
   }
 
   private var mapHeight: CGFloat {
-    if variant.isMapOnly { return variant.isStory ? 720 : 410 }
-    return variant.isStory ? 540 : 330
-  }
-
-  private var englishCountryName: String {
-    Locale(identifier: "en").localizedString(forRegionCode: definition.countryCode)
-      ?? definition.countryCode
+    if variant.isMapOnly { return variant.isStory ? 700 : 405 }
+    return variant.isStory ? 480 : 285
   }
 
   private var posterSecondary: Color {

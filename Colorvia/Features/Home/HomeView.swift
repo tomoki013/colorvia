@@ -6,6 +6,7 @@ struct HomeView: View {
   @State private var path: [AppRoute] = []
   @State private var showingPicker = false
   @State private var showingSettings = false
+  @State private var showingShareSheet = false
   @State private var isStatisticsExpanded = false
 
   /// Screen-based gate so showing the banner cannot flip this decision and loop.
@@ -106,6 +107,14 @@ struct HomeView: View {
       }
     }
     .sheet(isPresented: $showingSettings) { SettingsView() }
+    .sheet(isPresented: $showingShareSheet) {
+      WorldShareSheet(
+        countries: appState.mapCountries,
+        visitedCodes: appState.visitedCodes,
+        visitedCount: appState.visitedCountryCount,
+        visitedColor: appState.mapColor.color
+      )
+    }
   }
 
   private var header: some View {
@@ -117,7 +126,9 @@ struct HomeView: View {
       Spacer(minLength: 18)
 
       HStack(spacing: 12) {
-        ShareLink(item: L10n.shareMessage(appState.visitedCountryCount)) {
+        Button {
+          showingShareSheet = true
+        } label: {
           Image(systemName: "square.and.arrow.up")
             .frame(width: 44, height: 44)
             .contentShape(Rectangle())
